@@ -22,3 +22,8 @@ We know of a number of existing resources that have attempted to do parts of thi
 
 ## Other specific Resources we should make sure are included
 Want other specific resources included, add them here (or file an issue)
+
+
+# What do we need to do?
+1. Identify the training resource 'schema' that we want to use
+2. Adopt a from end
