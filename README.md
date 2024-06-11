@@ -16,4 +16,5 @@ We know of a number of existing resources that have attempted to do parts of thi
 * [ReproRehabDB](https://reprorehabdb.usc.edu/)
 * [LearnNeuroimaging/Hitchhacker's guide to the brain](https://learn-neuroimaging.github.io/hitchhackers_guide_brain/)
 * [NITRC Training Resource Query](https://www.nitrc.org/search/?type_of_search=group&q=training)
+* [BrainHack School Training Modules](https://school-brainhack.github.io/modules/)
 * And many more! (add your faviorites here!)
