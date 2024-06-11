@@ -11,10 +11,14 @@ to start from?
 We seek to create a ***ReproNim Inventory of Training Resources*** to help find what's out there so that users can more efficiently 
 identify, reuse and adapt existing resources instead of always starting from scratch.
 
-## Similar Efforts
+## Similar Inventories Efforts
 We know of a number of existing resources that have attempted to do parts of this. These include (but are not limited to):
 * [ReproRehabDB](https://reprorehabdb.usc.edu/)
 * [LearnNeuroimaging/Hitchhacker's guide to the brain](https://learn-neuroimaging.github.io/hitchhackers_guide_brain/)
 * [NITRC Training Resource Query](https://www.nitrc.org/search/?type_of_search=group&q=training)
 * [BrainHack School Training Modules](https://school-brainhack.github.io/modules/)
 * And many more! (add your faviorites here!)
+
+
+## Other specific Resources we should make sure are included
+Want other specific resources included, add them here (or file an issue)
