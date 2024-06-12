@@ -17,6 +17,9 @@ We know of a number of existing resources that have attempted to do parts of thi
 * [LearnNeuroimaging/Hitchhacker's guide to the brain](https://learn-neuroimaging.github.io/hitchhackers_guide_brain/)
 * [NITRC Training Resource Query](https://www.nitrc.org/search/?type_of_search=group&q=training)
 * [BrainHack School Training Modules](https://school-brainhack.github.io/modules/)
+* [INCF Training Space](https://training.incf.org/)
+* [Neuroimaging Carpentry](https://conp-pcno-training.github.io/neuroimaging-carpentry/)
+  * [Software Carpentry](https://www.software-carpentry.org/)
 * And many more! (add your faviorites here!)
 
 
