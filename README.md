@@ -33,7 +33,7 @@ Want other specific resources included, add them here (or file an issue)
   * For each resource, what do we want to know about it?
     * Identify the training resource 'schema' that we want to use
 
-* Adopt a ***front end*** (how the content is displayed)
+* Adopt a ***front end*** (how the content is displayed) and associated ***back end*** to store the information
   * What do we really want to see?
      * Search: by topic tag (i.e. git), by format (i.e. hands-on tutorial), by level (i.e. first-timers), by duration (i.e. 3 hour), etc. 
   * Do any of the existing platforms already do this?
