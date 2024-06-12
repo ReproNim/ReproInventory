@@ -28,6 +28,7 @@ Want other specific resources included, add them here (or file an issue)
 
 
 # What do we need to do?
+* Review ***existing*** inventories
 * Expand ***content***
   * For each resource, what do we want to know about it?
     * Identify the training resource 'schema' that we want to use
