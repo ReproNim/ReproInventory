@@ -26,7 +26,6 @@ We know of a number of existing resources that have attempted to do parts of thi
 ## Other specific Resources we should make sure are included
 Want other specific resources included, add them here (or file an issue)
 
-
 # What do we need to do?
 * Review ***existing*** inventories
 * Expand ***content***
@@ -38,3 +37,7 @@ Want other specific resources included, add them here (or file an issue)
      * Search: by topic tag (i.e. git), by format (i.e. hands-on tutorial), by level (i.e. first-timers), by duration (i.e. 3 hour), etc. 
   * Do any of the existing platforms already do this?
      * Which comes closest? 
+
+# Project development (OHBM Hackathon)
+[project-ohbm-hackathon here](https://github.com/ohbm/hackathon2024/issues/12)
+
