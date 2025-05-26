@@ -1,0 +1,34 @@
+﻿ID,Course Name,Level,Keywords,Course Length
+1,Git course,Beginner,"Git, Version Control, GitHub",1-4 hrs 
+5,Data Science in Communication: Python and Reproducible Research,Beginner,"Python, NLP, Open Science, Reproducibility, Data Science, Pandas, Seaborn, Publish, Statistics",1+ weeks
+7,Reproducible Data Management with DataLad - University of Munster 18/11/22,Beginner,"Datalad, Version Control, Collect",<1 hr
+8,Reproducible Data Management with DataLad - MEG/EEG Meeting DCCN 2022-11-28,Beginner,"Datalad, Version Control, FAIR, Collect",<1 hr
+9,Reusable (big) data management with DataLad - Donders Nexus,Beginner,"Datalad, Version Control, FAIR, Collect",<1 hr
+10,Git Workshop,Beginner,"Git, Shell, Version Control",<1 hr
+11,ISMRM QC 2022,"Intermediate, Beginner, Advanced","Nipreps, QC, QA, MRIQC, IQMs, Image Process, Standards, Describe",1-3 days
+16,Reproducible Computation Environments,Beginner,"Docker, Image Processing, Reproducible Environments,",<1 hr
+18,Guide to reproducible neuroimaging research,Beginner,"Pre-registration, Plan, Version Control",1-3 days
+21,Carpentries Incubator- SDC-BIDS-IntroMRI,Beginner,"BIDS, DataLad, Python, Neuroimaging, Carpentries, Standards, Version Control, Image Process, Statistics",1 day
+22,Carpentries Incubator-SDC-BIDS-functional MRI,Beginner,"nilearn, resting state, preprocessing, Python, resting state, carpentries, Image Process, Statistics",1 day
+23,Carpentries Incubator - SDC-BIDS-diffusion MRI,Beginner,"dMRI, carpentries, preprocessing, Image Process, Statistics",1 day
+25,Reproducibility science and methodologies (approx),Beginner,"syllabus, MRI, BIDS, preprocessing, fMRIprep, Plan, Standards",1 week
+26,ReproRehab: Reproducible Rehabilitation Research Education Program ,Beginner,"Rehabilitation, data sharing, DataLad, ",1+ weeks
+28,BrainIAK,Beginner,"Python, fMRI, multivariate analysis",1+ weeks
+29,Image to Inference,Intermediate,"Syllabus, MRI, FSL",1+ weeks
+30,Syllabus- Workshop/tutorial series  in reproducibility,Beginner,"BIDS, fMRI, version control,",1+ weeks
+31,Reproducibility Tutorial Notes,Beginner,"syllabus, BIDS, version control, QA",1-3 days
+32,DataLad Handbook,Intermediate,"DataLad, version control, Collect",1-3 days
+33,AI campus,Beginner,"AI, chatbots",1+ weeks
+34,Research Data Management 01,Beginner,"Datalad, Version Control, Collect",1-4 hrs 
+35,"Data collection to paper-Git basics, Data Management",Intermediate,"Datalad, MPI, Version Control",1 day
+36,Version Control,Beginner,"Git, Version Control",1+ weeks
+38,Data Science Basics in Neuroscience,Beginner,"Git, Reproducibility, Containers, Image Process, Version Control",1+ weeks
+39,ReproNim Workshop Schedule,Beginner,"Syllabus, shell scripting, version control, Python, FAIR, statistics, Machine Learning",1-3 days
+40,Syllabus - Research Imaging Informatics,Intermediate,"Syllabus, FAIR",1+ weeks
+43,Managing Reproducible Expts with DataLad and Boutiques,Intermediate,"DataLad, Boutiques, Collect",1-3 days
+46,The Princeton Handbook for Reproducible Neuroimaging¬∂,Beginner,"fMRI, Multivariate analysis",1+ weeks
+47,syllabus overview: MRI Analysis & ReproNim Reproducibility Imaging,Beginner,"fMRI analysis, clinical, language science",1 week
+51,Intro to Open and Reproducible Science in Computational Brain Imaging,Beginner,"Git, BIDS, Version control, ",1-4 hrs 
+51,Software carpentry introduction,Beginner,Carpentry,1+ weeks
+52,Intro to ReproNim,Beginner,Lesson plan,<1 hr
+53,Introduction to Machine Learning part 1,Beginner,"Multi-week curriculum, tutoruial on Machine Learning in neuroimaging",1+ weeks
