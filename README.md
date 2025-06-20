@@ -39,5 +39,5 @@ Want other specific resources included, add them here (or file an issue)
      * Which comes closest? 
 
 # Project development (OHBM Hackathon)
-[project-ohbm-hackathon here](https://github.com/ohbm/hackathon2024/issues/12)
+[project-ohbm-hackathon here]([https://github.com/ohbm/hackathon2025/issues/7])
 
