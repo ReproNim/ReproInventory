@@ -1,0 +1,197 @@
+name: TrainingProductsSchema
+description: A schema for tagged training products
+id: https://example.org/TrainingProductsSchema
+types:
+  string:
+    base: str
+    uri: xsd:string
+  integer:
+    base: int
+    uri: xsd:integer
+  float:
+    base: float
+    uri: xsd:float
+  boolean:
+    base: bool
+    uri: xsd:boolean
+enums:
+  Level_enum:
+    permissible_values:
+      Beginner:
+      Intermediate:
+      Advanced:
+      NA:
+  Platform_enum:
+    permissible_values:
+      Mac:
+      Windows:
+      Linux:
+      Docker:
+      Jupyter:
+      NA:
+  Course_Length_enum:
+    permissible_values:
+      <1_hr:
+      1_4_hrs:
+      1_day:
+      1_3_days:
+      1_week:
+      1+_weeks:
+      NA:
+  Content_format_enum:
+    permissible_values:
+      Hands_on_tutorial_notebooks:
+      lecture:
+      video:
+      notes:
+      blog_post:
+      reference:
+      slides:
+      website:
+      outline:
+      meta_resource:
+      Hybrid:
+      NA:
+  Language_enum:
+    permissible_values:
+      English:
+      French:
+      Spanish:
+      Chinese:
+      Other:
+      German:
+      NA:
+  Programming_language_enum:
+    permissible_values:
+      Python:
+      R:
+      shell_scripting:
+      Matlab:
+      Git:
+      NA:
+  Neuroimaging_Software_enum:
+    permissible_values:
+      AFNI:
+      SPM:
+      FSL:
+      Freesurfer:
+      NA:
+  Imaging_Modality_enum:
+    permissible_values:
+      DWI:
+      Structural:
+      Functional:
+      Task_based:
+      Resting_State:
+      EEG:
+      Behavioral:
+      MEG:
+      MRI:
+      NA:
+  Open_dataset_enum:
+    permissible_values:
+      Yes:
+      No:
+      NA:
+  Assessment_enum:
+    permissible_values:
+      Yes:
+      No:
+      NA:
+  Exclude_from_ReproInventory_enum:
+    permissible_values:
+      Yes:
+      No:
+      NA:
+  Delivery_enum:
+    permissible_values:
+      self_paced:
+      instructor:
+      Discussion_needed:
+      NA:
+  Quadrants_enum:
+    permissible_values:
+      information_oriented_reference:
+      understanding_oriented_explanation:
+      learning_oriented_tutorials:
+      problem_oriented_how_to_guides:
+      NA:
+classes:
+  TrainingProduct:
+    description: A training product with various attributes
+    attributes:
+      ID:
+        description: ID
+        range: string
+      Tag_Team:
+        description: Tag Team
+        range: string
+      Course_Name:
+        description: Course Name
+        range: string
+      URL:
+        description: URL
+        range: string
+      Level:
+        description: Level
+        range: Level_enum
+      Platform:
+        description: Platform
+        range: Platform_enum
+      Keywords:
+        description: Keywords
+        range: string
+      Course_Length:
+        description: Course Length
+        range: Course_Length_enum
+      Instruction_Medium:
+        description: Instruction Medium
+        range: Content_format_enum
+      Delivery:
+        description: Delivery
+        range: Delivery_enum
+      Language:
+        description: Language
+        range: Language_enum
+      Programming_Language:
+        description: Programming Language
+        range: Programming_language_enum
+      Neuroimaging_Software:
+        description: Neuroimaging Software
+        range: Neuroimaging_Software_enum
+      Imaging_Modality:
+        description: Imaging Modality
+        range: Imaging_Modality_enum
+      Open_Dataset:
+        description: Open Dataset
+        range: Open_dataset_enum
+      Last_Updated:
+        description: Last Updated
+        range: string
+      Functionality:
+        description: Functionality
+        range: string
+      Assessment:
+        description: Assessment
+        range: Assessment_enum
+      Prerequisite:
+        description: Prerequisite
+        range: string
+      Source:
+        description: Source
+        range: string
+      Review:
+        description: Review
+        range: string
+      Exclude_from_ReproInventory:
+        description: Exclude from ReproInventory
+        range: Exclude_from_ReproInventory_enum
+      Alias_Links:
+        description: Alias Links
+        range: string
+      Notes:
+        description: Notes
+        range: string
+      Quadrants:
+        description: Quadrants
+        range: Quadrants_enum
