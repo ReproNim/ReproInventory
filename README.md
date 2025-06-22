@@ -42,3 +42,31 @@ Want other specific resources included, add them here (or file an issue)
 
 OHBM 2025 - [project-ohbm-hackathon here](https://github.com/ohbm/hackathon2025/issues/7)
 
+# Developer Documentation
+
+## Build dependencies
+
+- nodejs
+
+  You can install from https://nodejs.org/en/download/
+
+## Local development
+
+- Get the project source code
+
+  ```bash
+  git clone https://github.com/ReproNim/ReproInventory.git
+  ```
+
+- Install dependencies
+
+```bash
+cd frontend
+npm install
+```
+
+- Now run the app by running
+
+```bash
+npm run dev
+```
