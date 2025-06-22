@@ -77,14 +77,15 @@ enums:
       FSL:
       Freesurfer:
       Python:
+      Multiple:
       NA:
   ImagingModalityEnum:
     permissible_values:
       DWI:
       Structural:
       Functional:
-      Task-based:
-      Resting-State:
+      "Task-based":
+      "Resting-State":
       EEG:
       Behavioral:
       MEG:
@@ -111,6 +112,7 @@ enums:
       "understanding-oriented (explanation)":
       "learning-oriented (tutorials)":
       "problem-oriented (how to guides)":
+      NA:
 
 classes:
   ReproInventoryEntry:
@@ -191,8 +193,10 @@ slots:
     range: AssessmentEnum
   prerequisite:
     range: string
+    multivalued: true
   source:
     range: string
+    multivalued: true
   review:
     range: string
   exclude_from_repro_inventory:
