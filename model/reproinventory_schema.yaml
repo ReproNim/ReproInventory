@@ -25,7 +25,7 @@ enums:
       NA:
   CourseLengthEnum:
     permissible_values:
-      "&lt;1 hr":
+      "<1 hr":
       "1-4 hrs":
       "1 day":
       "1-3 days":
@@ -91,17 +91,7 @@ enums:
       MEG:
       MRI:
       NA:
-  AssessmentEnum:
-    permissible_values:
-      Yes:
-      No:
-      NA:
   OpenDatasetEnum:
-    permissible_values:
-      Yes:
-      No:
-      NA:
-  ExcludeFromReproInventoryEnum:
     permissible_values:
       Yes:
       No:
@@ -145,7 +135,6 @@ classes:
 
 slots:
   id:
-    range: integer
     identifier: true
   tag_team:
     range: string
@@ -190,7 +179,7 @@ slots:
   functionality:
     range: string
   assessment:
-    range: AssessmentEnum
+    range: bool
   prerequisite:
     range: string
     multivalued: true
@@ -200,7 +189,7 @@ slots:
   review:
     range: string
   exclude_from_repro_inventory:
-    range: ExcludeFromReproInventoryEnum
+    range: bool
   alias_links:
     range: string
   notes:
