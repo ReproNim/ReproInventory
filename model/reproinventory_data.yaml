@@ -97,7 +97,9 @@
   - learning-oriented (tutorials)
 - id: 7
   tag_team:
-  - MH/CF/JB
+  - MH
+  - CF
+  - JB
   course_name: Reproducible Data Management with DataLad - University of Munster 18/11/22
   url: https://onedrive.live.com/?authkey=%21AFsNiGzveqZ750s&id=86184EF59C004002%21416672&cid=86184EF59C004002&parId=root&parQt=sharedby&o=OneUp
   level:
@@ -374,7 +376,8 @@
   - learning-oriented (tutorials)
 - id: 18
   tag_team:
-  - BH/DNK
+  - BH
+  - DNK
   course_name: Guide to reproducible neuroimaging research
   url: https://github.com/compneuro-ncu/reproducible-neuroimaging
   level:
@@ -1023,7 +1026,8 @@
   quadrants: null
 - id: 39
   tag_team:
-  - CW/JB
+  - CW
+  - JB
   course_name: ReproNim Workshop Schedule
   url: https://github.com/mick-d/repronim-fcbg
   level:
