@@ -1,0 +1,206 @@
+id: http://example.org/reproinventory
+name: reproinventory
+description: A LinkML schema for ReproInventory data
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  reproinv: http://example.org/reproinventory/
+
+default_prefix: reproinv
+
+enums:
+  LevelEnum:
+    permissible_values:
+      Beginner:
+      Intermediate:
+      Advanced:
+      NA:
+  PlatformEnum:
+    permissible_values:
+      Mac:
+      Windows:
+      Linux:
+      Docker:
+      Jupyter:
+      NA:
+  CourseLengthEnum:
+    permissible_values:
+      "&lt;1 hr":
+      "1-4 hrs":
+      "1 day":
+      "1-3 days":
+      "1 week":
+      "1+ weeks":
+      NA:
+  ContentFormatEnum:
+    permissible_values:
+      Hands-on tutorial / notebooks:
+      lecture:
+      video:
+      notes:
+      blog post:
+      reference:
+      slides:
+      website:
+      outline:
+      meta-resource:
+      NA:
+  DeliveryEnum:
+    permissible_values:
+      self-paced:
+      instructor:
+      Hybrid:
+      "Discussion needed":
+  LanguageEnum:
+    permissible_values:
+      English:
+      French:
+      Spanish:
+      Chinese:
+      German:
+      "English, French":
+      "English, German":
+      Other:
+      NA:
+  ProgrammingLanguageEnum:
+    permissible_values:
+      Python:
+      R:
+      "shell scripting":
+      Matlab:
+      Git:
+      NA:
+  NeuroimagingSoftwareEnum:
+    permissible_values:
+      AFNI:
+      SPM:
+      FSL:
+      Freesurfer:
+      Python:
+      NA:
+  ImagingModalityEnum:
+    permissible_values:
+      DWI:
+      Structural:
+      Functional:
+      Task-based:
+      Resting-State:
+      EEG:
+      Behavioral:
+      MEG:
+      MRI:
+      NA:
+  AssessmentEnum:
+    permissible_values:
+      Yes:
+      No:
+      NA:
+  OpenDatasetEnum:
+    permissible_values:
+      Yes:
+      No:
+      NA:
+  ExcludeFromReproInventoryEnum:
+    permissible_values:
+      Yes:
+      No:
+      NA:
+  QuadrantsEnum:
+    permissible_values:
+      "information-oriented (reference)":
+      "understanding-oriented (explanation)":
+      "learning-oriented (tutorials)":
+      "problem-oriented (how to guides)":
+
+classes:
+  ReproInventoryEntry:
+    slots:
+      - id
+      - tag_team
+      - course_name
+      - url
+      - level
+      - platform
+      - keywords
+      - course_length
+      - instruction_medium
+      - delivery
+      - language
+      - programming_language
+      - neuroimaging_software
+      - imaging_modality
+      - open_dataset
+      - last_updated
+      - functionality
+      - assessment
+      - prerequisite
+      - source
+      - review
+      - exclude_from_repro_inventory
+      - alias_links
+      - notes
+      - quadrants
+
+slots:
+  id:
+    range: integer
+    identifier: true
+  tag_team:
+    range: string
+    multivalued: true
+  course_name:
+    range: string
+  url:
+    range: string
+  level:
+    range: LevelEnum
+    multivalued: true
+  platform:
+    range: PlatformEnum
+    multivalued: true
+  keywords:
+    range: string
+    multivalued: true
+  course_length:
+    range: CourseLengthEnum
+  instruction_medium:
+    range: ContentFormatEnum
+    multivalued: true
+  delivery:
+    range: DeliveryEnum
+    multivalued: true
+  language:
+    range: LanguageEnum
+    multivalued: true
+  programming_language:
+    range: ProgrammingLanguageEnum
+    multivalued: true
+  neuroimaging_software:
+    range: NeuroimagingSoftwareEnum
+    multivalued: true
+  imaging_modality:
+    range: ImagingModalityEnum
+    multivalued: true
+  open_dataset:
+    range: OpenDatasetEnum
+  last_updated:
+    range: string # Can be date, but '2023' values suggest string is safer
+  functionality:
+    range: string
+  assessment:
+    range: AssessmentEnum
+  prerequisite:
+    range: string
+  source:
+    range: string
+  review:
+    range: string
+  exclude_from_repro_inventory:
+    range: ExcludeFromReproInventoryEnum
+  alias_links:
+    range: string
+  notes:
+    range: string
+  quadrants:
+    range: QuadrantsEnum
+    multivalued: true
