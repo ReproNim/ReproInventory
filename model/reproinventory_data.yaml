@@ -1,0 +1,1545 @@
+- id: 1
+  tag_team:
+  - CW
+  - BH
+  - JB
+  course_name: Git course
+  url: https://git-course.netlify.app/
+  level:
+  - Beginner
+  platform:
+  - Mac
+  keywords:
+  - Git
+  - Version Control
+  - GitHub
+  course_length: 1-4 hrs
+  instruction_medium:
+  - Hands-on tutorial / notebooks
+  - website
+  delivery:
+  - self-paced
+  - instructor
+  language:
+  - English
+  programming_language:
+  - Git
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2023'
+  functionality: null
+  assessment: false
+  prerequisite: None
+  source: ReproNim; Johanna Bayer; Fellow-22
+  review: null
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants:
+  - problem-oriented (how to guides)
+  - learning-oriented (tutorials)
+- id: 5
+  tag_team:
+  - CW/JB
+  course_name: 'Data Science in Communication: Python and Reproducible Research'
+  url: 'GitHub - yibeichan/COMM160DS: COMM 160DS: Data Science in Communication: Python
+    and Reproducible Research (Spring 2023, University of California, Santa Barbara)'
+  level:
+  - Beginner
+  platform:
+  - Jupyter
+  keywords:
+  - Python
+  - NLP
+  - Open Science
+  - Reproducibility
+  - Data Science
+  - Pandas
+  - Seaborn
+  - Publish
+  - Statistics
+  course_length: 1+ weeks
+  instruction_medium:
+  - Hands-on tutorial / notebooks
+  - lecture
+  delivery:
+  - self-paced
+  - instructor
+  language:
+  - English
+  programming_language:
+  - Python
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: null
+  last_updated: '2023'
+  functionality: null
+  assessment: true
+  prerequisite: None
+  source: ReproNim; Yibei Chen; Fellow-22; UCSB
+  review: JupyterHub no longer accessible. Need to link GitHubClassroom to GitHub
+    (uclear if links work once you do that)
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants:
+  - learning-oriented (tutorials)
+- id: 7
+  tag_team:
+  - MH/CF/JB
+  course_name: Reproducible Data Management with DataLad - University of Munster 18/11/22
+  url: https://onedrive.live.com/?authkey=%21AFsNiGzveqZ750s&id=86184EF59C004002%21416672&cid=86184EF59C004002&parId=root&parQt=sharedby&o=OneUp
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Datalad
+  - Version Control
+  - Collect
+  course_length: <1 hr
+  instruction_medium:
+  - slides
+  - lecture
+  delivery:
+  - instructor
+  language:
+  - English
+  programming_language:
+  - Git
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2022'
+  functionality: null
+  assessment: false
+  prerequisite: None
+  source: ReproNim; Julian Kosciessa; Fellow-22; Donders Institute
+  review: Short slide deck, very clear
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: link does not work for me (JB) can someone double check
+  quadrants:
+  - understanding-oriented (explanation)
+- id: 8
+  tag_team:
+  - CW/CF
+  course_name: Reproducible Data Management with DataLad - MEG/EEG Meeting DCCN 2022-11-28
+  url: https://onedrive.live.com/?authkey=%21AANsp4ZosaSOK2o&id=86184EF59C004002%21416988&cid=86184EF59C004002&parId=root&parQt=sharedby&o=OneUp
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Datalad
+  - Version Control
+  - FAIR
+  - Collect
+  course_length: <1 hr
+  instruction_medium:
+  - lecture
+  - slides
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2022'
+  functionality: null
+  assessment: false
+  prerequisite: Basic Git/None
+  source: ReproNim; Julian Kosciessa; Fellow-22; Donders Institute
+  review: Relatively quick overview - more just what is DataLad vs detailed how to
+    use
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants:
+  - information-oriented (reference)
+  - understanding-oriented (explanation)
+- id: 9
+  tag_team:
+  - CW/CF/JB
+  course_name: Reusable (big) data management with DataLad - Donders Nexus
+  url: https://1drv.ms/b/s!AgJAAJz1ThiGms0Vdo-WifbI8FKPOA?e%3DourGa2&sa=D&source=editors&ust=1718948936539613&usg=AOvVaw0nBhMBkdri9NRmpgP0Wfu1
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Datalad
+  - Version Control
+  - FAIR
+  - Collect
+  course_length: <1 hr
+  instruction_medium:
+  - lecture
+  - slides
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2022'
+  functionality: null
+  assessment: false
+  prerequisite: None
+  source: ReproNim; Julian Kosciessa; Fellow-22; Donders Institute
+  review: Very short slide deck on GIT
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants:
+  - understanding-oriented (explanation)
+  - information-oriented (reference)
+- id: 10
+  tag_team:
+  - BH/CF
+  course_name: Git Workshop
+  url: https://1drv.ms/b/s!AgJAAJz1ThiGms0Z1FcP8964X7sAxw?e=ZpBDCi
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Git
+  - Shell
+  - Version Control
+  course_length: <1 hr
+  instruction_medium:
+  - lecture
+  - slides
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - Git
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2023'
+  functionality: null
+  assessment: false
+  prerequisite: None
+  source: ReproNim; Julian Kosciessa; Fellow-22; Donders Institute
+  review: Practical intro to bash and git
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants:
+  - understanding-oriented (explanation)
+- id: 11
+  tag_team:
+  - CW/CF/JB
+  course_name: ISMRM QC 2022
+  url: https://www.nipreps.org/qc-book/welcome.html
+  level:
+  - Intermediate
+  - Beginner
+  - Advanced
+  platform:
+  - Jupyter
+  keywords:
+  - Nipreps
+  - QC
+  - QA
+  - MRIQC
+  - IQMs
+  - Image Process
+  - Standards
+  - Describe
+  course_length: 1-3 days
+  instruction_medium:
+  - website
+  - Hands-on tutorial / notebooks
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - Python
+  - Git
+  - shell scripting
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - MRI
+  open_dataset: NA
+  last_updated: '2022'
+  functionality: null
+  assessment: true
+  prerequisite: MRI preprocessing, R, Python
+  source: ReproNim; Celine Provins; Fellow-22
+  review: Focuses on QC in reference to MRIQC; has lots of big picture info about
+    QC/QA in general
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants:
+  - learning-oriented (tutorials)
+- id: 16
+  tag_team:
+  - CW/CF
+  course_name: Reproducible Computation Environments
+  url: https://uicapture.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=0640440b-c7ab-46c7-9bca-afdc00f914e6
+  level:
+  - Beginner
+  platform:
+  - Docker
+  keywords:
+  - Docker
+  - Image Processing
+  - Reproducible Environments
+  course_length: <1 hr
+  instruction_medium:
+  - video
+  - lecture
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - shell scripting
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2022'
+  functionality: null
+  assessment: false
+  prerequisite: Shell scripting
+  source: ReproNim; Avery Van De Water; Fellow-22
+  review: labeled as part 1 - unclear where part 2 is
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants:
+  - learning-oriented (tutorials)
+- id: 18
+  tag_team:
+  - BH/DNK
+  course_name: Guide to reproducible neuroimaging research
+  url: https://github.com/compneuro-ncu/reproducible-neuroimaging
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Pre-registration
+  - Plan
+  - Version Control
+  course_length: 1-3 days
+  instruction_medium:
+  - notes
+  - website
+  - outline
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2021'
+  functionality: NA
+  assessment: false
+  prerequisite: None
+  source: ReproNim; Karolina Finc
+  review: Some sections are under-developed
+  exclude_from_reproinventory: true
+  alias_links: null
+  notes: Reproducible Neuroimaging, tutorial guide, for cog sci students audience
+  quadrants: null
+- id: 21
+  tag_team:
+  - CW
+  course_name: Carpentries Incubator- SDC-BIDS-IntroMRI
+  url: https://carpentries-incubator.github.io/SDC-BIDS-IntroMRI/before-we-start.html
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - BIDS
+  - DataLad
+  - Python
+  - Neuroimaging
+  - Carpentries
+  - Standards
+  - Version Control
+  - Image Process
+  - Statistics
+  course_length: 1 day
+  instruction_medium:
+  - Hands-on tutorial
+  - notebooks
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - Python
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - MRI
+  open_dataset: true
+  last_updated: '2024'
+  functionality: null
+  assessment: true
+  prerequisite: Unix, Basic Python
+  source: ReproNim; MIchael Joseph; Fellow-20
+  review: Basic Imaging Overview. Focus on BIDS
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 22
+  tag_team:
+  - CW/JB
+  course_name: Carpentries Incubator-SDC-BIDS-functional MRI
+  url: https://carpentries-incubator.github.io/SDC-BIDS-fMRI/
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - nilearn
+  - resting state
+  - preprocessing
+  - Python
+  - resting state
+  - carpentries
+  - Image Process
+  - Statistics
+  course_length: 1 day
+  instruction_medium:
+  - Hands-on tutorial / notebooks
+  - website
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - Python
+  neuroimaging_software:
+  - Python
+  imaging_modality:
+  - Functional
+  open_dataset: true
+  last_updated: '2024'
+  functionality: null
+  assessment: true
+  prerequisite: Python
+  source: ReproNim; MIchael Joseph; Fellow-20
+  review: Tutorial on functional neuroimaging in Python
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants:
+  - learning-oriented (tutorials)
+  - problem-oriented (how to guides)
+- id: 23
+  tag_team:
+  - CW
+  course_name: Carpentries Incubator - SDC-BIDS-diffusion MRI
+  url: https://carpentries-incubator.github.io/SDC-BIDS-dMRI/introduction.html
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - dMRI
+  - carpentries
+  - preprocessing
+  - Image Process
+  - Statistics
+  course_length: 1 day
+  instruction_medium:
+  - Hands-on tutorial
+  - notebooks
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - Python
+  neuroimaging_software:
+  - Python
+  imaging_modality:
+  - DWI
+  open_dataset: true
+  last_updated: '2024'
+  functionality: null
+  assessment: true
+  prerequisite: Unix, Basic Python
+  source: ReproNim; MIchael Joseph; Fellow-20
+  review: null
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 25
+  tag_team:
+  - CW
+  course_name: Reproducibility science and methodologies (approx)
+  url: https://docs.google.com/document/d/1VBMtoBSuviYTDY5AdaoqIFBrHlBt6NmBToDVGkTexG4/edit#heading=h.g63wsqcq2bbh
+  level:
+  - Beginner
+  platform:
+  - Docker
+  keywords:
+  - syllabus
+  - MRI
+  - BIDS
+  - preprocessing
+  - fMRIprep
+  - Plan
+  - Standards
+  course_length: 1 week
+  instruction_medium:
+  - notes
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - Python
+  neuroimaging_software:
+  - Multiple
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2020'
+  functionality: null
+  assessment: false
+  prerequisite: Unix, Basic Python
+  source: ReproNim; Jennifer Legault; Fellow-20
+  review: example syllabus for hackathon/course
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 26
+  tag_team:
+  - ELB
+  course_name: 'ReproRehab: Reproducible Rehabilitation Research Education Program'
+  url: https://www.reprorehab.usc.edu/course
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Rehabilitation
+  - data sharing
+  - DataLad
+  course_length: 1+ weeks
+  instruction_medium:
+  - video
+  delivery: null
+  language:
+  - English
+  programming_language: null
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2023'
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: ReproNim; Sook-Lei Liew; Fellow-20; ReproRehab
+  review: Entire first year bootcamp videos online
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 28
+  tag_team:
+  - ELB
+  course_name: BrainIAK
+  url: https://brainiak.org/tutorials/
+  level:
+  - Beginner
+  platform:
+  - Jupyter
+  keywords:
+  - Python
+  - fMRI
+  - multivariate analysis
+  course_length: 1+ weeks
+  instruction_medium:
+  - Hands-on tutorial
+  - notebooks
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - Python
+  neuroimaging_software:
+  - Python
+  imaging_modality:
+  - Functional
+  open_dataset: NA
+  last_updated: '2020'
+  functionality: null
+  assessment: false
+  prerequisite: basic programming
+  source: ReproNim; Elizabeth McDevitt; Fellow-20; Princeton
+  review: Jupyter tutorials from the basics to advanced machine learning analyses
+    on fMRI data
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 29
+  tag_team:
+  - ELB
+  course_name: Image to Inference
+  url: https://crnl.readthedocs.io/psyc589888/#overlay-context=
+  level:
+  - Intermediate
+  platform:
+  - NA
+  keywords:
+  - Syllabus
+  - MRI
+  - FSL
+  course_length: 1+ weeks
+  instruction_medium:
+  - lecture
+  delivery: null
+  language:
+  - English
+  programming_language: null
+  neuroimaging_software:
+  - Multiple
+  imaging_modality:
+  - Functional
+  open_dataset: NA
+  last_updated: '2020'
+  functionality: null
+  assessment: true
+  prerequisite: None
+  source: ReproNim; Chris Rorden; Fellow-20
+  review: Syllabus for course on fMRI, including slides, from collection to inferencing
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 30
+  tag_team:
+  - ELB
+  course_name: Syllabus- Workshop/tutorial series  in reproducibility
+  url: https://docs.google.com/document/d/1I4U9E_5fvJ2BSSAux_PPQvr6QavR6g1burSyIACXuKI/edit#heading=h.qm1rn5lf4l02
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - BIDS
+  - fMRI
+  - version control
+  course_length: 1+ weeks
+  instruction_medium:
+  - lecture
+  delivery: null
+  language:
+  - English
+  programming_language: null
+  neuroimaging_software:
+  - Multiple
+  imaging_modality:
+  - Functional
+  open_dataset: NA
+  last_updated: NA
+  functionality: null
+  assessment: true
+  prerequisite: moderate programming experience; must have bash/unix shell experience
+  source: ReproNim; Julie Schneider; Fellow-20
+  review: Syllabus for reproducible neuroimaging multi-week course
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 31
+  tag_team:
+  - CW
+  course_name: Reproducibility Tutorial Notes
+  url: https://docs.google.com/document/d/1JAz10xCdWw2ifOzcV-KQhmqz9Vq7PCF1CBq868aaXvQ/edit
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - syllabus
+  - BIDS
+  - version control
+  - QA
+  course_length: 1-3 days
+  instruction_medium:
+  - notes
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - Freesurfer
+  imaging_modality:
+  - MRI
+  open_dataset: NA
+  last_updated: '2020'
+  functionality: null
+  assessment: false
+  prerequisite: UNIX, Basic Python
+  source: ReproNim
+  review: syllabus for tutorial; details unclear. Might be unfinished.
+  exclude_from_reproinventory: true
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 32
+  tag_team:
+  - CW /JB
+  course_name: DataLad Handbook
+  url: https://handbook.datalad.org/en/latest/
+  level:
+  - Intermediate
+  platform:
+  - NA
+  keywords:
+  - DataLad
+  - version control
+  - Collect
+  course_length: 1-3 days
+  instruction_medium:
+  - reference
+  - website
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - shell scripting
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2024'
+  functionality: '2025'
+  assessment: false
+  prerequisite: DataLad Handbook. Has Beginner and Advanced use cases
+  source: ReproNim; Adina Wagner
+  review: very good resource for data provenance
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 33
+  tag_team:
+  - CF
+  - SS
+  - JB
+  course_name: AI campus
+  url: https://ki-campus.org/
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - AI
+  - chatbots
+  course_length: 1+ weeks
+  instruction_medium:
+  - video
+  delivery: null
+  language:
+  - English
+  - German
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2024'
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: AI campus
+  review: Nice videos and course material on AI
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 34
+  tag_team:
+  - CF
+  - SS
+  - JB
+  course_name: Research Data Management 01
+  url: https://www.youtube.com/watch?v=fL3DWzSWFL8
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Datalad
+  - Version Control
+  - Collect
+  course_length: 1-4 hrs
+  instruction_medium:
+  - video
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - shell scripting
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2021'
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: ReproNim; Lennart Wittkuhn; Adina Wagner
+  review: Good video
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 35
+  tag_team:
+  - MH
+  course_name: Data collection to paper-Git basics, Data Management
+  url: https://github.com/adswa/mpi-datamanagement-ws
+  level:
+  - Intermediate
+  platform:
+  - NA
+  keywords:
+  - Datalad
+  - MPI
+  - Version Control
+  course_length: 1 day
+  instruction_medium:
+  - outline
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - shell scripting
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2020'
+  functionality: null
+  assessment: false
+  prerequisite: null
+  source: null
+  review: Course outline for Data Lad Course
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 36
+  tag_team:
+  - CF
+  - SS
+  - JB
+  course_name: Version Control
+  url: https://lennartwittkuhn.com/version-control-book/
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Git
+  - Version Control
+  course_length: 1+ weeks
+  instruction_medium:
+  - notes
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - Git
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2024'
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: ReproNim; Lennart Wittkuhn
+  review: null
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 38
+  tag_team:
+  - CF
+  - SS
+  - JB
+  course_name: Data Science Basics in Neuroscience
+  url: https://wcm-datascibasics.github.io/
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Git
+  - Reproducibility
+  - Containers
+  - Image Process
+  - Version Control
+  course_length: 1+ weeks
+  instruction_medium:
+  - lecture
+  delivery: null
+  language:
+  - English
+  programming_language: null
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2021'
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: ReproNim; Xihe Xie
+  review: Review of previous materials, full course
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 39
+  tag_team:
+  - CW/JB
+  course_name: ReproNim Workshop Schedule
+  url: https://github.com/mick-d/repronim-fcbg
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Syllabus
+  - shell scripting
+  - version control
+  - Python
+  - FAIR
+  - statistics
+  - Machine Learning
+  course_length: 1-3 days
+  instruction_medium:
+  - notes
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - Python
+  neuroimaging_software:
+  - Python
+  imaging_modality:
+  - MRI
+  open_dataset: NA
+  last_updated: '2019'
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: ReproNim; Michael Dayan; Fellow-19
+  review: Syllabus for ReproNim workshop
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 40
+  tag_team:
+  - CW/JB
+  course_name: Syllabus - Research Imaging Informatics
+  url: https://docs.google.com/document/d/1J-wCg62yIJNCdZd_bTDYkOWCXn0eqD1j7l17MQlE4qM/edit
+  level:
+  - Intermediate
+  platform:
+  - NA
+  keywords:
+  - Syllabus
+  - FAIR
+  course_length: 1+ weeks
+  instruction_medium:
+  - notes
+  - outline
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - MRI
+  open_dataset: NA
+  last_updated: '2019'
+  functionality: null
+  assessment: false
+  prerequisite: Computational Methods, Neuroimaging experience
+  source: ReproNim; Aaron Kemp; Fellow-19
+  review: Syllabus for Research Imaging Informatics course. Overview of neuroimaging
+    methods and basic processing
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 43
+  tag_team:
+  - CF
+  - SS
+  - JB
+  course_name: Managing Reproducible Expts with DataLad and Boutiques
+  url: https://github.com/gkiar/Repronim-GSAN
+  level:
+  - Intermediate
+  platform:
+  - NA
+  keywords:
+  - DataLad
+  - Boutiques
+  - Collect
+  course_length: 1-3 days
+  instruction_medium:
+  - Hands-on tutorial
+  - notebooks
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - Python
+  neuroimaging_software:
+  - Python
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2020'
+  functionality: null
+  assessment: true
+  prerequisite: NA
+  source: ReproNim
+  review: Syllabus for workshop that has been given
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 46
+  tag_team:
+  - CF
+  - SS
+  - JB
+  course_name: "The Princeton Handbook for Reproducible Neuroimaging\xB6"
+  url: https://brainhack-princeton.github.io/handbook/
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - fMRI
+  - Multivariate analysis
+  course_length: 1+ weeks
+  instruction_medium:
+  - lecture
+  delivery: null
+  language:
+  - English
+  programming_language: null
+  neuroimaging_software:
+  - Multiple
+  imaging_modality:
+  - Functional
+  open_dataset: NA
+  last_updated: '2021'
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: ReproNim; Princeton
+  review: Very nice overview of different fMRI topics
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants:
+  - information-oriented (reference)
+- id: 47
+  tag_team:
+  - CF
+  - SS
+  - JB
+  course_name: 'syllabus overview: MRI Analysis & ReproNim Reproducibility Imaging'
+  url: https://eroesch.github.io/2019-20-PYM0FM/
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - fMRI analysis
+  - clinical
+  - language science
+  course_length: 1 week
+  instruction_medium:
+  - lecture
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - Functional
+  open_dataset: NA
+  last_updated: '2019'
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: ReproNim; Etienne Roesch
+  review: Pretty good if you want to teach fMRI analysis from scratch
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants:
+  - learning-oriented (tutorials)
+  - understanding-oriented (explanation)
+  - information-oriented (reference)
+- id: 51
+  tag_team:
+  - CF
+  - SS
+  - JB
+  course_name: Intro to Open and Reproducible Science in Computational Brain Imaging
+  url: https://github.com/sebastientourbier/openneuroresources/blob/master/lectures/reproducibility_trabit19.pdf
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Git
+  - BIDS
+  - Version control
+  course_length: 1-4 hrs
+  instruction_medium:
+  - lecture
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2019'
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: ReproNim; Sebastien Tourbier
+  review: Single presentation, good for an intro class to data management and data
+    version control
+  exclude_from_reproinventory: false
+  alias_links: null
+  notes: null
+  quadrants:
+  - information-oriented (reference)
+  - understanding-oriented (explanation)
+- id: 51
+  tag_team:
+  - CF
+  - SS
+  - JB
+  course_name: Software carpentry introduction
+  url: https://swcarpentry.github.io/shell-novice/
+  level:
+  - Beginner
+  platform:
+  - Linux
+  keywords:
+  - Carpentry
+  course_length: 1+ weeks
+  instruction_medium:
+  - Hands-on tutorial
+  - notebooks
+  delivery: null
+  language:
+  - English
+  programming_language: null
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: '2024'
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: Carpentries
+  review: If you want to teach carpentries use this tool - not only shell scripting,
+    but also intro to R, Python and HPC
+  exclude_from_reproinventory: false
+  alias_links: https://github.com/jdkent/incf-fellow-jdkent/blob/gh-pages/index.md
+  notes: null
+  quadrants:
+  - learning-oriented (tutorials)
+  - problem-oriented (how to guides)
+- id: 52
+  tag_team:
+  - CF
+  - SS
+  - JB
+  course_name: Intro to ReproNim
+  url: https://github.com/DavidEWarrenPhD/INCF-Fellow-DavidEWarren
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - Lesson plan
+  course_length: <1 hr
+  instruction_medium:
+  - reference
+  delivery: null
+  language:
+  - English
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - NA
+  open_dataset: NA
+  last_updated: NA
+  functionality: null
+  assessment: false
+  prerequisite: NA
+  source: ReproNim; David Warren
+  review: For internal usage
+  exclude_from_reproinventory: true
+  alias_links: null
+  notes: Link to Github Importer broken
+  quadrants: null
+- id: 53
+  tag_team:
+  - JB
+  course_name: Introduction to Machine Learning part 1
+  url: :https://neurodatascience.github.io/QLS612-Overview/lectures-materials/2024/intro_ml_part_1.html
+  level:
+  - Beginner
+  platform:
+  - Windows
+  - Mac
+  - Linux
+  keywords:
+  - Multi-week curriculum
+  - tutoruial on Machine Learning in neuroimaging
+  course_length: 1+ weeks
+  instruction_medium:
+  - Hands-on tutorial / notebooks
+  - lecture
+  - website
+  - slides
+  delivery:
+  - self-paced
+  - instructor
+  language:
+  - English
+  programming_language:
+  - Python
+  - shell scripting
+  - Git
+  neuroimaging_software:
+  - Python
+  imaging_modality: null
+  open_dataset: null
+  last_updated: null
+  functionality: null
+  assessment: null
+  prerequisite: null
+  source: null
+  review: null
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 54
+  tag_team:
+  - JB
+  course_name: Brainhack School
+  url: https://school.brainhackmtl.org/
+  level:
+  - Beginner
+  - Intermediate
+  platform:
+  - Windows
+  keywords: null
+  course_length: null
+  instruction_medium: null
+  delivery: null
+  language: null
+  programming_language: null
+  neuroimaging_software: null
+  imaging_modality:
+  - NA
+  open_dataset: null
+  last_updated: null
+  functionality: null
+  assessment: null
+  prerequisite: null
+  source: null
+  review: null
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 55
+  tag_team:
+  - JB
+  course_name: NeuroHackademy
+  url: https://neurohackademy.org/
+  level:
+  - Beginner
+  - Intermediate
+  platform:
+  - Mac
+  - Windows
+  - Linux
+  keywords: null
+  course_length: null
+  instruction_medium: null
+  delivery: null
+  language: null
+  programming_language: null
+  neuroimaging_software: null
+  imaging_modality: null
+  open_dataset: null
+  last_updated: null
+  functionality: null
+  assessment: null
+  prerequisite: null
+  source: null
+  review: null
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 56
+  tag_team:
+  - CF
+  course_name: Neuromatchacademy
+  url: https://github.com/NeuromatchAcademy
+  level: null
+  platform: null
+  keywords: null
+  course_length: null
+  instruction_medium: null
+  delivery: null
+  language: null
+  programming_language: null
+  neuroimaging_software: null
+  imaging_modality: null
+  open_dataset: null
+  last_updated: null
+  functionality: null
+  assessment: null
+  prerequisite: null
+  source: null
+  review: null
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 57
+  tag_team:
+  - CF
+  course_name: List of open neuroscience resources
+  url: https://github.com/asoplata/open-computational-neuroscience-resources
+  level:
+  - Beginner
+  - Intermediate
+  - Advanced
+  platform:
+  - NA
+  keywords:
+  - List of resources
+  course_length: 1+ weeks
+  instruction_medium:
+  - Hands-on tutorial / notebooks
+  - lecture
+  - video
+  - notes
+  - blog post
+  - reference
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - Functional
+  - Structural
+  - EEG
+  - Behavioral
+  - Resting-State
+  - MRI
+  open_dataset: true
+  last_updated: '2024'
+  functionality: '2024'
+  assessment: false
+  prerequisite: NA
+  source: Github Repo added by Charlotte Fraze
+  review: Great resource
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 58
+  tag_team:
+  - JB
+  course_name: Andy's brain book
+  url: https://andysbrainbook.readthedocs.io/en/latest/
+  level: null
+  platform: null
+  keywords: null
+  course_length: null
+  instruction_medium: null
+  delivery: null
+  language: null
+  programming_language: null
+  neuroimaging_software: null
+  imaging_modality: null
+  open_dataset: null
+  last_updated: null
+  functionality: null
+  assessment: null
+  prerequisite: null
+  source: null
+  review: null
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 59
+  tag_team:
+  - JB
+  course_name: ABCD Repronim course
+  url: https://www.abcd-repronim.org/
+  level: null
+  platform: null
+  keywords: null
+  course_length: null
+  instruction_medium: null
+  delivery: null
+  language: null
+  programming_language: null
+  neuroimaging_software: null
+  imaging_modality: null
+  open_dataset: null
+  last_updated: null
+  functionality: null
+  assessment: null
+  prerequisite: null
+  source: null
+  review: null
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: 60
+  tag_team:
+  - JB
+  course_name: ABCD Repronim ML course
+  url: null
+  level: null
+  platform: null
+  keywords: null
+  course_length: null
+  instruction_medium: null
+  delivery: null
+  language: null
+  programming_language: null
+  neuroimaging_software: null
+  imaging_modality: null
+  open_dataset: null
+  last_updated: null
+  functionality: null
+  assessment: null
+  prerequisite: null
+  source: null
+  review: null
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
+- id: null
+  tag_team:
+  - JB
+  course_name: Reproducible Pipelines for Neuroimaging Research
+  url: https://sina-mansour.github.io/ohbm2025-reproducible-research/intro.html
+  level: null
+  platform: null
+  keywords: null
+  course_length: null
+  instruction_medium: null
+  delivery: null
+  language: null
+  programming_language: null
+  neuroimaging_software: null
+  imaging_modality: null
+  open_dataset: null
+  last_updated: null
+  functionality: null
+  assessment: null
+  prerequisite: null
+  source: null
+  review: null
+  exclude_from_reproinventory: null
+  alias_links: null
+  notes: null
+  quadrants: null
