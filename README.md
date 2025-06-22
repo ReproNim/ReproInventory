@@ -47,7 +47,7 @@ OHBM 2025 - [project-ohbm-hackathon here](https://github.com/ohbm/hackathon2025/
 ## Frontend
 
 Example figure from the frontend (on 'dummy' data):
-![image](Pics/ExampleViewer.png)
+![image](pics/ExampleViewer.png)
 
 ### Build dependencies
 
