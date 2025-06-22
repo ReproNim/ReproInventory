@@ -44,13 +44,18 @@ OHBM 2025 - [project-ohbm-hackathon here](https://github.com/ohbm/hackathon2025/
 
 # Developer Documentation
 
-## Build dependencies
+## Frontend
+
+Example figure from the frontend (on 'dummy' data):
+![image](Pics/ExampleViewer.png)
+
+### Build dependencies
 
 - nodejs
 
   You can install from https://nodejs.org/en/download/
 
-## Local development
+### Local development
 
 - Get the project source code
 
