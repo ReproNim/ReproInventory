@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useMemo, useEffect } from "react"
-import { Search, BookOpen, Video, FileText, Users, Clock, ExternalLink } from "lucide-react" // Added ExternalLink
+import { Search, BookOpen, Video, FileText, Clock, ExternalLink } from "lucide-react" // Added ExternalLink
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -12,17 +12,17 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
   type ReproInventoryEntry,
-  LevelEnum,
-  PlatformEnum,
-  CourseLengthEnum,
-  ContentFormatEnum,
-  DeliveryEnum,
-  LanguageEnum,
-  ProgrammingLanguageEnum,
-  NeuroimagingSoftwareEnum,
-  ImagingModalityEnum,
-  OpenDatasetEnum,
-  QuadrantsEnum,
+  type LevelEnum,
+  type PlatformEnum,
+  type CourseLengthEnum,
+  type ContentFormatEnum,
+  type DeliveryEnum,
+  type LanguageEnum,
+  type ProgrammingLanguageEnum,
+  type NeuroimagingSoftwareEnum,
+  type ImagingModalityEnum,
+  type OpenDatasetEnum,
+  type QuadrantsEnum,
 } from "./types/reproinventory" // Import generated types
 
 export default function TrainingMaterialsBrowser() {
@@ -71,17 +71,17 @@ export default function TrainingMaterialsBrowser() {
   }
 
   // Define filter options based on Enums from schema
-  const levelOptions = Object.values(LevelEnum)
-  const platformOptions = Object.values(PlatformEnum)
-  const courseLengthOptions = Object.values(CourseLengthEnum)
-  const instructionMediumOptions = Object.values(ContentFormatEnum)
-  const deliveryOptions = Object.values(DeliveryEnum)
-  const languageOptions = Object.values(LanguageEnum)
-  const programmingLanguageOptions = Object.values(ProgrammingLanguageEnum)
-  const neuroimagingSoftwareOptions = Object.values(NeuroimagingSoftwareEnum)
-  const imagingModalityOptions = Object.values(ImagingModalityEnum)
-  const openDatasetOptions = Object.values(OpenDatasetEnum)
-  const quadrantsOptions = Object.values(QuadrantsEnum)
+  const levelOptions: LevelEnum[] = ["Beginner", "Intermediate", "Advanced", "NA"];
+  const platformOptions: PlatformEnum[] = ["Mac", "Windows", "Linux", "Docker", "Jupyter", "NA"];
+  const courseLengthOptions: CourseLengthEnum[] = ["<1 hr", "1-4 hrs", "1 day", "1-3 days", "1 week", "1+ weeks", "NA"];
+  const instructionMediumOptions: ContentFormatEnum[] = ["Hands-on tutorial / notebooks", "lecture", "video", "notes", "blog post", "reference", "slides", "website", "outline", "meta-resource", "NA"];
+  const deliveryOptions: DeliveryEnum[] = ["self-paced", "instructor", "Hybrid", "Discussion needed"];
+  const languageOptions: LanguageEnum[] = ["English", "French", "Spanish", "Chinese", "German", "English, French", "English, German", "Other", "NA"];
+  const programmingLanguageOptions: ProgrammingLanguageEnum[] = ["Python", "R", "shell scripting", "Matlab", "Git", "NA"];
+  const neuroimagingSoftwareOptions: NeuroimagingSoftwareEnum[] = ["AFNI", "SPM", "FSL", "Freesurfer", "Python", "Multiple", "NA"];
+  const imagingModalityOptions: ImagingModalityEnum[] = ["DWI", "Structural", "Functional", "Task-based", "Resting-State", "EEG", "Behavioral", "MEG", "MRI", "NA"];
+  const openDatasetOptions: OpenDatasetEnum[] = ["True", "False", "NA"];
+  const quadrantsOptions: QuadrantsEnum[] = ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"];
 
   const filteredMaterials = useMemo(() => {
     let filtered = reproInventoryData
@@ -101,47 +101,47 @@ export default function TrainingMaterialsBrowser() {
       }
 
       // Level filter
-      if (selectedLevels.length > 0 && !(material.level && selectedLevels.some(sl => material.level.includes(sl)))) {
+      if (selectedLevels.length > 0 && !material.level?.some(level => selectedLevels.includes(level))) {
         return false;
       }
 
       // Platform filter
-      if (selectedPlatforms.length > 0 && !(material.platform && selectedPlatforms.some(sp => material.platform.includes(sp)))) {
+      if (selectedPlatforms.length > 0 && !material.platform?.some(platform => selectedPlatforms.includes(platform))) {
         return false;
       }
 
       // Course Length filter
-      if (selectedCourseLengths.length > 0 && !(material.course_length && selectedCourseLengths.includes(material.course_length))) {
+      if (selectedCourseLengths.length > 0 && material.course_length && !selectedCourseLengths.includes(material.course_length)) {
         return false;
       }
 
       // Instruction Medium filter
-      if (selectedInstructionMedia.length > 0 && !(material.instruction_medium && selectedInstructionMedia.some(sim => material.instruction_medium.includes(sim)))) {
+      if (selectedInstructionMedia.length > 0 && !material.instruction_medium?.some(medium => selectedInstructionMedia.includes(medium))) {
         return false;
       }
 
       // Delivery filter
-      if (selectedDeliveries.length > 0 && !(material.delivery && selectedDeliveries.some(sd => material.delivery.includes(sd)))) {
+      if (selectedDeliveries.length > 0 && !material.delivery?.some(delivery => selectedDeliveries.includes(delivery))) {
         return false;
       }
 
       // Language filter
-      if (selectedLanguages.length > 0 && !(material.language && selectedLanguages.some(sl => material.language.includes(sl)))) {
+      if (selectedLanguages.length > 0 && !material.language?.some(language => selectedLanguages.includes(language))) {
         return false;
       }
 
       // Programming Language filter
-      if (selectedProgrammingLanguages.length > 0 && !(material.programming_language && selectedProgrammingLanguages.some(spl => material.programming_language.includes(spl)))) {
+      if (selectedProgrammingLanguages.length > 0 && !material.programming_language?.some(lang => selectedProgrammingLanguages.includes(lang))) {
         return false;
       }
 
       // Neuroimaging Software filter
-      if (selectedNeuroimagingSoftware.length > 0 && !(material.neuroimaging_software && selectedNeuroimagingSoftware.some(sns => material.neuroimaging_software.includes(sns)))) {
+      if (selectedNeuroimagingSoftware.length > 0 && !material.neuroimaging_software?.some(software => selectedNeuroimagingSoftware.includes(software))) {
         return false;
       }
 
       // Imaging Modality filter
-      if (selectedImagingModalities.length > 0 && !(material.imaging_modality && selectedImagingModalities.some(sim => material.imaging_modality.includes(sim)))) {
+      if (selectedImagingModalities.length > 0 && !material.imaging_modality?.some(modality => selectedImagingModalities.includes(modality))) {
         return false;
       }
 
@@ -151,7 +151,7 @@ export default function TrainingMaterialsBrowser() {
       }
       
       // Quadrants filter
-      if (selectedQuadrants.length > 0 && !(material.quadrants && selectedQuadrants.some(sq => material.quadrants.includes(sq)))) {
+      if (selectedQuadrants.length > 0 && !material.quadrants?.some(quadrant => selectedQuadrants.includes(quadrant))) {
         return false;
       }
 
@@ -213,18 +213,18 @@ export default function TrainingMaterialsBrowser() {
 
   const getFormatIcon = (format: ContentFormatEnum | string) => {
     switch (format) {
-      case ContentFormatEnum["Hands_on_tutorial___notebooks"]:
-      case ContentFormatEnum.Website:
-      case ContentFormatEnum.Notes:
-      case ContentFormatEnum.Reference:
-      case ContentFormatEnum.Blog_post:
-      case ContentFormatEnum.Outline:
-      case ContentFormatEnum["Meta_resource"]:
+      case "Hands-on tutorial / notebooks":
+      case "website":
+      case "notes":
+      case "reference":
+      case "blog post":
+      case "outline":
+      case "meta-resource":
         return <BookOpen className="w-4 h-4" />
-      case ContentFormatEnum.Video:
+      case "video":
         return <Video className="w-4 h-4" />
-      case ContentFormatEnum.Lecture:
-      case ContentFormatEnum.Slides:
+      case "lecture":
+      case "slides":
         return <FileText className="w-4 h-4" />
       default:
         return <BookOpen className="w-4 h-4" />
