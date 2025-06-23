@@ -38,6 +38,7 @@ export default function TrainingMaterialsBrowser() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [selectedRawMaterial, setSelectedRawMaterial] = useState<ReproInventoryEntry | null>(null)
+  const [editingMaterial, setEditingMaterial] = useState<ReproInventoryEntry | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -660,30 +661,104 @@ export default function TrainingMaterialsBrowser() {
                               </a>
                             )}
                         </div>
-                        <Dialog>
-                          <DialogTrigger asChild>
-                            <Button
-                              variant="outline"
-                              className="w-fit text-xs px-2 py-1 h-auto"
-                              onClick={() => setSelectedRawMaterial(material)}
-                            >
-                              View Raw Data
-                            </Button>
-                          </DialogTrigger>
-                          <DialogContent className="sm:max-w-[800px]">
-                            <DialogHeader>
-                              <DialogTitle>Raw Data for {selectedRawMaterial?.course_name}</DialogTitle>
-                              <DialogDescription>
-                                This is the raw JSON data for the selected training material.
-                              </DialogDescription>
-                            </DialogHeader>
-                            <div className="max-h-[60vh] overflow-auto rounded-md bg-zinc-900 p-4 text-zinc-50">
-                              <pre className="text-xs">
-                                {selectedRawMaterial ? JSON.stringify(selectedRawMaterial, null, 2) : "No data selected"}
-                              </pre>
-                            </div>
-                          </DialogContent>
-                        </Dialog>
+                        <div className="flex gap-2">
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <Button
+                                variant="outline"
+                                className="w-fit text-xs px-2 py-1 h-auto"
+                                onClick={() => setSelectedRawMaterial(material)}
+                              >
+                                View Raw Data
+                              </Button>
+                            </DialogTrigger>
+                            <DialogContent className="sm:max-w-[800px]">
+                              <DialogHeader>
+                                <DialogTitle>Raw Data for {selectedRawMaterial?.course_name}</DialogTitle>
+                                <DialogDescription>
+                                  This is the raw JSON data for the selected training material.
+                                </DialogDescription>
+                              </DialogHeader>
+                              <div className="max-h-[60vh] overflow-auto rounded-md bg-zinc-900 p-4 text-zinc-50">
+                                <pre className="text-xs">
+                                  {selectedRawMaterial ? JSON.stringify(selectedRawMaterial, null, 2) : "No data selected"}
+                                </pre>
+                              </div>
+                            </DialogContent>
+                          </Dialog>
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <Button
+                                variant="outline"
+                                className="w-fit text-xs px-2 py-1 h-auto"
+                                onClick={() => setEditingMaterial(material)}
+                              >
+                                Edit
+                              </Button>
+                            </DialogTrigger>
+                            {editingMaterial && (
+                              <DialogContent className="sm:max-w-[800px]">
+                                <DialogHeader>
+                                  <DialogTitle>Edit {editingMaterial.course_name}</DialogTitle>
+                                  <DialogDescription>
+                                    Update the details of this training material.
+                                  </DialogDescription>
+                                </DialogHeader>
+                                <div className="grid gap-4 py-4">
+                                  <div className="grid grid-cols-4 items-center gap-4">
+                                    <Label htmlFor="course_name" className="text-right">
+                                      Course Name
+                                    </Label>
+                                    <Input
+                                      id="course_name"
+                                      value={editingMaterial.course_name}
+                                      onChange={(e) =>
+                                        setEditingMaterial({ ...editingMaterial, course_name: e.target.value })
+                                      }
+                                      className="col-span-3"
+                                    />
+                                  </div>
+                                  <div className="grid grid-cols-4 items-center gap-4">
+                                    <Label htmlFor="url" className="text-right">
+                                      URL
+                                    </Label>
+                                    <Input
+                                      id="url"
+                                      value={editingMaterial.url}
+                                      onChange={(e) =>
+                                        setEditingMaterial({ ...editingMaterial, url: e.target.value })
+                                      }
+                                      className="col-span-3"
+                                    />
+                                  </div>
+                                  <div className="grid grid-cols-4 items-center gap-4">
+                                    <Label htmlFor="review" className="text-right">
+                                      Review
+                                    </Label>
+                                    <Input
+                                      id="review"
+                                      value={editingMaterial.review || ""}
+                                      onChange={(e) =>
+                                        setEditingMaterial({ ...editingMaterial, review: e.target.value })
+                                      }
+                                      className="col-span-3"
+                                    />
+                                  </div>
+                                  {/* Add more fields as needed based on ReproInventoryEntry type */}
+                                </div>
+                                <Button onClick={() => {
+                                  // Update the main data array with the edited material
+                                  setReproInventoryData((prevData) =>
+                                    prevData.map((item) =>
+                                      item.id === editingMaterial.id ? editingMaterial : item
+                                    )
+                                  );
+                                  setEditingMaterial(null); // Close the dialog
+                                }}>Save changes</Button>
+                              </DialogContent>
+                            )}
+                          </Dialog>
+                        </div>
                       </CardContent>
                     </Card>
                   ))}
