@@ -239,7 +239,7 @@ export default function TrainingMaterialsBrowser() {
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Training Materials Library</h1>
+          <h1 className="text-3xl font-bold mb-2">ReproInventory - Training</h1>
           <p className="text-muted-foreground">
             Explore our comprehensive collection of research training materials and educational resources
           </p>
