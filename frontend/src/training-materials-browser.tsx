@@ -11,6 +11,14 @@ import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import {
   type ReproInventoryEntry,
   type LevelEnum,
   type PlatformEnum,
@@ -29,6 +37,8 @@ export default function TrainingMaterialsBrowser() {
   const [reproInventoryData, setReproInventoryData] = useState<ReproInventoryEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [showRawDataDialog, setShowRawDataDialog] = useState(false)
+  const [selectedRawMaterial, setSelectedRawMaterial] = useState<ReproInventoryEntry | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -651,6 +661,30 @@ export default function TrainingMaterialsBrowser() {
                               </a>
                             )}
                         </div>
+                        <Dialog>
+                          <DialogTrigger asChild>
+                            <Button
+                              variant="outline"
+                              className="w-fit text-xs px-2 py-1 h-auto"
+                              onClick={() => setSelectedRawMaterial(material)}
+                            >
+                              View Raw Data
+                            </Button>
+                          </DialogTrigger>
+                          <DialogContent className="sm:max-w-[800px]">
+                            <DialogHeader>
+                              <DialogTitle>Raw Data for {selectedRawMaterial?.course_name}</DialogTitle>
+                              <DialogDescription>
+                                This is the raw JSON data for the selected training material.
+                              </DialogDescription>
+                            </DialogHeader>
+                            <div className="max-h-[60vh] overflow-auto rounded-md bg-zinc-900 p-4 text-zinc-50">
+                              <pre className="text-xs">
+                                {selectedRawMaterial ? JSON.stringify(selectedRawMaterial, null, 2) : "No data selected"}
+                              </pre>
+                            </div>
+                          </DialogContent>
+                        </Dialog>
                       </CardContent>
                     </Card>
                   ))}
