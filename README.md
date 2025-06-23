@@ -91,7 +91,8 @@ OHBM 2025 - [project-ohbm-hackathon here](https://github.com/ohbm/hackathon2025/
 * “Are there any Spanish-language courses on structural MRI?”
 * “Which tutorials include assessments or quizzes?”
 
-
+<details>
+<summary>Example use storied</summary>
 
 ## Example Use Stories
 
@@ -137,9 +138,11 @@ Delivery = Instructor
 * Modality = Functional
 
 
+</details>
 
-
-
+<details>
+<summary>Developer Documentation</summary>
+ 
 # Developer Documentation
 
 ## Frontend
@@ -173,3 +176,5 @@ npm install
 ```bash
 npm run dev
 ```
+
+</details>
