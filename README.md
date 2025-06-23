@@ -139,7 +139,9 @@ Delivery = Instructor
 
 
 
-
+<details>
+<summary>Developer Documentation</summary>
+ 
 # Developer Documentation
 
 ## Frontend
@@ -173,3 +175,5 @@ npm install
 ```bash
 npm run dev
 ```
+
+</details>
