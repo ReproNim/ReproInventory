@@ -29,7 +29,7 @@ interface EditMaterialDialogProps {
 
 const levelOptions: LevelEnum[] = ["Beginner", "Intermediate", "Advanced", "NA"];
 const platformOptions: PlatformEnum[] = ["Mac", "Windows", "Linux", "Docker", "Jupyter", "NA"];
-const courseLengthOptions: CourseLengthEnum[] = ["&lt;1 hr", "1-4 hrs", "1 day", "1-3 days", "1 week", "1+ weeks", "NA"];
+const courseLengthOptions: CourseLengthEnum[] = ["<1 hr", "1-4 hrs", "1 day", "1-3 days", "1 week", "1+ weeks", "NA"];
 const instructionMediumOptions: ContentFormatEnum[] = ["Hands-on tutorial / notebooks", "lecture", "video", "notes", "blog post", "reference", "slides", "website", "outline", "meta-resource", "NA"];
 const deliveryOptions: DeliveryEnum[] = ["self-paced", "instructor", "Hybrid", "Discussion needed"];
 const languageOptions: LanguageEnum[] = ["English", "French", "Spanish", "Chinese", "German", "English, French", "English, German", "Other", "NA"];
