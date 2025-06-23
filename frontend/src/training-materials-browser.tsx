@@ -37,7 +37,6 @@ export default function TrainingMaterialsBrowser() {
   const [reproInventoryData, setReproInventoryData] = useState<ReproInventoryEntry[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [showRawDataDialog, setShowRawDataDialog] = useState(false)
   const [selectedRawMaterial, setSelectedRawMaterial] = useState<ReproInventoryEntry | null>(null)
 
   useEffect(() => {
