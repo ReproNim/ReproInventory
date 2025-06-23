@@ -38,6 +38,12 @@ Want other specific resources included, add them here (or file an issue)
   * Do any of the existing platforms already do this?
      * Which comes closest? 
 
+     
+# Our Training Resource Description Model
+
+Our current model (v_0.0.1) is expressed in YAML [here](model/model.yaml). A more human-readable version of that model is [here](model/model.md).
+
+
 # Project development (OHBM Hackathon)
 
 OHBM 2025 - [project-ohbm-hackathon here](https://github.com/ohbm/hackathon2025/issues/7)
