@@ -26,30 +26,30 @@ export type QuadrantsEnum = "information-oriented (reference)" | "understanding-
 
 export interface ReproInventoryEntry {
     id: string,
-    tag_team?: string,
+    tag_team?: string[],
     course_name?: string,
     url?: string,
-    level?: LevelEnum[], // Changed from string to LevelEnum[]
-    platform?: PlatformEnum[], // Changed from string to PlatformEnum[]
-    keywords?: string[], // Changed from string to string[]
-    course_length?: CourseLengthEnum, // Changed from string to CourseLengthEnum
-    instruction_medium?: ContentFormatEnum[], // Changed from string to ContentFormatEnum[]
-    delivery?: DeliveryEnum[], // Changed from string to DeliveryEnum[]
-    language?: LanguageEnum[], // Changed from string to LanguageEnum[]
-    programming_language?: ProgrammingLanguageEnum[], // Changed from string to ProgrammingLanguageEnum[]
-    neuroimaging_software?: NeuroimagingSoftwareEnum[], // Changed from string to NeuroimagingSoftwareEnum[]
-    imaging_modality?: ImagingModalityEnum[], // Changed from string to ImagingModalityEnum[]
-    open_dataset?: OpenDatasetEnum, // Changed from string to OpenDatasetEnum
+    level?: LevelEnum[],
+    platform?: PlatformEnum[],
+    keywords?: string[],
+    course_length?: CourseLengthEnum,
+    instruction_medium?: ContentFormatEnum[],
+    delivery?: DeliveryEnum[],
+    language?: LanguageEnum[],
+    programming_language?: ProgrammingLanguageEnum[],
+    neuroimaging_software?: NeuroimagingSoftwareEnum[],
+    imaging_modality?: ImagingModalityEnum[],
+    open_dataset?: OpenDatasetEnum,
     last_updated?: string,
     functionality?: string,
     assessment?: string,
-    prerequisite?: string,
-    source?: string,
+    prerequisite?: string[],
+    source?: string[],
     review?: string,
     exclude_from_repro_inventory?: string,
     alias_links?: string,
     notes?: string,
-    quadrants?: QuadrantsEnum[], // Changed from string to QuadrantsEnum[]
+    quadrants?: QuadrantsEnum[],
 }
 
 
@@ -79,8 +79,8 @@ export function toReproInventoryEntry(o: ReproInventoryEntry): ReproInventoryEnt
         last_updated: o.last_updated ?? undefined,
         functionality: o.functionality ?? undefined,
         assessment: o.assessment ?? undefined,
-        prerequisite: o.prerequisite ?? undefined,
-        source: o.source ?? undefined,
+        prerequisite: Array.isArray(o.prerequisite) ? o.prerequisite : (o.prerequisite ? [o.prerequisite] : undefined),
+        source: Array.isArray(o.source) ? o.source : (o.source ? [o.source] : undefined),
         review: o.review ?? undefined,
         exclude_from_repro_inventory: o.exclude_from_repro_inventory ?? undefined,
         alias_links: o.alias_links ?? undefined,

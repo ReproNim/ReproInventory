@@ -10,14 +10,8 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog" // Adjusted import
+import EditMaterialDialog from "@/components/EditMaterialDialog"; // Import the new component
 import {
   type ReproInventoryEntry,
   type LevelEnum,
@@ -686,7 +680,9 @@ export default function TrainingMaterialsBrowser() {
                               </div>
                             </DialogContent>
                           </Dialog>
-                          <Dialog>
+                          <Dialog onOpenChange={(open) => {
+                            if (!open) setEditingMaterial(null); // Close dialog
+                          }}>
                             <DialogTrigger asChild>
                               <Button
                                 variant="outline"
@@ -697,65 +693,18 @@ export default function TrainingMaterialsBrowser() {
                               </Button>
                             </DialogTrigger>
                             {editingMaterial && (
-                              <DialogContent className="sm:max-w-[800px]">
-                                <DialogHeader>
-                                  <DialogTitle>Edit {editingMaterial.course_name}</DialogTitle>
-                                  <DialogDescription>
-                                    Update the details of this training material.
-                                  </DialogDescription>
-                                </DialogHeader>
-                                <div className="grid gap-4 py-4">
-                                  <div className="grid grid-cols-4 items-center gap-4">
-                                    <Label htmlFor="course_name" className="text-right">
-                                      Course Name
-                                    </Label>
-                                    <Input
-                                      id="course_name"
-                                      value={editingMaterial.course_name}
-                                      onChange={(e) =>
-                                        setEditingMaterial({ ...editingMaterial, course_name: e.target.value })
-                                      }
-                                      className="col-span-3"
-                                    />
-                                  </div>
-                                  <div className="grid grid-cols-4 items-center gap-4">
-                                    <Label htmlFor="url" className="text-right">
-                                      URL
-                                    </Label>
-                                    <Input
-                                      id="url"
-                                      value={editingMaterial.url}
-                                      onChange={(e) =>
-                                        setEditingMaterial({ ...editingMaterial, url: e.target.value })
-                                      }
-                                      className="col-span-3"
-                                    />
-                                  </div>
-                                  <div className="grid grid-cols-4 items-center gap-4">
-                                    <Label htmlFor="review" className="text-right">
-                                      Review
-                                    </Label>
-                                    <Input
-                                      id="review"
-                                      value={editingMaterial.review || ""}
-                                      onChange={(e) =>
-                                        setEditingMaterial({ ...editingMaterial, review: e.target.value })
-                                      }
-                                      className="col-span-3"
-                                    />
-                                  </div>
-                                  {/* Add more fields as needed based on ReproInventoryEntry type */}
-                                </div>
-                                <Button onClick={() => {
-                                  // Update the main data array with the edited material
+                              <EditMaterialDialog
+                                material={editingMaterial}
+                                onSave={(updatedMaterial) => {
                                   setReproInventoryData((prevData) =>
                                     prevData.map((item) =>
-                                      item.id === editingMaterial.id ? editingMaterial : item
+                                      item.id === updatedMaterial.id ? updatedMaterial : item
                                     )
                                   );
-                                  setEditingMaterial(null); // Close the dialog
-                                }}>Save changes</Button>
-                              </DialogContent>
+                                  setEditingMaterial(null);
+                                }}
+                                onClose={() => setEditingMaterial(null)}
+                              />
                             )}
                           </Dialog>
                         </div>
