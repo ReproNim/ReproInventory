@@ -48,6 +48,9 @@ Our current model (v_0.0.1) is expressed in YAML [here](model/model.yaml). A mor
 
 OHBM 2025 - [project-ohbm-hackathon here](https://github.com/ohbm/hackathon2025/issues/7)
 
+<details> 
+<summary>Example Queries</summary>
+ 
 # Example Queries
 * I would like to find a 1 hour lecture to introduce git/github to novice first year graduate students in my Introduction to Computational Neuroscience course
 * I would like to find 1.5 hr multishell diffusion (dMRI) course video (in lecture style)
@@ -91,8 +94,10 @@ OHBM 2025 - [project-ohbm-hackathon here](https://github.com/ohbm/hackathon2025/
 * “Are there any Spanish-language courses on structural MRI?”
 * “Which tutorials include assessments or quizzes?”
 
+</details>
+
 <details>
-<summary>Example use storied</summary>
+<summary>Example Use Stories</summary>
 
 ## Example Use Stories
 
