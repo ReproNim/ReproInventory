@@ -2076,5 +2076,33 @@
     "alias_links": null,
     "notes": null,
     "quadrants": null
+  }.
+  {
+    "id": 61,
+    "tag_team": [
+      "JMMB"
+    ],
+    "course_name": "Adding test resource",
+    "url": null,
+    "level": null,
+    "platform": null,
+    "keywords": null,
+    "course_length": "NA",
+    "instruction_medium": null,
+    "delivery": null,
+    "language": null,
+    "programming_language": null,
+    "neuroimaging_software": null,
+    "imaging_modality": null,
+    "open_dataset": "NA",
+    "last_updated": null,
+    "functionality": null,
+    "assessment": null,
+    "prerequisite": null,
+    "source": null,
+    "review": null,
+    "alias_links": null,
+    "notes": null,
+    "quadrants": null
   }
 ]
