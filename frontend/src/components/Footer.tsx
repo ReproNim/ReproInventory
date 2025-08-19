@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
               <Github className="w-4 h-4" />
               <span>GitHub</span>
             </a>
-            <span>© 2024 ReproNim</span>
+            <span>© 2025 ReproNim</span>
           </div>
         </div>
       </div>
