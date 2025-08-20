@@ -1,5 +1,6 @@
 "use client"
 
+import Footer from "@/components/Footer"
 import { useState, useMemo, useEffect } from "react"
 import { Search, BookOpen, Video, FileText, Clock, ExternalLink } from "lucide-react" // Added ExternalLink
 import { Badge } from "@/components/ui/badge"
@@ -730,6 +731,7 @@ export default function TrainingMaterialsBrowser() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
