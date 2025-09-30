@@ -1601,7 +1601,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 51,
     "tag_team": [
       "CF",
       "SS",
@@ -2062,7 +2062,7 @@
     "course_length": "NA",
     "instruction_medium": null,
     "delivery": null,
-    "language": null,
+    "language": "English",
     "programming_language": null,
     "neuroimaging_software": null,
     "imaging_modality": null,
