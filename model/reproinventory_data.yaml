@@ -1574,9 +1574,9 @@
   - JB
   course_name: ABCD Repronim ML course
   url: https://www.abcd-repronim.org/ml.html
-  level: intermediate
+  level: null
   platform: null
-  keywords: Machine Learning
+  keywords: null
   course_length: NA
   instruction_medium: null
   delivery: null
@@ -1585,12 +1585,12 @@
   neuroimaging_software: null
   imaging_modality: null
   open_dataset: NA
-  last_updated: 2025
+  last_updated: null
   functionality: null
   assessment: true
   prerequisite: null
   source: null
-  review: 3 week machone learning course
+  review: null
   alias_links: null
   notes: null
   quadrants: null
@@ -1601,16 +1601,18 @@
   url: https://sina-mansour.github.io/ohbm2025-reproducible-research/intro.html
   level: null
   platform: null
-  keywords: Reproducible Pipelines, Best Practices, Data Visualization
-  course_length: 
-  instruction_medium: null
+  keywords: null
+  course_length: NA
+  instruction_medium: 
+  - lecture
   delivery: null
   language: English
-  programming_language: Python
+  programming_language: 
+  - Python
   neuroimaging_software: null
   imaging_modality: null
   open_dataset: NA
-  last_updated: 2025
+  last_updated: null
   functionality: null
   assessment: null
   prerequisite: null
