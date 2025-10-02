@@ -1601,7 +1601,7 @@
     ]
   },
   {
-    "id": 51,
+    "id": 50,
     "tag_team": [
       "CF",
       "SS",
@@ -2027,7 +2027,7 @@
       "JB"
     ],
     "course_name": "ABCD Repronim ML course",
-    "url": null,
+    "url": "https://www.abcd-repronim.org/ml.html",
     "level": null,
     "platform": null,
     "keywords": null,
@@ -2041,7 +2041,7 @@
     "open_dataset": "NA",
     "last_updated": null,
     "functionality": null,
-    "assessment": null,
+    "assessment": true,
     "prerequisite": null,
     "source": null,
     "review": null,
@@ -2050,7 +2050,7 @@
     "quadrants": null
   },
   {
-    "id": null,
+    "id": 61,
     "tag_team": [
       "JB"
     ],
@@ -2060,10 +2060,14 @@
     "platform": null,
     "keywords": null,
     "course_length": "NA",
-    "instruction_medium": null,
+    "instruction_medium": [
+      "lecture"
+    ],
     "delivery": null,
     "language": "English",
-    "programming_language": null,
+    "programming_language": [
+      "Python"
+    ],
     "neuroimaging_software": null,
     "imaging_modality": null,
     "open_dataset": "NA",
@@ -2072,7 +2076,7 @@
     "assessment": null,
     "prerequisite": null,
     "source": null,
-    "review": null,
+    "review": "Comprehensive website describing the necessity of reproducible research and how to achieve it (notebooks, visualisation)",
     "alias_links": null,
     "notes": null,
     "quadrants": null
