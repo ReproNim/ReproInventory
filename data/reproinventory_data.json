@@ -1975,7 +1975,7 @@
     "level": null,
     "platform": null,
     "keywords": null,
-    "course_length": "NA",
+    "course_length": "1+ weeks",
     "instruction_medium": null,
     "delivery": null,
     "language": null,
@@ -2003,7 +2003,7 @@
     "level": null,
     "platform": null,
     "keywords": null,
-    "course_length": "NA",
+    "course_length": "1+ weeks",
     "instruction_medium": null,
     "delivery": null,
     "language": null,
@@ -2031,7 +2031,9 @@
     "level": null,
     "platform": null,
     "keywords": null,
-    "course_length": "NA",
+    "course_length": [
+      "1+ weeks"
+    ],
     "instruction_medium": null,
     "delivery": null,
     "language": null,
@@ -2056,10 +2058,15 @@
     ],
     "course_name": "Reproducible Pipelines for Neuroimaging Research",
     "url": "https://sina-mansour.github.io/ohbm2025-reproducible-research/intro.html",
-    "level": null,
+    "level": [
+      "Beginner",
+      "Intermediate"
+    ],
     "platform": null,
     "keywords": null,
-    "course_length": "NA",
+    "course_length": [
+      "1-4 hrs"
+    ],
     "instruction_medium": [
       "lecture"
     ],
