@@ -664,7 +664,7 @@ export default function TrainingMaterialsBrowser() {
                               </a>
                             )}
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 flex-wrap">
                           <Dialog>
                             <DialogTrigger asChild>
                               <Button
@@ -704,18 +704,24 @@ export default function TrainingMaterialsBrowser() {
                             {editingMaterial && (
                               <EditMaterialDialog
                                 material={editingMaterial}
-                                onSave={(updatedMaterial) => {
-                                  setReproInventoryData((prevData) =>
-                                    prevData.map((item) =>
-                                      item.id === updatedMaterial.id ? updatedMaterial : item
-                                    )
-                                  );
-                                  setEditingMaterial(null);
-                                }}
                                 onClose={() => setEditingMaterial(null)}
                               />
                             )}
                           </Dialog>
+                          <Button
+                            variant="outline"
+                            className="w-fit text-xs px-2 py-1 h-auto text-red-600 hover:text-red-700"
+                            onClick={() => {
+                              const title = `Delete material: ${material.course_name} (ID: ${material.id})`;
+                              const body =
+                                `## Delete Training Material Request\n\n` +
+                                `Please remove entry **ID: ${material.id}** ("${material.course_name}") from \`model/reproinventory_data.yaml\`.`;
+                              const url = `https://github.com/likeajumprope/ReproInventory/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+                              window.open(url, "_blank");
+                            }}
+                          >
+                            Delete
+                          </Button>
                         </div>
                       </CardContent>
                     </Card>

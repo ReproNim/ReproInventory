@@ -21,9 +21,66 @@ import type {
     QuadrantsEnum,
 } from "@/types/reproinventory";
 
+const GITHUB_REPO = "https://github.com/likeajumprope/ReproInventory";
+
+function formatAsYaml(material: ReproInventoryEntry): string {
+    const lines: string[] = [];
+
+    const addScalar = (key: string, value: string | number | boolean | undefined | null) => {
+        if (value !== undefined && value !== null && value !== "") {
+            lines.push(`${key}: ${value}`);
+        }
+    };
+
+    const addList = (key: string, values: string[] | undefined | null) => {
+        if (values && values.length > 0) {
+            lines.push(`${key}:`);
+            values.forEach((v) => lines.push(`  - ${v}`));
+        }
+    };
+
+    addScalar("id", material.id);
+    addList("tag_team", material.tag_team);
+    addScalar("course_name", material.course_name);
+    addScalar("url", material.url);
+    addList("level", material.level);
+    addList("platform", material.platform);
+    addList("keywords", material.keywords);
+    addScalar("course_length", material.course_length);
+    addList("instruction_medium", material.instruction_medium);
+    addList("delivery", material.delivery);
+    addList("language", material.language);
+    addList("programming_language", material.programming_language);
+    addList("neuroimaging_software", material.neuroimaging_software);
+    addList("imaging_modality", material.imaging_modality);
+    addScalar("open_dataset", material.open_dataset);
+    addScalar("last_updated", material.last_updated);
+    addScalar("functionality", material.functionality);
+    addScalar("assessment", material.assessment);
+    addList("prerequisite", material.prerequisite);
+    addList("source", material.source);
+    addScalar("review", material.review);
+    addScalar("exclude_from_repro_inventory", material.exclude_from_repro_inventory);
+    addScalar("alias_links", material.alias_links);
+    addScalar("notes", material.notes);
+    addList("quadrants", material.quadrants);
+
+    return lines.join("\n");
+}
+
+function openGitHubIssue(material: ReproInventoryEntry) {
+    const yaml = formatAsYaml(material);
+    const title = `Edit material: ${material.course_name || "Unknown"} (ID: ${material.id})`;
+    const body =
+        `## Edit Training Material Request\n\n` +
+        `Please update entry **ID: ${material.id}** in \`model/reproinventory_data.yaml\` with the following:\n\n` +
+        `\`\`\`yaml\n${yaml}\n\`\`\``;
+    const url = `${GITHUB_REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+    window.open(url, "_blank");
+}
+
 interface EditMaterialDialogProps {
     material: ReproInventoryEntry;
-    onSave: (updatedMaterial: ReproInventoryEntry) => void;
     onClose: () => void;
 }
 
@@ -39,7 +96,7 @@ const imagingModalityOptions: ImagingModalityEnum[] = ["DWI", "Structural", "Fun
 const openDatasetOptions: OpenDatasetEnum[] = ["True", "False", "NA"];
 const quadrantsOptions: QuadrantsEnum[] = ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"];
 
-const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onSave, onClose }) => {
+const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onClose }) => {
     const [editedMaterial, setEditedMaterial] = useState<ReproInventoryEntry>(material);
 
     useEffect(() => {
@@ -77,7 +134,7 @@ const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onSav
     };
 
     const handleSave = () => {
-        onSave(editedMaterial);
+        openGitHubIssue(editedMaterial);
         onClose();
     };
 
@@ -439,7 +496,7 @@ const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onSav
             </div>
             <div className="flex justify-end gap-2">
                 <Button variant="outline" onClick={onClose}>Cancel</Button>
-                <Button onClick={handleSave}>Save Changes</Button>
+                <Button onClick={handleSave}>Submit via GitHub Issue</Button>
             </div>
         </DialogContent>
     );
