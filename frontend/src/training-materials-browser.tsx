@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog" // Adjusted import
 import EditMaterialDialog from "@/components/EditMaterialDialog"; // Import the new component
+import AddMaterialDialog from "@/components/AddMaterialDialog";
 import {
   type ReproInventoryEntry,
   type LevelEnum,
@@ -34,6 +35,7 @@ export default function TrainingMaterialsBrowser() {
   const [error, setError] = useState<string | null>(null)
   const [selectedRawMaterial, setSelectedRawMaterial] = useState<ReproInventoryEntry | null>(null)
   const [editingMaterial, setEditingMaterial] = useState<ReproInventoryEntry | null>(null)
+  const [showAddMaterial, setShowAddMaterial] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -590,6 +592,12 @@ export default function TrainingMaterialsBrowser() {
                       <p className="text-sm text-muted-foreground">Results for "{searchQuery}"</p>
                     )}
                   </div>
+                  <Dialog open={showAddMaterial} onOpenChange={setShowAddMaterial}>
+                    <DialogTrigger asChild>
+                      <Button>Add Material</Button>
+                    </DialogTrigger>
+                    <AddMaterialDialog onClose={() => setShowAddMaterial(false)} />
+                  </Dialog>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
