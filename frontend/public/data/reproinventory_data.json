@@ -1972,26 +1972,13 @@
     ],
     "course_name": "Andy's brain book",
     "url": "https://andysbrainbook.readthedocs.io/en/latest/",
-    "level": null,
-    "platform": null,
-    "keywords": null,
     "course_length": "NA",
-    "instruction_medium": null,
-    "delivery": null,
-    "language": null,
-    "programming_language": null,
-    "neuroimaging_software": null,
-    "imaging_modality": null,
+    "instruction_medium": [
+      "blog post",
+      "Hands-on tutorial / notebooks"
+    ],
     "open_dataset": "NA",
-    "last_updated": null,
-    "functionality": null,
-    "assessment": null,
-    "prerequisite": null,
-    "source": null,
-    "review": null,
-    "alias_links": null,
-    "notes": null,
-    "quadrants": null
+    "last_updated": 2026
   },
   {
     "id": 59,
