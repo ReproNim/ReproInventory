@@ -604,17 +604,17 @@ export default function TrainingMaterialsBrowser() {
                   {filteredMaterials.map((material) => (
                     <Card key={material.id} className="hover:shadow-lg transition-shadow">
                       <CardHeader>
-                        <div className="flex items-start justify-between">
+                        <div className="flex flex-col gap-1">
                           <div className="flex items-center gap-2">
                             {getFormatIcon(material.instruction_medium?.[0] || "")}
                             <Badge variant="secondary">
                               {material.instruction_medium?.[0] || "N/A"}
                             </Badge>
                           </div>
-                          {material.assessment && <Badge variant="default">Assessment</Badge>}
+                          {material.assessment && <Badge variant="default" className="w-fit">Assessment</Badge>}
                         </div>
-                        <CardTitle className="text-lg">{material.course_name}</CardTitle>
-                        <CardDescription>{material.review}</CardDescription>
+                        <CardTitle className="text-lg break-words">{material.course_name}</CardTitle>
+                        <CardDescription className="break-words">{material.review}</CardDescription>
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -659,8 +659,8 @@ export default function TrainingMaterialsBrowser() {
                                 </div>
                             </div>
                             {material.url && (
-                              <a href={material.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline flex items-center gap-1">
-                                Access Material <ExternalLink className="w-4 h-4" />
+                              <a href={material.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline flex items-center gap-1 min-w-0">
+                                <span className="truncate">Access Material</span> <ExternalLink className="w-4 h-4 shrink-0" />
                               </a>
                             )}
                         </div>
