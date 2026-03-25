@@ -96,11 +96,28 @@ const imagingModalityOptions: ImagingModalityEnum[] = ["DWI", "Structural", "Fun
 const openDatasetOptions: OpenDatasetEnum[] = ["True", "False", "NA"];
 const quadrantsOptions: QuadrantsEnum[] = ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"];
 
+const ARRAY_FIELDS: (keyof ReproInventoryEntry)[] = [
+    "tag_team", "level", "platform", "keywords", "instruction_medium",
+    "delivery", "language", "programming_language", "neuroimaging_software",
+    "imaging_modality", "quadrants", "source", "prerequisite",
+];
+
+function normalizeMaterial(m: ReproInventoryEntry): ReproInventoryEntry {
+    const normalized = { ...m };
+    for (const field of ARRAY_FIELDS) {
+        const val = normalized[field];
+        if (val !== null && val !== undefined && !Array.isArray(val)) {
+            (normalized as any)[field] = [val];
+        }
+    }
+    return normalized;
+}
+
 const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onClose }) => {
-    const [editedMaterial, setEditedMaterial] = useState<ReproInventoryEntry>(material);
+    const [editedMaterial, setEditedMaterial] = useState<ReproInventoryEntry>(() => normalizeMaterial(material));
 
     useEffect(() => {
-        setEditedMaterial(material);
+        setEditedMaterial(normalizeMaterial(material));
     }, [material]);
 
     const handleChange = (field: keyof ReproInventoryEntry, value: any) => {
