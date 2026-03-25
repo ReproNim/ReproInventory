@@ -2028,9 +2028,13 @@
     ],
     "course_name": "ABCD Repronim ML course",
     "url": "https://www.abcd-repronim.org/ml.html",
-    "level": "intermediate",
+    "level": [
+      "Intermediate"
+    ],
     "platform": null,
-    "keywords": "Machine Learning",
+    "keywords": [
+      "Machine Learning"
+    ],
     "course_length": "NA",
     "instruction_medium": null,
     "delivery": null,
@@ -2058,12 +2062,20 @@
     "url": "https://sina-mansour.github.io/ohbm2025-reproducible-research/intro.html",
     "level": null,
     "platform": null,
-    "keywords": "Reproducible Pipelines, Best Practices, Data Visualization",
+    "keywords": [
+      "Reproducible Pipelines",
+      "Best Practices",
+      "Data Visualization"
+    ],
     "course_length": null,
     "instruction_medium": null,
     "delivery": null,
-    "language": "English",
-    "programming_language": "Python",
+    "language": [
+      "English"
+    ],
+    "programming_language": [
+      "Python"
+    ],
     "neuroimaging_software": null,
     "imaging_modality": null,
     "open_dataset": "NA",
@@ -2076,9 +2088,5 @@
     "alias_links": null,
     "notes": null,
     "quadrants": null
-  },
-  {
-    "id": 62,
-    "course_name": "test course"
   }
 ]

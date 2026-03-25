@@ -19,6 +19,20 @@ import yaml
 YAML_PATH = "model/reproinventory_data.yaml"
 JSON_PATH = "frontend/public/data/reproinventory_data.json"
 
+ARRAY_FIELDS = [
+    "tag_team", "level", "platform", "keywords", "instruction_medium",
+    "delivery", "language", "programming_language", "neuroimaging_software",
+    "imaging_modality", "quadrants", "source",
+]
+
+def normalize_entry(entry):
+    """Ensure all array fields are lists, not scalars."""
+    for field in ARRAY_FIELDS:
+        val = entry.get(field)
+        if val is not None and not isinstance(val, list):
+            entry[field] = [val]
+    return entry
+
 label = os.environ["ISSUE_LABEL"]
 issue_number = os.environ["ISSUE_NUMBER"]
 
@@ -30,7 +44,7 @@ with open("/tmp/issue_title.txt", "r", encoding="utf-8") as f:
 
 # Load current data
 with open(YAML_PATH, "r", encoding="utf-8") as f:
-    data = yaml.safe_load(f) or []
+    data = [normalize_entry(e) for e in (yaml.safe_load(f) or [])]
 
 
 def extract_yaml_block(body):
@@ -42,7 +56,7 @@ def extract_yaml_block(body):
 
 
 if label == "new-material":
-    entry = extract_yaml_block(issue_body)
+    entry = normalize_entry(extract_yaml_block(issue_body))
 
     # Assign a new numeric ID
     numeric_ids = [e["id"] for e in data if isinstance(e.get("id"), int)]
@@ -52,7 +66,7 @@ if label == "new-material":
     print(f"Added new entry with ID {entry['id']}: {entry.get('course_name')}")
 
 elif label == "edit-material":
-    entry = extract_yaml_block(issue_body)
+    entry = normalize_entry(extract_yaml_block(issue_body))
     entry_id = entry.get("id")
 
     replaced = False
