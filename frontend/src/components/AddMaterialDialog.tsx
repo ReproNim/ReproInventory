@@ -79,7 +79,7 @@ function openGitHubIssue(material: ReproInventoryEntry) {
         `## New Training Material Submission\n\n` +
         `Please review the following training material for addition to ReproInventory.\n\n` +
         `\`\`\`yaml\n${yaml}\n\`\`\``;
-    const url = `${GITHUB_REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+    const url = `${GITHUB_REPO}/issues/new?labels=new-material&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
     window.open(url, "_blank");
 }
 

@@ -75,7 +75,7 @@ function openGitHubIssue(material: ReproInventoryEntry) {
         `## Edit Training Material Request\n\n` +
         `Please update entry **ID: ${material.id}** in \`model/reproinventory_data.yaml\` with the following:\n\n` +
         `\`\`\`yaml\n${yaml}\n\`\`\``;
-    const url = `${GITHUB_REPO}/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+    const url = `${GITHUB_REPO}/issues/new?labels=edit-material&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
     window.open(url, "_blank");
 }
 
