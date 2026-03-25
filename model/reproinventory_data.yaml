@@ -1152,7 +1152,7 @@
   - CF
   - SS
   - JB
-  course_name: "The Princeton Handbook for Reproducible Neuroimaging\xB6"
+  course_name: The Princeton Handbook for Reproducible Neuroimaging¶
   url: https://brainhack-princeton.github.io/handbook/
   level:
   - Beginner
@@ -1602,7 +1602,7 @@
   level: null
   platform: null
   keywords: Reproducible Pipelines, Best Practices, Data Visualization
-  course_length: 
+  course_length: null
   instruction_medium: null
   delivery: null
   language: English
@@ -1620,3 +1620,5 @@
   alias_links: null
   notes: null
   quadrants: null
+- id: 62
+  course_name: test course

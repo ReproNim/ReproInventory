@@ -1502,7 +1502,7 @@
       "SS",
       "JB"
     ],
-    "course_name": "The Princeton Handbook for Reproducible Neuroimaging\u00b6",
+    "course_name": "The Princeton Handbook for Reproducible Neuroimaging¶",
     "url": "https://brainhack-princeton.github.io/handbook/",
     "level": [
       "Beginner"
@@ -1601,7 +1601,7 @@
     ]
   },
   {
-    "id": 51,
+    "id": 50,
     "tag_team": [
       "CF",
       "SS",
@@ -2027,10 +2027,10 @@
       "JB"
     ],
     "course_name": "ABCD Repronim ML course",
-    "url": null,
-    "level": null,
+    "url": "https://www.abcd-repronim.org/ml.html",
+    "level": "intermediate",
     "platform": null,
-    "keywords": null,
+    "keywords": "Machine Learning",
     "course_length": "NA",
     "instruction_medium": null,
     "delivery": null,
@@ -2039,18 +2039,18 @@
     "neuroimaging_software": null,
     "imaging_modality": null,
     "open_dataset": "NA",
-    "last_updated": null,
+    "last_updated": 2025,
     "functionality": null,
-    "assessment": null,
+    "assessment": true,
     "prerequisite": null,
     "source": null,
-    "review": null,
+    "review": "3 week machone learning course",
     "alias_links": null,
     "notes": null,
     "quadrants": null
   },
   {
-    "id": null,
+    "id": 61,
     "tag_team": [
       "JB"
     ],
@@ -2058,23 +2058,27 @@
     "url": "https://sina-mansour.github.io/ohbm2025-reproducible-research/intro.html",
     "level": null,
     "platform": null,
-    "keywords": null,
-    "course_length": "NA",
+    "keywords": "Reproducible Pipelines, Best Practices, Data Visualization",
+    "course_length": null,
     "instruction_medium": null,
     "delivery": null,
     "language": "English",
-    "programming_language": null,
+    "programming_language": "Python",
     "neuroimaging_software": null,
     "imaging_modality": null,
     "open_dataset": "NA",
-    "last_updated": null,
+    "last_updated": 2025,
     "functionality": null,
     "assessment": null,
     "prerequisite": null,
     "source": null,
-    "review": null,
+    "review": "Comprehensive website describing the necessity of reproducible research and how to achieve it (notebooks, visualisation)",
     "alias_links": null,
     "notes": null,
     "quadrants": null
+  },
+  {
+    "id": 62,
+    "course_name": "test course"
   }
 ]
