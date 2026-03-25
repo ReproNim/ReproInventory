@@ -57,10 +57,11 @@ jobs:
           fi
           git commit -m "${ISSUE_TITLE}"
           git push origin "$BRANCH"
+          PR_BODY="Closes #${ISSUE_NUMBER}
+
+Automatically generated from issue #${ISSUE_NUMBER}."
           gh pr create \
             --title "${ISSUE_TITLE}" \
-            --body "Closes #${ISSUE_NUMBER}
-
-Automatically generated from issue #${ISSUE_NUMBER}." \
+            --body "$PR_BODY" \
             --base main \
             --head "$BRANCH"
