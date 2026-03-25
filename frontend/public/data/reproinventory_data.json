@@ -2088,5 +2088,21 @@
     "alias_links": null,
     "notes": null,
     "quadrants": null
+  },
+  {
+    "id": 62,
+    "course_name": "test course",
+    "platform": [
+      "Mac"
+    ],
+    "instruction_medium": [
+      "blog post"
+    ],
+    "delivery": [
+      "instructor"
+    ],
+    "imaging_modality": [
+      "Behavioral"
+    ]
   }
 ]
