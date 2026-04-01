@@ -21,7 +21,7 @@ import type {
     QuadrantsEnum,
 } from "@/types/reproinventory";
 
-const GITHUB_REPO = "https://github.com/likeajumprope/ReproInventory";
+const GITHUB_REPO = "https://github.com/ReproNim/ReproInventory";
 
 function formatAsYaml(material: ReproInventoryEntry): string {
     const lines: string[] = [];

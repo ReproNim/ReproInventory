@@ -21,7 +21,7 @@ import type {
     QuadrantsEnum,
 } from "@/types/reproinventory";
 
-const GITHUB_REPO = "https://github.com/likeajumprope/ReproInventory";
+const GITHUB_REPO = "https://github.com/ReproNim/ReproInventory";
 
 const levelOptions: LevelEnum[] = ["Beginner", "Intermediate", "Advanced", "NA"];
 const platformOptions: PlatformEnum[] = ["Mac", "Windows", "Linux", "Docker", "Jupyter", "NA"];

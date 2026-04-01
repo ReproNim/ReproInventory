@@ -716,7 +716,7 @@ export default function TrainingMaterialsBrowser() {
                               const body =
                                 `## Delete Training Material Request\n\n` +
                                 `Please remove entry **ID: ${material.id}** ("${material.course_name}") from \`model/reproinventory_data.yaml\`.`;
-                              const url = `https://github.com/likeajumprope/ReproInventory/issues/new?labels=delete-material&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+                              const url = `https://github.com/ReproNim/ReproInventory/issues/new?labels=delete-material&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
                               window.open(url, "_blank");
                             }}
                           >
