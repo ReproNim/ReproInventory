@@ -22,7 +22,7 @@ JSON_PATH = "frontend/public/data/reproinventory_data.json"
 ARRAY_FIELDS = [
     "tag_team", "level", "platform", "keywords", "instruction_medium",
     "delivery", "language", "programming_language", "neuroimaging_software",
-    "imaging_modality", "quadrants", "source",
+    "imaging_modality", "quadrants", "source", "prerequisite",
 ]
 
 def normalize_entry(entry):
