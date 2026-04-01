@@ -1502,7 +1502,7 @@
       "SS",
       "JB"
     ],
-    "course_name": "The Princeton Handbook for Reproducible Neuroimaging¶",
+    "course_name": "The Princeton Handbook for Reproducible Neuroimaging\u00b6",
     "url": "https://brainhack-princeton.github.io/handbook/",
     "level": [
       "Beginner"
@@ -1601,7 +1601,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 51,
     "tag_team": [
       "CF",
       "SS",
@@ -1975,16 +1975,23 @@
     "level": null,
     "platform": null,
     "keywords": null,
-    "course_length": "1+ weeks",
+    "course_length": "NA",
     "instruction_medium": null,
     "delivery": null,
     "language": null,
     "programming_language": null,
     "neuroimaging_software": null,
     "imaging_modality": null,
-
     "open_dataset": "NA",
-    "last_updated": 2026
+    "last_updated": null,
+    "functionality": null,
+    "assessment": null,
+    "prerequisite": null,
+    "source": null,
+    "review": null,
+    "alias_links": null,
+    "notes": null,
+    "quadrants": null
   },
   {
     "id": 59,
@@ -1996,7 +2003,7 @@
     "level": null,
     "platform": null,
     "keywords": null,
-    "course_length": "1+ weeks",
+    "course_length": "NA",
     "instruction_medium": null,
     "delivery": null,
     "language": null,
@@ -2020,18 +2027,11 @@
       "JB"
     ],
     "course_name": "ABCD Repronim ML course",
-    "url": "https://www.abcd-repronim.org/ml.html",
-    "level": [
-      "Intermediate"
-    ],
+    "url": null,
+    "level": null,
     "platform": null,
-    "keywords": [
-      "Machine Learning"
-    ],
+    "keywords": null,
     "course_length": "NA",
-    "course_length": [
-      "1+ weeks"
-    ],
     "instruction_medium": null,
     "delivery": null,
     "language": null,
@@ -2039,73 +2039,42 @@
     "neuroimaging_software": null,
     "imaging_modality": null,
     "open_dataset": "NA",
-    "last_updated": 2025,
+    "last_updated": null,
     "functionality": null,
-    "assessment": true,
+    "assessment": null,
     "prerequisite": null,
     "source": null,
-    "review": "3 week machone learning course",
+    "review": null,
     "alias_links": null,
     "notes": null,
     "quadrants": null
   },
   {
-    "id": 61,
+    "id": null,
     "tag_team": [
       "JB"
     ],
     "course_name": "Reproducible Pipelines for Neuroimaging Research",
     "url": "https://sina-mansour.github.io/ohbm2025-reproducible-research/intro.html",
-    "level": [
-      "Beginner",
-      "Intermediate"
-    ],
+    "level": null,
     "platform": null,
-    "keywords": [
-      "Reproducible Pipelines",
-      "Best Practices",
-      "Data Visualization"
-    ],
-      "course_length": [
-      "1-4 hrs"
-    ],
-    "instruction_medium": [
-      "lecture"
-    ],
+    "keywords": null,
+    "course_length": "NA",
+    "instruction_medium": null,
     "delivery": null,
-    "language": [
-      "English"
-    ],
-    "programming_language": [
-      "Python"
-    ],
+    "language": "English",
+    "programming_language": null,
     "neuroimaging_software": null,
     "imaging_modality": null,
     "open_dataset": "NA",
-    "last_updated": 2025,
+    "last_updated": null,
     "functionality": null,
     "assessment": null,
     "prerequisite": null,
     "source": null,
-    "review": "Comprehensive website describing the necessity of reproducible research and how to achieve it (notebooks, visualisation)",
+    "review": null,
     "alias_links": null,
     "notes": null,
     "quadrants": null
-  },
-  {
-    "id": 62,
-    "course_name": "test course",
-    "platform": [
-      "Mac"
-    ],
-    "instruction_medium": [
-      "blog post"
-    ],
-    "delivery": [
-      "instructor"
-    ],
-    "imaging_modality": [
-      "Behavioral"
-    ]
   }
 ]

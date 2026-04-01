@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog" // Adjusted import
 import EditMaterialDialog from "@/components/EditMaterialDialog"; // Import the new component
+import AddMaterialDialog from "@/components/AddMaterialDialog";
 import {
   type ReproInventoryEntry,
   type LevelEnum,
@@ -34,6 +35,7 @@ export default function TrainingMaterialsBrowser() {
   const [error, setError] = useState<string | null>(null)
   const [selectedRawMaterial, setSelectedRawMaterial] = useState<ReproInventoryEntry | null>(null)
   const [editingMaterial, setEditingMaterial] = useState<ReproInventoryEntry | null>(null)
+  const [showAddMaterial, setShowAddMaterial] = useState(false)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -590,23 +592,29 @@ export default function TrainingMaterialsBrowser() {
                       <p className="text-sm text-muted-foreground">Results for "{searchQuery}"</p>
                     )}
                   </div>
+                  <Dialog open={showAddMaterial} onOpenChange={setShowAddMaterial}>
+                    <DialogTrigger asChild>
+                      <Button>Add Material</Button>
+                    </DialogTrigger>
+                    <AddMaterialDialog onClose={() => setShowAddMaterial(false)} />
+                  </Dialog>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                   {filteredMaterials.map((material) => (
                     <Card key={material.id} className="hover:shadow-lg transition-shadow">
                       <CardHeader>
-                        <div className="flex items-start justify-between">
+                        <div className="flex flex-col gap-1">
                           <div className="flex items-center gap-2">
                             {getFormatIcon(material.instruction_medium?.[0] || "")}
                             <Badge variant="secondary">
                               {material.instruction_medium?.[0] || "N/A"}
                             </Badge>
                           </div>
-                          {material.assessment && <Badge variant="default">Assessment</Badge>}
+                          {material.assessment && <Badge variant="default" className="w-fit">Assessment</Badge>}
                         </div>
-                        <CardTitle className="text-lg">{material.course_name}</CardTitle>
-                        <CardDescription>{material.review}</CardDescription>
+                        <CardTitle className="text-lg break-words">{material.course_name}</CardTitle>
+                        <CardDescription className="break-words">{material.review}</CardDescription>
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -651,12 +659,12 @@ export default function TrainingMaterialsBrowser() {
                                 </div>
                             </div>
                             {material.url && (
-                              <a href={material.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline flex items-center gap-1">
-                                Access Material <ExternalLink className="w-4 h-4" />
+                              <a href={material.url} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline flex items-center gap-1 min-w-0">
+                                <span className="truncate">Access Material</span> <ExternalLink className="w-4 h-4 shrink-0" />
                               </a>
                             )}
                         </div>
-                        <div className="flex gap-2">
+                        <div className="flex gap-2 flex-wrap">
                           <Dialog>
                             <DialogTrigger asChild>
                               <Button
@@ -696,18 +704,24 @@ export default function TrainingMaterialsBrowser() {
                             {editingMaterial && (
                               <EditMaterialDialog
                                 material={editingMaterial}
-                                onSave={(updatedMaterial) => {
-                                  setReproInventoryData((prevData) =>
-                                    prevData.map((item) =>
-                                      item.id === updatedMaterial.id ? updatedMaterial : item
-                                    )
-                                  );
-                                  setEditingMaterial(null);
-                                }}
                                 onClose={() => setEditingMaterial(null)}
                               />
                             )}
                           </Dialog>
+                          <Button
+                            variant="outline"
+                            className="w-fit text-xs px-2 py-1 h-auto text-red-600 hover:text-red-700"
+                            onClick={() => {
+                              const title = `Delete material: ${material.course_name} (ID: ${material.id})`;
+                              const body =
+                                `## Delete Training Material Request\n\n` +
+                                `Please remove entry **ID: ${material.id}** ("${material.course_name}") from \`model/reproinventory_data.yaml\`.`;
+                              const url = `https://github.com/ReproNim/ReproInventory/issues/new?labels=delete-material&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+                              window.open(url, "_blank");
+                            }}
+                          >
+                            Delete
+                          </Button>
                         </div>
                       </CardContent>
                     </Card>

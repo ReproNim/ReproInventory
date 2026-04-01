@@ -1,0 +1,65 @@
+name: Create PR from Issue
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    if: contains(fromJSON('["new-material", "edit-material", "delete-material"]'), github.event.label.name)
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install pyyaml
+
+      - name: Write issue data to files
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          printf '%s' "$ISSUE_BODY" > /tmp/issue_body.txt
+          printf '%s' "$ISSUE_TITLE" > /tmp/issue_title.txt
+
+      - name: Process issue and update files
+        env:
+          ISSUE_LABEL: ${{ github.event.label.name }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: python .github/scripts/process_issue.py
+
+      - name: Create branch and open PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          ISSUE_LABEL: ${{ github.event.label.name }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          BRANCH="auto/${ISSUE_LABEL}-issue-${ISSUE_NUMBER}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add model/reproinventory_data.yaml frontend/public/data/reproinventory_data.json
+          if git diff --cached --quiet; then
+            echo "No changes detected — nothing to commit."
+            exit 1
+          fi
+          git commit -m "${ISSUE_TITLE}"
+          git push origin "$BRANCH"
+          PR_BODY=$(printf "Closes #%s\n\nAutomatically generated from issue #%s." "${ISSUE_NUMBER}" "${ISSUE_NUMBER}")
+          gh pr create \
+            --title "${ISSUE_TITLE}" \
+            --body "${PR_BODY}" \
+            --base main \
+            --head "${BRANCH}"

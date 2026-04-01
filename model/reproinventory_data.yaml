@@ -1152,7 +1152,7 @@
   - CF
   - SS
   - JB
-  course_name: "The Princeton Handbook for Reproducible Neuroimaging\xB6"
+  course_name: The Princeton Handbook for Reproducible Neuroimaging¶
   url: https://brainhack-princeton.github.io/handbook/
   level:
   - Beginner
@@ -1524,26 +1524,21 @@
   - JB
   course_name: Andy's brain book
   url: https://andysbrainbook.readthedocs.io/en/latest/
+  course_length: NA
   level: null
   platform: null
   keywords: null
   course_length: 1+ weeks
-  instruction_medium: null
+  instruction_medium:
+  - blog post
+  - Hands-on tutorial / notebooks
   delivery: null
   language: null
   programming_language: null
   neuroimaging_software: null
   imaging_modality: null
   open_dataset: NA
-  last_updated: null
-  functionality: null
-  assessment: null
-  prerequisite: null
-  source: null
-  review: null
-  alias_links: null
-  notes: null
-  quadrants: null
+  last_updated: 2026
 - id: 59
   tag_team:
   - JB
@@ -1574,9 +1569,11 @@
   - JB
   course_name: ABCD Repronim ML course
   url: https://www.abcd-repronim.org/ml.html
-  level: null
+  level:
+  - Intermediate
   platform: null
-  keywords: null
+  keywords:
+  - Machine Learning
   course_length: 
   - 1+ weeks
   instruction_medium: null
@@ -1626,3 +1623,13 @@
   alias_links: null
   notes: null
   quadrants: null
+- id: 62
+  course_name: test course
+  platform:
+  - Mac
+  instruction_medium:
+  - blog post
+  delivery:
+  - instructor
+  imaging_modality:
+  - Behavioral
