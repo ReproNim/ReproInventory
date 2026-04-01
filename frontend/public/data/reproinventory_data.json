@@ -12,12 +12,17 @@
       "Beginner"
     ],
     "platform": [
-      "Mac"
+      "Mac",
+      "Windows"
     ],
     "keywords": [
       "Git",
       "Version Control",
-      "GitHub"
+      "GitHub",
+      "GitHub Desktop",
+      "Branching",
+      "Collaboration",
+      "Merge Conflicts"
     ],
     "course_length": "1-4 hrs",
     "instruction_medium": [
@@ -40,9 +45,8 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2023",
-    "functionality": null,
     "assessment": false,
     "prerequisite": null,
     "source": [
@@ -50,13 +54,12 @@
       "Johanna Bayer",
       "Fellow-22"
     ],
-    "review": null,
-    "alias_links": null,
     "notes": null,
     "quadrants": [
       "problem-oriented (how to guides)",
       "learning-oriented (tutorials)"
-    ]
+    ],
+    "description": "A beginner-friendly course introducing Git and GitHub for version control and collaboration, covering online GitHub workflows and local machine setup with GitHub Desktop, progressing from basic concepts to managing merge conflicts."
   },
   {
     "id": 5,
@@ -104,23 +107,26 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": true,
     "last_updated": "2023",
     "functionality": null,
     "assessment": true,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Python",
+      "Introductory statistics"
+    ],
     "source": [
       "ReproNim",
       "Yibei Chen",
       "Fellow-22",
       "UCSB"
     ],
-    "review": "JupyterHub no longer accessible. Need to link GitHubClassroom to GitHub (uclear if links work once you do that)",
     "alias_links": null,
     "notes": null,
     "quadrants": [
       "learning-oriented (tutorials)"
-    ]
+    ],
+    "description": "JupyterHub no longer accessible. Need to link GitHubClassroom to GitHub (uclear if links work once you do that)"
   },
   {
     "id": 7,
@@ -162,23 +168,25 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2022",
     "functionality": null,
     "assessment": false,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Git"
+    ],
     "source": [
       "ReproNim",
       "Julian Kosciessa",
       "Fellow-22",
       "Donders Institute"
     ],
-    "review": "Short slide deck, very clear",
     "alias_links": null,
     "notes": "link does not work for me (JB) can someone double check",
     "quadrants": [
       "understanding-oriented (explanation)"
-    ]
+    ],
+    "description": "Short slide deck, very clear"
   },
   {
     "id": 8,
@@ -220,7 +228,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2022",
     "functionality": null,
     "assessment": false,
@@ -233,13 +241,13 @@
       "Fellow-22",
       "Donders Institute"
     ],
-    "review": "Relatively quick overview - more just what is DataLad vs detailed how to use",
     "alias_links": null,
     "notes": null,
     "quadrants": [
       "information-oriented (reference)",
       "understanding-oriented (explanation)"
-    ]
+    ],
+    "description": "Relatively quick overview - more just what is DataLad vs detailed how to use"
   },
   {
     "id": 9,
@@ -282,24 +290,26 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2022",
     "functionality": null,
     "assessment": false,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Git"
+    ],
     "source": [
       "ReproNim",
       "Julian Kosciessa",
       "Fellow-22",
       "Donders Institute"
     ],
-    "review": "Very short slide deck on GIT",
     "alias_links": null,
     "notes": null,
     "quadrants": [
       "understanding-oriented (explanation)",
       "information-oriented (reference)"
-    ]
+    ],
+    "description": "Very short slide deck on GIT"
   },
   {
     "id": 10,
@@ -340,7 +350,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2023",
     "functionality": null,
     "assessment": false,
@@ -351,12 +361,12 @@
       "Fellow-22",
       "Donders Institute"
     ],
-    "review": "Practical intro to bash and git",
     "alias_links": null,
     "notes": null,
     "quadrants": [
       "understanding-oriented (explanation)"
-    ]
+    ],
+    "description": "Practical intro to bash and git"
   },
   {
     "id": 11,
@@ -407,7 +417,7 @@
     "imaging_modality": [
       "MRI"
     ],
-    "open_dataset": "NA",
+    "open_dataset": true,
     "last_updated": "2022",
     "functionality": null,
     "assessment": true,
@@ -421,12 +431,12 @@
       "Celine Provins",
       "Fellow-22"
     ],
-    "review": "Focuses on QC in reference to MRIQC; has lots of big picture info about QC/QA in general",
     "alias_links": null,
     "notes": null,
     "quadrants": [
       "learning-oriented (tutorials)"
-    ]
+    ],
+    "description": "Focuses on QC in reference to MRIQC; has lots of big picture info about QC/QA in general"
   },
   {
     "id": 16,
@@ -467,7 +477,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2022",
     "functionality": null,
     "assessment": false,
@@ -479,12 +489,12 @@
       "Avery Van De Water",
       "Fellow-22"
     ],
-    "review": "labeled as part 1 - unclear where part 2 is",
     "alias_links": null,
     "notes": null,
     "quadrants": [
       "learning-oriented (tutorials)"
-    ]
+    ],
+    "description": "labeled as part 1 - unclear where part 2 is"
   },
   {
     "id": 18,
@@ -526,19 +536,25 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2021",
     "functionality": "NA",
     "assessment": false,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Python",
+      "Unix"
+    ],
     "source": [
       "ReproNim",
       "Karolina Finc"
     ],
-    "review": "Some sections are under-developed",
     "alias_links": null,
     "notes": "Reproducible Neuroimaging, tutorial guide, for cog sci students audience",
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "information-oriented (reference)"
+    ],
+    "description": "Some sections are under-developed"
   },
   {
     "id": 21,
@@ -583,7 +599,7 @@
     "imaging_modality": [
       "MRI"
     ],
-    "open_dataset": "True",
+    "open_dataset": true,
     "last_updated": "2024",
     "functionality": null,
     "assessment": true,
@@ -596,10 +612,13 @@
       "MIchael Joseph",
       "Fellow-20"
     ],
-    "review": "Basic Imaging Overview. Focus on BIDS",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "understanding-oriented (explanation)"
+    ],
+    "description": "Basic Imaging Overview. Focus on BIDS"
   },
   {
     "id": 22,
@@ -645,7 +664,7 @@
     "imaging_modality": [
       "Functional"
     ],
-    "open_dataset": "True",
+    "open_dataset": true,
     "last_updated": "2024",
     "functionality": null,
     "assessment": true,
@@ -657,13 +676,13 @@
       "MIchael Joseph",
       "Fellow-20"
     ],
-    "review": "Tutorial on functional neuroimaging in Python",
     "alias_links": null,
     "notes": null,
     "quadrants": [
       "learning-oriented (tutorials)",
       "problem-oriented (how to guides)"
-    ]
+    ],
+    "description": "Tutorial on functional neuroimaging in Python"
   },
   {
     "id": 23,
@@ -702,7 +721,7 @@
     "imaging_modality": [
       "DWI"
     ],
-    "open_dataset": "True",
+    "open_dataset": true,
     "last_updated": "2024",
     "functionality": null,
     "assessment": true,
@@ -715,10 +734,13 @@
       "MIchael Joseph",
       "Fellow-20"
     ],
-    "review": null,
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "problem-oriented (how to guides)"
+    ],
+    "description": "A Carpentries Incubator lesson introducing diffusion MRI concepts and data organization using BIDS, with hands-on analysis using Python-based tools like Dipy and Nibabel."
   },
   {
     "id": 25,
@@ -759,7 +781,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": null,
     "last_updated": "2020",
     "functionality": null,
     "assessment": false,
@@ -772,10 +794,14 @@
       "Jennifer Legault",
       "Fellow-20"
     ],
-    "review": "example syllabus for hackathon/course",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "understanding-oriented (explanation)",
+      "learning-oriented (tutorials)",
+      "information-oriented (reference)"
+    ],
+    "description": "example syllabus for hackathon/course"
   },
   {
     "id": 26,
@@ -803,28 +829,37 @@
     "language": [
       "English"
     ],
-    "programming_language": null,
+    "programming_language": [
+      "R",
+      "Python"
+    ],
     "neuroimaging_software": [
       "NA"
     ],
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": true,
     "last_updated": "2023",
     "functionality": null,
     "assessment": false,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic statistics",
+      "Basic research methods"
+    ],
     "source": [
       "ReproNim",
       "Sook-Lei Liew",
       "Fellow-20",
       "ReproRehab"
     ],
-    "review": "Entire first year bootcamp videos online",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "understanding-oriented (explanation)"
+    ],
+    "description": "Entire first year bootcamp videos online"
   },
   {
     "id": 28,
@@ -861,7 +896,7 @@
     "imaging_modality": [
       "Functional"
     ],
-    "open_dataset": "NA",
+    "open_dataset": true,
     "last_updated": "2020",
     "functionality": null,
     "assessment": false,
@@ -874,10 +909,13 @@
       "Fellow-20",
       "Princeton"
     ],
-    "review": "Jupyter tutorials from the basics to advanced machine learning analyses on fMRI data",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "problem-oriented (how to guides)"
+    ],
+    "description": "Jupyter tutorials from the basics to advanced machine learning analyses on fMRI data"
   },
   {
     "id": 29,
@@ -905,27 +943,36 @@
     "language": [
       "English"
     ],
-    "programming_language": null,
+    "programming_language": [
+      "Python",
+      "R"
+    ],
     "neuroimaging_software": [
       "Multiple"
     ],
     "imaging_modality": [
       "Functional"
     ],
-    "open_dataset": "NA",
+    "open_dataset": true,
     "last_updated": "2020",
     "functionality": null,
     "assessment": true,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic neuroscience knowledge",
+      "Basic statistics"
+    ],
     "source": [
       "ReproNim",
       "Chris Rorden",
       "Fellow-20"
     ],
-    "review": "Syllabus for course on fMRI, including slides, from collection to inferencing",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "understanding-oriented (explanation)"
+    ],
+    "description": "Syllabus for course on fMRI, including slides, from collection to inferencing"
   },
   {
     "id": 30,
@@ -953,14 +1000,18 @@
     "language": [
       "English"
     ],
-    "programming_language": null,
+    "programming_language": [
+      "Python",
+      "shell scripting",
+      "Git"
+    ],
     "neuroimaging_software": [
       "Multiple"
     ],
     "imaging_modality": [
       "Functional"
     ],
-    "open_dataset": "NA",
+    "open_dataset": null,
     "last_updated": "NA",
     "functionality": null,
     "assessment": true,
@@ -973,10 +1024,13 @@
       "Julie Schneider",
       "Fellow-20"
     ],
-    "review": "Syllabus for reproducible neuroimaging multi-week course",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "problem-oriented (how to guides)"
+    ],
+    "description": "Syllabus for reproducible neuroimaging multi-week course"
   },
   {
     "id": 31,
@@ -1014,7 +1068,7 @@
     "imaging_modality": [
       "MRI"
     ],
-    "open_dataset": "NA",
+    "open_dataset": null,
     "last_updated": "2020",
     "functionality": null,
     "assessment": false,
@@ -1025,10 +1079,13 @@
     "source": [
       "ReproNim"
     ],
-    "review": "syllabus for tutorial; details unclear. Might be unfinished.",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "information-oriented (reference)"
+    ],
+    "description": "syllabus for tutorial; details unclear. Might be unfinished."
   },
   {
     "id": 32,
@@ -1069,7 +1126,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": null,
     "last_updated": "2024",
     "functionality": "2025",
     "assessment": false,
@@ -1080,10 +1137,14 @@
       "ReproNim",
       "Adina Wagner"
     ],
-    "review": "very good resource for data provenance",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "information-oriented (reference)",
+      "problem-oriented (how to guides)"
+    ],
+    "description": "very good resource for data provenance"
   },
   {
     "id": 33,
@@ -1122,7 +1183,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": null,
     "last_updated": "2024",
     "functionality": null,
     "assessment": false,
@@ -1130,10 +1191,13 @@
     "source": [
       "AI campus"
     ],
-    "review": "Nice videos and course material on AI",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "understanding-oriented (explanation)"
+    ],
+    "description": "Nice videos and course material on AI"
   },
   {
     "id": 34,
@@ -1172,7 +1236,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2021",
     "functionality": null,
     "assessment": false,
@@ -1182,10 +1246,13 @@
       "Lennart Wittkuhn",
       "Adina Wagner"
     ],
-    "review": "Good video",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "understanding-oriented (explanation)"
+    ],
+    "description": "Good video"
   },
   {
     "id": 35,
@@ -1224,16 +1291,22 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2020",
     "functionality": null,
     "assessment": false,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Git",
+      "Unix"
+    ],
     "source": null,
-    "review": "Course outline for Data Lad Course",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "problem-oriented (how to guides)"
+    ],
+    "description": "Course outline for Data Lad Course"
   },
   {
     "id": 36,
@@ -1271,7 +1344,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": null,
     "last_updated": "2024",
     "functionality": null,
     "assessment": false,
@@ -1280,10 +1353,13 @@
       "ReproNim",
       "Lennart Wittkuhn"
     ],
-    "review": null,
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "information-oriented (reference)"
+    ],
+    "description": "An open-access online book that teaches version control using Git, designed for researchers with no prior experience. It covers core Git concepts and workflows through hands-on exercises and practical examples relevant to scientific work."
   },
   {
     "id": 38,
@@ -1315,26 +1391,33 @@
     "language": [
       "English"
     ],
-    "programming_language": null,
+    "programming_language": [
+      "Python"
+    ],
     "neuroimaging_software": [
       "NA"
     ],
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": true,
     "last_updated": "2021",
     "functionality": null,
     "assessment": false,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic familiarity with Python recommended"
+    ],
     "source": [
       "ReproNim",
       "Xihe Xie"
     ],
-    "review": "Review of previous materials, full course",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "understanding-oriented (explanation)"
+    ],
+    "description": "Review of previous materials, full course"
   },
   {
     "id": 39,
@@ -1376,20 +1459,26 @@
     "imaging_modality": [
       "MRI"
     ],
-    "open_dataset": "NA",
+    "open_dataset": null,
     "last_updated": "2019",
     "functionality": null,
     "assessment": false,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Python",
+      "Unix shell"
+    ],
     "source": [
       "ReproNim",
       "Michael Dayan",
       "Fellow-19"
     ],
-    "review": "Syllabus for ReproNim workshop",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "information-oriented (reference)"
+    ],
+    "description": "Syllabus for ReproNim workshop"
   },
   {
     "id": 40,
@@ -1427,7 +1516,7 @@
     "imaging_modality": [
       "MRI"
     ],
-    "open_dataset": "NA",
+    "open_dataset": null,
     "last_updated": "2019",
     "functionality": null,
     "assessment": false,
@@ -1440,10 +1529,13 @@
       "Aaron Kemp",
       "Fellow-19"
     ],
-    "review": "Syllabus for Research Imaging Informatics course. Overview of neuroimaging methods and basic processing",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "information-oriented (reference)",
+      "understanding-oriented (explanation)"
+    ],
+    "description": "Syllabus for Research Imaging Informatics course. Overview of neuroimaging methods and basic processing"
   },
   {
     "id": 43,
@@ -1482,18 +1574,25 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2020",
     "functionality": null,
     "assessment": true,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Python",
+      "Basic Git",
+      "Unix"
+    ],
     "source": [
       "ReproNim"
     ],
-    "review": "Syllabus for workshop that has been given",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "problem-oriented (how to guides)"
+    ],
+    "description": "Syllabus for workshop that has been given"
   },
   {
     "id": 46,
@@ -1502,7 +1601,7 @@
       "SS",
       "JB"
     ],
-    "course_name": "The Princeton Handbook for Reproducible Neuroimaging¶",
+    "course_name": "The Princeton Handbook for Reproducible Neuroimaging\u00b6",
     "url": "https://brainhack-princeton.github.io/handbook/",
     "level": [
       "Beginner"
@@ -1522,28 +1621,34 @@
     "language": [
       "English"
     ],
-    "programming_language": null,
+    "programming_language": [
+      "Python",
+      "shell scripting"
+    ],
     "neuroimaging_software": [
       "Multiple"
     ],
     "imaging_modality": [
       "Functional"
     ],
-    "open_dataset": "NA",
+    "open_dataset": true,
     "last_updated": "2021",
     "functionality": null,
     "assessment": false,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic familiarity with neuroimaging concepts",
+      "Some experience with command-line tools"
+    ],
     "source": [
       "ReproNim",
       "Princeton"
     ],
-    "review": "Very nice overview of different fMRI topics",
     "alias_links": null,
     "notes": null,
     "quadrants": [
       "information-oriented (reference)"
-    ]
+    ],
+    "description": "Very nice overview of different fMRI topics"
   },
   {
     "id": 47,
@@ -1582,23 +1687,26 @@
     "imaging_modality": [
       "Functional"
     ],
-    "open_dataset": "NA",
+    "open_dataset": null,
     "last_updated": "2019",
     "functionality": null,
     "assessment": false,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic MRI knowledge",
+      "Introductory neuroimaging experience"
+    ],
     "source": [
       "ReproNim",
       "Etienne Roesch"
     ],
-    "review": "Pretty good if you want to teach fMRI analysis from scratch",
     "alias_links": null,
     "notes": null,
     "quadrants": [
       "learning-oriented (tutorials)",
       "understanding-oriented (explanation)",
       "information-oriented (reference)"
-    ]
+    ],
+    "description": "Pretty good if you want to teach fMRI analysis from scratch"
   },
   {
     "id": 50,
@@ -1637,22 +1745,24 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": null,
     "last_updated": "2019",
     "functionality": null,
     "assessment": false,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic neuroimaging knowledge"
+    ],
     "source": [
       "ReproNim",
       "Sebastien Tourbier"
     ],
-    "review": "Single presentation, good for an intro class to data management and data version control",
     "alias_links": null,
     "notes": null,
     "quadrants": [
       "information-oriented (reference)",
       "understanding-oriented (explanation)"
-    ]
+    ],
+    "description": "Single presentation, good for an intro class to data management and data version control"
   },
   {
     "id": 51,
@@ -1680,14 +1790,16 @@
     "language": [
       "English"
     ],
-    "programming_language": null,
+    "programming_language": [
+      "shell scripting"
+    ],
     "neuroimaging_software": [
       "NA"
     ],
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "2024",
     "functionality": null,
     "assessment": false,
@@ -1695,13 +1807,13 @@
     "source": [
       "Carpentries"
     ],
-    "review": "If you want to teach carpentries use this tool - not only shell scripting, but also intro to R, Python and HPC",
     "alias_links": "https://github.com/jdkent/incf-fellow-jdkent/blob/gh-pages/index.md",
     "notes": null,
     "quadrants": [
       "learning-oriented (tutorials)",
       "problem-oriented (how to guides)"
-    ]
+    ],
+    "description": "If you want to teach carpentries use this tool - not only shell scripting, but also intro to R, Python and HPC"
   },
   {
     "id": 52,
@@ -1738,7 +1850,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": false,
     "last_updated": "NA",
     "functionality": null,
     "assessment": false,
@@ -1747,10 +1859,13 @@
       "ReproNim",
       "David Warren"
     ],
-    "review": "For internal usage",
     "alias_links": null,
     "notes": "Link to Github Importer broken",
-    "quadrants": null
+    "quadrants": [
+      "information-oriented (reference)",
+      "understanding-oriented (explanation)"
+    ],
+    "description": "For internal usage"
   },
   {
     "id": 53,
@@ -1758,7 +1873,7 @@
       "JB"
     ],
     "course_name": "Introduction to Machine Learning part 1",
-    "url": ":https://neurodatascience.github.io/QLS612-Overview/lectures-materials/2024/intro_ml_part_1.html",
+    "url": "https://neurodatascience.github.io/QLS612-Overview/lectures-materials/2024/intro_ml_part_1.html",
     "level": [
       "Beginner"
     ],
@@ -1793,17 +1908,26 @@
     "neuroimaging_software": [
       "Python"
     ],
-    "imaging_modality": null,
-    "open_dataset": "NA",
+    "imaging_modality": [
+      "MRI"
+    ],
+    "open_dataset": true,
     "last_updated": null,
     "functionality": null,
     "assessment": null,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Python",
+      "Introductory statistics",
+      "Basic neuroimaging knowledge"
+    ],
     "source": null,
-    "review": null,
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "understanding-oriented (explanation)"
+    ],
+    "description": "An introduction to machine learning concepts and methods in the context of neuroimaging data, covering supervised learning, model evaluation, and practical implementation in Python. Part of the QLS612 multi-week curriculum at McGill University."
   },
   {
     "id": 54,
@@ -1819,26 +1943,52 @@
     "platform": [
       "Windows"
     ],
-    "keywords": null,
+    "keywords": [
+      "brainhack",
+      "open science",
+      "reproducibility",
+      "neuroimaging",
+      "data science",
+      "machine learning",
+      "open-source",
+      "collaboration",
+      "Python",
+      "version control"
+    ],
     "course_length": "NA",
     "instruction_medium": null,
     "delivery": null,
     "language": null,
-    "programming_language": null,
-    "neuroimaging_software": null,
+    "programming_language": [
+      "Python",
+      "shell scripting",
+      "Git"
+    ],
+    "neuroimaging_software": [
+      "FSL",
+      "Freesurfer",
+      "Python",
+      "Multiple"
+    ],
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": "NA",
+    "open_dataset": true,
     "last_updated": null,
     "functionality": null,
     "assessment": null,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Python programming",
+      "Familiarity with neuroimaging concepts"
+    ],
     "source": null,
-    "review": null,
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "problem-oriented (how to guides)"
+    ],
+    "description": "Brainhack School is an intensive, project-based training program run by a consortium of Canadian universities that teaches open and reproducible neuroscience. Participants work on collaborative projects while learning modern data science tools applied to neuroimaging."
   },
   {
     "id": 55,
@@ -1856,24 +2006,56 @@
       "Windows",
       "Linux"
     ],
-    "keywords": null,
+    "keywords": [
+      "data science",
+      "open neuroscience",
+      "reproducibility",
+      "machine learning",
+      "neuroimaging",
+      "fMRI",
+      "open data",
+      "Python",
+      "summer institute",
+      "collaborative"
+    ],
     "course_length": "NA",
     "instruction_medium": null,
     "delivery": null,
     "language": null,
-    "programming_language": null,
-    "neuroimaging_software": null,
-    "imaging_modality": null,
-    "open_dataset": "NA",
+    "programming_language": [
+      "Python",
+      "R",
+      "shell scripting",
+      "Git"
+    ],
+    "neuroimaging_software": [
+      "FSL",
+      "Freesurfer",
+      "Python",
+      "Multiple"
+    ],
+    "imaging_modality": [
+      "Functional",
+      "Structural",
+      "Resting-State"
+    ],
+    "open_dataset": true,
     "last_updated": null,
     "functionality": null,
     "assessment": null,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Python or programming experience",
+      "Graduate-level neuroscience or related field"
+    ],
     "source": null,
-    "review": null,
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "understanding-oriented (explanation)",
+      "problem-oriented (how to guides)"
+    ],
+    "description": "NeuroHackademy is a summer institute at the University of Washington focused on data science and open neuroscience, combining lectures and hands-on tutorials covering neuroimaging analysis, machine learning, and reproducible research practices."
   },
   {
     "id": 56,
@@ -1882,26 +2064,55 @@
     ],
     "course_name": "Neuromatchacademy",
     "url": "https://github.com/NeuromatchAcademy",
-    "level": null,
-    "platform": null,
-    "keywords": null,
+    "level": [
+      "Intermediate",
+      "Advanced"
+    ],
+    "platform": [
+      "Jupyter"
+    ],
+    "keywords": [
+      "computational neuroscience",
+      "deep learning",
+      "neural data",
+      "modeling",
+      "data analysis",
+      "machine learning",
+      "online course",
+      "open science",
+      "tutorials"
+    ],
     "course_length": "NA",
     "instruction_medium": null,
     "delivery": null,
     "language": null,
-    "programming_language": null,
+    "programming_language": [
+      "Python"
+    ],
     "neuroimaging_software": null,
-    "imaging_modality": null,
-    "open_dataset": "NA",
+    "imaging_modality": [
+      "Functional",
+      "Resting-State",
+      "Behavioral"
+    ],
+    "open_dataset": true,
     "last_updated": null,
     "functionality": null,
     "assessment": null,
-    "prerequisite": null,
+    "prerequisite": [
+      "Linear algebra",
+      "Basic calculus",
+      "Python programming",
+      "Introductory neuroscience"
+    ],
     "source": null,
-    "review": null,
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "understanding-oriented (explanation)"
+    ],
+    "description": "Neuromatch Academy offers intensive online computational neuroscience and deep learning courses through lectures, tutorials, and projects designed to build skills in quantitative analysis of neural data. The curriculum covers modeling, data analysis, and machine learning applied to neuroscience."
   },
   {
     "id": 57,
@@ -1952,7 +2163,7 @@
       "Resting-State",
       "MRI"
     ],
-    "open_dataset": "True",
+    "open_dataset": true,
     "last_updated": "2024",
     "functionality": "2024",
     "assessment": false,
@@ -1960,10 +2171,12 @@
     "source": [
       "Github Repo added by Charlotte Fraze"
     ],
-    "review": "Great resource",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "information-oriented (reference)"
+    ],
+    "description": "Great resource"
   },
   {
     "id": 58,
@@ -1977,8 +2190,56 @@
       "blog post",
       "Hands-on tutorial / notebooks"
     ],
-    "open_dataset": "NA",
-    "last_updated": 2026
+    "open_dataset": true,
+    "last_updated": 2026,
+    "description": "Andy's Brain Book is a comprehensive, beginner-friendly online textbook covering neuroimaging analysis with major software packages including FSL, SPM, AFNI, and Freesurfer, using real datasets and step-by-step tutorials. It is widely used as an introductory reference for fMRI and structural MRI analysis.",
+    "level": [
+      "Beginner",
+      "Intermediate"
+    ],
+    "platform": [
+      "Mac",
+      "Windows",
+      "Linux"
+    ],
+    "keywords": [
+      "fMRI",
+      "neuroimaging",
+      "FSL",
+      "SPM",
+      "AFNI",
+      "Freesurfer",
+      "tutorial",
+      "beginner",
+      "structural MRI",
+      "connectivity",
+      "tractography"
+    ],
+    "prerequisite": null,
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "problem-oriented (how to guides)",
+      "information-oriented (reference)"
+    ],
+    "programming_language": [
+      "shell scripting",
+      "Python",
+      "Matlab"
+    ],
+    "imaging_modality": [
+      "Functional",
+      "Structural",
+      "DWI",
+      "Resting-State",
+      "Task-based"
+    ],
+    "neuroimaging_software": [
+      "FSL",
+      "SPM",
+      "AFNI",
+      "Freesurfer",
+      "Multiple"
+    ]
   },
   {
     "id": 59,
@@ -1987,26 +2248,59 @@
     ],
     "course_name": "ABCD Repronim course",
     "url": "https://www.abcd-repronim.org/",
-    "level": null,
-    "platform": null,
-    "keywords": null,
+    "level": [
+      "Intermediate",
+      "Advanced"
+    ],
+    "platform": [
+      "Linux",
+      "Docker"
+    ],
+    "keywords": [
+      "ABCD",
+      "reproducibility",
+      "neuroimaging",
+      "developmental",
+      "ReproNim",
+      "large-scale data",
+      "open data"
+    ],
     "course_length": "NA",
     "instruction_medium": null,
     "delivery": null,
     "language": null,
-    "programming_language": null,
-    "neuroimaging_software": null,
-    "imaging_modality": null,
-    "open_dataset": "NA",
+    "programming_language": [
+      "Python",
+      "R",
+      "shell scripting"
+    ],
+    "neuroimaging_software": [
+      "Multiple"
+    ],
+    "imaging_modality": [
+      "Structural",
+      "Functional",
+      "Resting-State",
+      "DWI"
+    ],
+    "open_dataset": true,
     "last_updated": null,
     "functionality": null,
     "assessment": null,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic Python or R programming",
+      "Introductory neuroimaging knowledge",
+      "Familiarity with MRI data"
+    ],
     "source": null,
-    "review": null,
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "understanding-oriented (explanation)",
+      "problem-oriented (how to guides)"
+    ],
+    "description": "A comprehensive course on reproducible neuroimaging using the Adolescent Brain Cognitive Development (ABCD) dataset, covering data access, processing pipelines, and ReproNim reproducibility principles. Designed for researchers working with large-scale developmental neuroimaging data."
   },
   {
     "id": 60,
@@ -2018,7 +2312,11 @@
     "level": [
       "Intermediate"
     ],
-    "platform": null,
+    "platform": [
+      "Linux",
+      "Docker",
+      "Jupyter"
+    ],
     "keywords": [
       "Machine Learning"
     ],
@@ -2026,19 +2324,34 @@
     "instruction_medium": null,
     "delivery": null,
     "language": null,
-    "programming_language": null,
-    "neuroimaging_software": null,
-    "imaging_modality": null,
-    "open_dataset": "NA",
+    "programming_language": [
+      "Python"
+    ],
+    "neuroimaging_software": [
+      "Multiple"
+    ],
+    "imaging_modality": [
+      "Structural",
+      "Functional",
+      "Resting-State"
+    ],
+    "open_dataset": true,
     "last_updated": 2025,
     "functionality": null,
     "assessment": true,
-    "prerequisite": null,
+    "prerequisite": [
+      "ABCD ReproNim course or equivalent",
+      "Basic Python programming",
+      "Introductory machine learning concepts"
+    ],
     "source": null,
-    "review": "3 week machone learning course",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "problem-oriented (how to guides)"
+    ],
+    "description": "3 week machone learning course"
   },
   {
     "id": 61,
@@ -2047,8 +2360,14 @@
     ],
     "course_name": "Reproducible Pipelines for Neuroimaging Research",
     "url": "https://sina-mansour.github.io/ohbm2025-reproducible-research/intro.html",
-    "level": null,
-    "platform": null,
+    "level": [
+      "Intermediate",
+      "Advanced"
+    ],
+    "platform": [
+      "Linux",
+      "Docker"
+    ],
     "keywords": [
       "Reproducible Pipelines",
       "Best Practices",
@@ -2063,33 +2382,30 @@
     "programming_language": [
       "Python"
     ],
-    "neuroimaging_software": null,
-    "imaging_modality": null,
-    "open_dataset": "NA",
+    "neuroimaging_software": [
+      "Multiple"
+    ],
+    "imaging_modality": [
+      "Structural",
+      "Functional"
+    ],
+    "open_dataset": true,
     "last_updated": 2025,
     "functionality": null,
     "assessment": null,
-    "prerequisite": null,
+    "prerequisite": [
+      "Basic neuroimaging experience",
+      "Familiarity with command-line tools",
+      "Basic Python or shell scripting"
+    ],
     "source": null,
-    "review": "Comprehensive website describing the necessity of reproducible research and how to achieve it (notebooks, visualisation)",
     "alias_links": null,
     "notes": null,
-    "quadrants": null
-  },
-  {
-    "id": 62,
-    "course_name": "test course",
-    "platform": [
-      "Mac"
+    "quadrants": [
+      "learning-oriented (tutorials)",
+      "problem-oriented (how to guides)",
+      "understanding-oriented (explanation)"
     ],
-    "instruction_medium": [
-      "blog post"
-    ],
-    "delivery": [
-      "instructor"
-    ],
-    "imaging_modality": [
-      "Behavioral"
-    ]
+    "description": "Comprehensive website describing the necessity of reproducible research and how to achieve it (notebooks, visualisation)"
   }
 ]

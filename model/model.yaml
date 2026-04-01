@@ -90,14 +90,12 @@ enums:
       NA:
   Open_dataset_enum:
     permissible_values:
-      Yes:
-      No:
-      NA:
+      "true":
+      "false":
   Assessment_enum:
     permissible_values:
-      Yes:
-      No:
-      NA:
+      "true":
+      "false":
   Exclude_from_ReproInventory_enum:
     permissible_values:
       Yes:
@@ -180,8 +178,8 @@ classes:
       Source:
         description: Source
         range: string
-      Review:
-        description: Review
+      Description:
+        description: Public description of the course
         range: string
       Exclude_from_ReproInventory:
         description: Exclude from ReproInventory

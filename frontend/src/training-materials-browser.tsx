@@ -25,7 +25,6 @@ import {
   type ProgrammingLanguageEnum,
   type NeuroimagingSoftwareEnum,
   type ImagingModalityEnum,
-  type OpenDatasetEnum,
   type QuadrantsEnum,
 } from "./types/reproinventory" // Import generated types
 
@@ -67,10 +66,9 @@ export default function TrainingMaterialsBrowser() {
   const [selectedProgrammingLanguages, setSelectedProgrammingLanguages] = useState<ProgrammingLanguageEnum[]>([])
   const [selectedNeuroimagingSoftware, setSelectedNeuroimagingSoftware] = useState<NeuroimagingSoftwareEnum[]>([])
   const [selectedImagingModalities, setSelectedImagingModalities] = useState<ImagingModalityEnum[]>([])
-  const [selectedOpenDataset, setSelectedOpenDataset] = useState<OpenDatasetEnum | "">("")
+  const [selectedOpenDataset, setSelectedOpenDataset] = useState<boolean | null>(null)
   const [selectedQuadrants, setSelectedQuadrants] = useState<QuadrantsEnum[]>([])
-  const [showAssessmentOnly, setShowAssessmentOnly] = useState(false)
-  const [showFeaturedOnly, setShowFeaturedOnly] = useState(false) // Assuming a 'featured' concept will be derived or added
+  const [showFeaturedOnly, setShowFeaturedOnly] = useState(false)
 
   // Helper function to handle multi-select filters
   const handleMultiSelectFilterChange = <T,>(setter: React.Dispatch<React.SetStateAction<T[]>>, value: T, checked: boolean) => {
@@ -87,18 +85,21 @@ export default function TrainingMaterialsBrowser() {
   const programmingLanguageOptions: ProgrammingLanguageEnum[] = ["Python", "R", "shell scripting", "Matlab", "Git", "NA"];
   const neuroimagingSoftwareOptions: NeuroimagingSoftwareEnum[] = ["AFNI", "SPM", "FSL", "Freesurfer", "Python", "Multiple", "NA"];
   const imagingModalityOptions: ImagingModalityEnum[] = ["DWI", "Structural", "Functional", "Task-based", "Resting-State", "EEG", "Behavioral", "MEG", "MRI", "NA"];
-  const openDatasetOptions: OpenDatasetEnum[] = ["True", "False", "NA"];
+  const openDatasetOptions: { label: string; value: boolean }[] = [
+    { label: "Yes", value: true },
+    { label: "No", value: false },
+  ];
   const quadrantsOptions: QuadrantsEnum[] = ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"];
 
   const filteredMaterials = useMemo(() => {
     let filtered = reproInventoryData
 
     return filtered.filter((material) => {
-      // Search query filter: course_name, url, keywords, notes, review
+      // Search query filter: course_name, url, keywords, notes, description
       const searchFields = [
         material.course_name,
         material.url,
-        material.review,
+        material.description,
         material.notes,
         ...(material.keywords || []),
       ].filter(Boolean).map(String).join(" ").toLowerCase();
@@ -153,7 +154,7 @@ export default function TrainingMaterialsBrowser() {
       }
 
       // Open Dataset filter
-      if (selectedOpenDataset && material.open_dataset !== selectedOpenDataset) {
+      if (selectedOpenDataset !== null && material.open_dataset !== selectedOpenDataset) {
         return false;
       }
       
@@ -162,11 +163,6 @@ export default function TrainingMaterialsBrowser() {
         return false;
       }
 
-
-      // Assessment filter (boolean)
-      if (showAssessmentOnly && !material.assessment) {
-        return false
-      }
 
       // Featured filter (assuming 'featured' will be part of the schema or derived)
       // Currently, 'featured' is not in the schema. This filter will always return true
@@ -197,7 +193,6 @@ export default function TrainingMaterialsBrowser() {
     selectedImagingModalities,
     selectedOpenDataset,
     selectedQuadrants,
-    showAssessmentOnly,
     showFeaturedOnly,
   ])
 
@@ -212,9 +207,8 @@ export default function TrainingMaterialsBrowser() {
     setSelectedProgrammingLanguages([])
     setSelectedNeuroimagingSoftware([])
     setSelectedImagingModalities([])
-    setSelectedOpenDataset("")
+    setSelectedOpenDataset(null)
     setSelectedQuadrants([])
-    setShowAssessmentOnly(false)
     setShowFeaturedOnly(false)
   }
 
@@ -544,14 +538,16 @@ export default function TrainingMaterialsBrowser() {
                     <AccordionContent>
                       <div className="space-y-2">
                         {openDatasetOptions.map((option) => (
-                          <div key={option} className="flex items-center space-x-2">
+                          <div key={String(option.value)} className="flex items-center space-x-2">
                             <Checkbox
-                              id={`open-dataset-${option}`}
-                              checked={selectedOpenDataset === option}
-                              onCheckedChange={() => setSelectedOpenDataset(option)}
+                              id={`open-dataset-${option.value}`}
+                              checked={selectedOpenDataset === option.value}
+                              onCheckedChange={() =>
+                                setSelectedOpenDataset(selectedOpenDataset === option.value ? null : option.value)
+                              }
                             />
-                            <Label htmlFor={`open-dataset-${option}`} className="text-sm">
-                              {option}
+                            <Label htmlFor={`open-dataset-${option.value}`} className="text-sm">
+                              {option.label}
                             </Label>
                           </div>
                         ))}
@@ -559,21 +555,6 @@ export default function TrainingMaterialsBrowser() {
                     </AccordionContent>
                   </AccordionItem>
 
-                  <AccordionItem value="assessment">
-                    <AccordionTrigger>Assessment Available</AccordionTrigger>
-                    <AccordionContent>
-                      <div className="flex items-center space-x-2">
-                        <Checkbox
-                          id="showAssessmentOnly"
-                          checked={showAssessmentOnly}
-                          onCheckedChange={(checked) => setShowAssessmentOnly(checked as boolean)}
-                        />
-                        <Label htmlFor="showAssessmentOnly" className="text-sm">
-                          Show only materials with assessment
-                        </Label>
-                      </div>
-                    </AccordionContent>
-                  </AccordionItem>
                 </Accordion>
               </TabsContent>
             </Tabs>
@@ -611,10 +592,9 @@ export default function TrainingMaterialsBrowser() {
                               {material.instruction_medium?.[0] || "N/A"}
                             </Badge>
                           </div>
-                          {material.assessment && <Badge variant="default" className="w-fit">Assessment</Badge>}
                         </div>
                         <CardTitle className="text-lg break-words">{material.course_name}</CardTitle>
-                        <CardDescription className="break-words">{material.review}</CardDescription>
+                        <CardDescription className="break-words">{material.description}</CardDescription>
                       </CardHeader>
                       <CardContent className="space-y-4">
                         <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -716,7 +696,7 @@ export default function TrainingMaterialsBrowser() {
                               const body =
                                 `## Delete Training Material Request\n\n` +
                                 `Please remove entry **ID: ${material.id}** ("${material.course_name}") from \`model/reproinventory_data.yaml\`.`;
-                              const url = `https://github.com/ReproNim/ReproInventory/issues/new?labels=delete-material&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+                              const url = `https://github.com/ReproNim/likeajumprope/issues/new?labels=delete-material&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
                               window.open(url, "_blank");
                             }}
                           >

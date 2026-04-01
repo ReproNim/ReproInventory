@@ -17,11 +17,10 @@ import type {
     ProgrammingLanguageEnum,
     NeuroimagingSoftwareEnum,
     ImagingModalityEnum,
-    OpenDatasetEnum,
     QuadrantsEnum,
 } from "@/types/reproinventory";
 
-const GITHUB_REPO = "https://github.com/ReproNim/ReproInventory";
+const GITHUB_REPO = "https://github.com/likeajumprope/ReproInventory";
 
 function formatAsYaml(material: ReproInventoryEntry): string {
     const lines: string[] = [];
@@ -55,13 +54,9 @@ function formatAsYaml(material: ReproInventoryEntry): string {
     addList("imaging_modality", material.imaging_modality);
     addScalar("open_dataset", material.open_dataset);
     addScalar("last_updated", material.last_updated);
-    addScalar("functionality", material.functionality);
-    addScalar("assessment", material.assessment);
     addList("prerequisite", material.prerequisite);
     addList("source", material.source);
-    addScalar("review", material.review);
-    addScalar("exclude_from_repro_inventory", material.exclude_from_repro_inventory);
-    addScalar("alias_links", material.alias_links);
+    addScalar("description", material.description);
     addScalar("notes", material.notes);
     addList("quadrants", material.quadrants);
 
@@ -93,7 +88,6 @@ const languageOptions: LanguageEnum[] = ["English", "French", "Spanish", "Chines
 const programmingLanguageOptions: ProgrammingLanguageEnum[] = ["Python", "R", "shell scripting", "Matlab", "Git", "NA"];
 const neuroimagingSoftwareOptions: NeuroimagingSoftwareEnum[] = ["AFNI", "SPM", "FSL", "Freesurfer", "Python", "Multiple", "NA"];
 const imagingModalityOptions: ImagingModalityEnum[] = ["DWI", "Structural", "Functional", "Task-based", "Resting-State", "EEG", "Behavioral", "MEG", "MRI", "NA"];
-const openDatasetOptions: OpenDatasetEnum[] = ["True", "False", "NA"];
 const quadrantsOptions: QuadrantsEnum[] = ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"];
 
 const ARRAY_FIELDS: (keyof ReproInventoryEntry)[] = [
@@ -213,14 +207,6 @@ const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onClo
                     <Label htmlFor="last_updated" className="text-right">Last Updated</Label>
                     <Input id="last_updated" value={editedMaterial.last_updated || ""} onChange={(e) => handleChange("last_updated", e.target.value)} className="col-span-3" />
                 </div>
-                 <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="functionality" className="text-right">Functionality</Label>
-                    <Input id="functionality" value={editedMaterial.functionality || ""} onChange={(e) => handleChange("functionality", e.target.value)} className="col-span-3" />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="assessment" className="text-right">Assessment</Label>
-                    <Input id="assessment" value={editedMaterial.assessment || ""} onChange={(e) => handleChange("assessment", e.target.value)} className="col-span-3" />
-                </div>
                 {/* Dynamic Prerequisite fields */}
                 <div className="grid grid-cols-4 items-start gap-4">
                     <Label htmlFor="prerequisite" className="text-right pt-2">Prerequisite</Label>
@@ -284,22 +270,8 @@ const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onClo
                     </div>
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="review" className="text-right">Review</Label>
-                    <Input id="review" value={editedMaterial.review || ""} onChange={(e) => handleChange("review", e.target.value)} className="col-span-3" />
-                </div>
-                <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="exclude_from_repro_inventory" className="text-right">Exclude from Repro Inventory</Label>
-                    <Input id="exclude_from_repro_inventory" value={editedMaterial.exclude_from_repro_inventory || ""} onChange={(e) => handleChange("exclude_from_repro_inventory", e.target.value)} className="col-span-3" />
-                </div>
-                {/* Reverted Alias Links to single input */}
-                <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="alias_links" className="text-right">Alias Links</Label>
-                    <Input
-                        id="alias_links"
-                        value={editedMaterial.alias_links || ""}
-                        onChange={(e) => handleChange("alias_links", e.target.value)}
-                        className="col-span-3"
-                    />
+                    <Label htmlFor="description" className="text-right">Description</Label>
+                    <Input id="description" value={editedMaterial.description || ""} onChange={(e) => handleChange("description", e.target.value)} className="col-span-3" />
                 </div>
                 {/* Dynamic Keywords fields */}
                 <div className="grid grid-cols-4 items-start gap-4">
@@ -496,19 +468,14 @@ const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onClo
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label htmlFor="open_dataset" className="text-right">Open Dataset</Label>
-                    <Select
-                        value={editedMaterial.open_dataset || ""}
-                        onValueChange={(value) => handleChange("open_dataset", value as OpenDatasetEnum)}
-                    >
-                        <SelectTrigger className="col-span-3">
-                            <SelectValue placeholder="Select dataset availability" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            {openDatasetOptions.map(option => (
-                                <SelectItem key={option} value={option}>{option}</SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
+                    <div className="col-span-3 flex items-center gap-2">
+                        <Checkbox
+                            id="open_dataset"
+                            checked={editedMaterial.open_dataset === true}
+                            onCheckedChange={(checked) => handleChange("open_dataset", checked === true ? true : null)}
+                        />
+                        <Label htmlFor="open_dataset" className="text-sm">Uses an open dataset</Label>
+                    </div>
                 </div>
             </div>
             <div className="flex justify-end gap-2">

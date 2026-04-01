@@ -18,7 +18,7 @@ export type NeuroimagingSoftwareEnum = "AFNI" | "SPM" | "FSL" | "Freesurfer" | "
 
 export type ImagingModalityEnum = "DWI" | "Structural" | "Functional" | "Task-based" | "Resting-State" | "EEG" | "Behavioral" | "MEG" | "MRI" | "NA";
 
-export type OpenDatasetEnum = "True" | "False" | "NA";
+export type OpenDatasetEnum = boolean;
 
 export type QuadrantsEnum = "information-oriented (reference)" | "understanding-oriented (explanation)" | "learning-oriented (tutorials)" | "problem-oriented (how to guides)" | "NA";
 
@@ -42,10 +42,10 @@ export interface ReproInventoryEntry {
     open_dataset?: OpenDatasetEnum,
     last_updated?: string,
     functionality?: string,
-    assessment?: string,
+    assessment?: boolean,
     prerequisite?: string[],
     source?: string[],
-    review?: string,
+    description?: string,
     exclude_from_repro_inventory?: string,
     alias_links?: string,
     notes?: string,
@@ -81,7 +81,7 @@ export function toReproInventoryEntry(o: ReproInventoryEntry): ReproInventoryEnt
         assessment: o.assessment ?? undefined,
         prerequisite: Array.isArray(o.prerequisite) ? o.prerequisite : (o.prerequisite ? [o.prerequisite] : undefined),
         source: Array.isArray(o.source) ? o.source : (o.source ? [o.source] : undefined),
-        review: o.review ?? undefined,
+        description: o.description ?? undefined,
         exclude_from_repro_inventory: o.exclude_from_repro_inventory ?? undefined,
         alias_links: o.alias_links ?? undefined,
         notes: o.notes ?? undefined,
