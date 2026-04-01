@@ -1502,7 +1502,7 @@
       "SS",
       "JB"
     ],
-    "course_name": "The Princeton Handbook for Reproducible Neuroimaging\u00b6",
+    "course_name": "The Princeton Handbook for Reproducible Neuroimaging¶",
     "url": "https://brainhack-princeton.github.io/handbook/",
     "level": [
       "Beginner"
@@ -1982,16 +1982,9 @@
     "programming_language": null,
     "neuroimaging_software": null,
     "imaging_modality": null,
+
     "open_dataset": "NA",
-    "last_updated": null,
-    "functionality": null,
-    "assessment": null,
-    "prerequisite": null,
-    "source": null,
-    "review": null,
-    "alias_links": null,
-    "notes": null,
-    "quadrants": null
+    "last_updated": 2026
   },
   {
     "id": 59,
@@ -2028,9 +2021,14 @@
     ],
     "course_name": "ABCD Repronim ML course",
     "url": "https://www.abcd-repronim.org/ml.html",
-    "level": null,
+    "level": [
+      "Intermediate"
+    ],
     "platform": null,
-    "keywords": null,
+    "keywords": [
+      "Machine Learning"
+    ],
+    "course_length": "NA",
     "course_length": [
       "1+ weeks"
     ],
@@ -2041,12 +2039,12 @@
     "neuroimaging_software": null,
     "imaging_modality": null,
     "open_dataset": "NA",
-    "last_updated": null,
+    "last_updated": 2025,
     "functionality": null,
     "assessment": true,
     "prerequisite": null,
     "source": null,
-    "review": null,
+    "review": "3 week machone learning course",
     "alias_links": null,
     "notes": null,
     "quadrants": null
@@ -2063,22 +2061,28 @@
       "Intermediate"
     ],
     "platform": null,
-    "keywords": null,
-    "course_length": [
+    "keywords": [
+      "Reproducible Pipelines",
+      "Best Practices",
+      "Data Visualization"
+    ],
+      "course_length": [
       "1-4 hrs"
     ],
     "instruction_medium": [
       "lecture"
     ],
     "delivery": null,
-    "language": "English",
+    "language": [
+      "English"
+    ],
     "programming_language": [
       "Python"
     ],
     "neuroimaging_software": null,
     "imaging_modality": null,
     "open_dataset": "NA",
-    "last_updated": null,
+    "last_updated": 2025,
     "functionality": null,
     "assessment": null,
     "prerequisite": null,
@@ -2087,5 +2091,21 @@
     "alias_links": null,
     "notes": null,
     "quadrants": null
+  },
+  {
+    "id": 62,
+    "course_name": "test course",
+    "platform": [
+      "Mac"
+    ],
+    "instruction_medium": [
+      "blog post"
+    ],
+    "delivery": [
+      "instructor"
+    ],
+    "imaging_modality": [
+      "Behavioral"
+    ]
   }
 ]
