@@ -1972,11 +1972,17 @@
     ],
     "course_name": "Andy's brain book",
     "url": "https://andysbrainbook.readthedocs.io/en/latest/",
-    "course_length": "NA",
-    "instruction_medium": [
-      "blog post",
-      "Hands-on tutorial / notebooks"
-    ],
+    "level": null,
+    "platform": null,
+    "keywords": null,
+    "course_length": "1+ weeks",
+    "instruction_medium": null,
+    "delivery": null,
+    "language": null,
+    "programming_language": null,
+    "neuroimaging_software": null,
+    "imaging_modality": null,
+
     "open_dataset": "NA",
     "last_updated": 2026
   },
@@ -1990,7 +1996,7 @@
     "level": null,
     "platform": null,
     "keywords": null,
-    "course_length": "NA",
+    "course_length": "1+ weeks",
     "instruction_medium": null,
     "delivery": null,
     "language": null,
@@ -2023,6 +2029,9 @@
       "Machine Learning"
     ],
     "course_length": "NA",
+    "course_length": [
+      "1+ weeks"
+    ],
     "instruction_medium": null,
     "delivery": null,
     "language": null,
@@ -2047,15 +2056,22 @@
     ],
     "course_name": "Reproducible Pipelines for Neuroimaging Research",
     "url": "https://sina-mansour.github.io/ohbm2025-reproducible-research/intro.html",
-    "level": null,
+    "level": [
+      "Beginner",
+      "Intermediate"
+    ],
     "platform": null,
     "keywords": [
       "Reproducible Pipelines",
       "Best Practices",
       "Data Visualization"
     ],
-    "course_length": null,
-    "instruction_medium": null,
+      "course_length": [
+      "1-4 hrs"
+    ],
+    "instruction_medium": [
+      "lecture"
+    ],
     "delivery": null,
     "language": [
       "English"
