@@ -2088,5 +2088,9 @@
     "alias_links": null,
     "notes": null,
     "quadrants": null
+  },
+  {
+    "id": 62,
+    "course_name": "test course 3"
   }
 ]
