@@ -2088,18 +2088,5 @@
     "alias_links": null,
     "notes": null,
     "quadrants": null
-  },
-  {
-    "id": 62,
-    "tag_team": [
-      "JB"
-    ],
-    "course_name": "ABCD Repronim course",
-    "url": "https://www.abcd-repronim.org/",
-    "course_length": "1+ weeks",
-    "delivery": [
-      "self-paced"
-    ],
-    "open_dataset": "NA"
   }
 ]
