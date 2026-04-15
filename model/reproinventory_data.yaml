@@ -1524,11 +1524,10 @@
   - JB
   course_name: Andy's brain book
   url: https://andysbrainbook.readthedocs.io/en/latest/
-  course_length: NA
+  course_length: 1+ weeks
   level: null
   platform: null
   keywords: null
-  course_length: 1+ weeks
   instruction_medium:
   - blog post
   - Hands-on tutorial / notebooks
@@ -1574,7 +1573,7 @@
   platform: null
   keywords:
   - Machine Learning
-  course_length: 
+  course_length:
   - 1+ weeks
   instruction_medium: null
   delivery: null
@@ -1597,18 +1596,19 @@
   - JB
   course_name: Reproducible Pipelines for Neuroimaging Research
   url: https://sina-mansour.github.io/ohbm2025-reproducible-research/intro.html
-  level: 
+  level:
   - Beginner
   - Intermediate
   platform: null
   keywords: null
-  course_length: 
+  course_length:
   - 1-4 hrs
-  instruction_medium: 
+  instruction_medium:
   - lecture
   delivery: null
-  language: English
-  programming_language: 
+  language:
+  - English
+  programming_language:
   - Python
   neuroimaging_software: null
   imaging_modality: null
@@ -1623,3 +1623,12 @@
   alias_links: null
   notes: null
   quadrants: null
+- id: 62
+  tag_team:
+  - JB
+  course_name: ABCD Repronim course
+  url: https://www.abcd-repronim.org/
+  course_length: 1+ weeks
+  delivery:
+  - self-paced
+  open_dataset: NA
