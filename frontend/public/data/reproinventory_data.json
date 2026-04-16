@@ -508,7 +508,8 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Linux"
     ],
     "keywords": [
       "Pre-registration",
@@ -528,13 +529,15 @@
       "English"
     ],
     "programming_language": [
-      "NA"
+      "Python",
+      "shell scripting"
     ],
     "neuroimaging_software": [
-      "NA"
+      "FSL"
     ],
     "imaging_modality": [
-      "NA"
+      "Functional",
+      "Structural"
     ],
     "open_dataset": false,
     "last_updated": "2021",
@@ -567,7 +570,7 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Jupyter"
     ],
     "keywords": [
       "BIDS",
@@ -632,7 +635,7 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Jupyter"
     ],
     "keywords": [
       "nilearn",
@@ -695,7 +698,7 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Jupyter"
     ],
     "keywords": [
       "dMRI",
@@ -708,7 +711,9 @@
     "instruction_medium": [
       "Hands-on tutorial / notebooks"
     ],
-    "delivery": null,
+    "delivery": [
+      "self-paced"
+    ],
     "language": [
       "English"
     ],
@@ -768,7 +773,9 @@
     "instruction_medium": [
       "notes"
     ],
-    "delivery": null,
+    "delivery": [
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -779,9 +786,10 @@
       "Multiple"
     ],
     "imaging_modality": [
-      "NA"
+      "Functional",
+      "Structural"
     ],
-    "open_dataset": null,
+    "open_dataset": false,
     "last_updated": "2020",
     "functionality": null,
     "assessment": false,
@@ -814,7 +822,9 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Windows",
+      "Linux"
     ],
     "keywords": [
       "Rehabilitation",
@@ -825,7 +835,10 @@
     "instruction_medium": [
       "video"
     ],
-    "delivery": null,
+    "delivery": [
+      "self-paced",
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -883,7 +896,9 @@
     "instruction_medium": [
       "Hands-on tutorial / notebooks"
     ],
-    "delivery": null,
+    "delivery": [
+      "self-paced"
+    ],
     "language": [
       "English"
     ],
@@ -928,7 +943,8 @@
       "Intermediate"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Linux"
     ],
     "keywords": [
       "Syllabus",
@@ -939,7 +955,9 @@
     "instruction_medium": [
       "lecture"
     ],
-    "delivery": null,
+    "delivery": [
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -985,7 +1003,9 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Windows",
+      "Linux"
     ],
     "keywords": [
       "BIDS",
@@ -996,7 +1016,9 @@
     "instruction_medium": [
       "lecture"
     ],
-    "delivery": null,
+    "delivery": [
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -1011,7 +1033,7 @@
     "imaging_modality": [
       "Functional"
     ],
-    "open_dataset": null,
+    "open_dataset": false,
     "last_updated": "NA",
     "functionality": null,
     "assessment": true,
@@ -1043,7 +1065,9 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Windows",
+      "Linux"
     ],
     "keywords": [
       "syllabus",
@@ -1055,7 +1079,9 @@
     "instruction_medium": [
       "notes"
     ],
-    "delivery": null,
+    "delivery": [
+      "self-paced"
+    ],
     "language": [
       "English"
     ],
@@ -1068,7 +1094,7 @@
     "imaging_modality": [
       "MRI"
     ],
-    "open_dataset": null,
+    "open_dataset": false,
     "last_updated": "2020",
     "functionality": null,
     "assessment": false,
@@ -1099,7 +1125,9 @@
       "Intermediate"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Windows",
+      "Linux"
     ],
     "keywords": [
       "DataLad",
@@ -1126,7 +1154,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": null,
+    "open_dataset": false,
     "last_updated": "2024",
     "functionality": "2025",
     "assessment": false,
@@ -1159,7 +1187,9 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Windows",
+      "Linux"
     ],
     "keywords": [
       "AI",
@@ -1169,7 +1199,9 @@
     "instruction_medium": [
       "video"
     ],
-    "delivery": null,
+    "delivery": [
+      "self-paced"
+    ],
     "language": [
       "English",
       "German"
@@ -1183,7 +1215,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": null,
+    "open_dataset": false,
     "last_updated": "2024",
     "functionality": null,
     "assessment": false,
@@ -1212,7 +1244,9 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Windows",
+      "Linux"
     ],
     "keywords": [
       "Datalad",
@@ -1223,7 +1257,9 @@
     "instruction_medium": [
       "video"
     ],
-    "delivery": null,
+    "delivery": [
+      "self-paced"
+    ],
     "language": [
       "English"
     ],
@@ -1265,7 +1301,8 @@
       "Intermediate"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Linux"
     ],
     "keywords": [
       "Datalad",
@@ -1321,7 +1358,9 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Windows",
+      "Linux"
     ],
     "keywords": [
       "Git",
@@ -1331,7 +1370,10 @@
     "instruction_medium": [
       "notes"
     ],
-    "delivery": null,
+    "delivery": [
+      "self-paced",
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -1344,7 +1386,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": null,
+    "open_dataset": false,
     "last_updated": "2024",
     "functionality": null,
     "assessment": false,
@@ -1374,7 +1416,8 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Jupyter",
+      "Linux"
     ],
     "keywords": [
       "Git",
@@ -1387,7 +1430,9 @@
     "instruction_medium": [
       "lecture"
     ],
-    "delivery": null,
+    "delivery": [
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -1431,7 +1476,8 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Linux"
     ],
     "keywords": [
       "Syllabus",
@@ -1446,7 +1492,9 @@
     "instruction_medium": [
       "notes"
     ],
-    "delivery": null,
+    "delivery": [
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -1459,7 +1507,7 @@
     "imaging_modality": [
       "MRI"
     ],
-    "open_dataset": null,
+    "open_dataset": true,
     "last_updated": "2019",
     "functionality": null,
     "assessment": false,
@@ -1503,7 +1551,9 @@
       "notes",
       "outline"
     ],
-    "delivery": null,
+    "delivery": [
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -1516,7 +1566,7 @@
     "imaging_modality": [
       "MRI"
     ],
-    "open_dataset": null,
+    "open_dataset": false,
     "last_updated": "2019",
     "functionality": null,
     "assessment": false,
@@ -1550,7 +1600,7 @@
       "Intermediate"
     ],
     "platform": [
-      "NA"
+      "Linux"
     ],
     "keywords": [
       "DataLad",
@@ -1561,7 +1611,9 @@
     "instruction_medium": [
       "Hands-on tutorial / notebooks"
     ],
-    "delivery": null,
+    "delivery": [
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -1607,7 +1659,8 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Linux"
     ],
     "keywords": [
       "fMRI",
@@ -1617,7 +1670,9 @@
     "instruction_medium": [
       "lecture"
     ],
-    "delivery": null,
+    "delivery": [
+      "self-paced"
+    ],
     "language": [
       "English"
     ],
@@ -1663,7 +1718,8 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Linux"
     ],
     "keywords": [
       "fMRI analysis",
@@ -1674,20 +1730,22 @@
     "instruction_medium": [
       "lecture"
     ],
-    "delivery": null,
+    "delivery": [
+      "instructor"
+    ],
     "language": [
       "English"
     ],
     "programming_language": [
-      "NA"
+      "shell scripting"
     ],
     "neuroimaging_software": [
-      "NA"
+      "FSL"
     ],
     "imaging_modality": [
       "Functional"
     ],
-    "open_dataset": null,
+    "open_dataset": false,
     "last_updated": "2019",
     "functionality": null,
     "assessment": false,
@@ -1732,7 +1790,9 @@
     "instruction_medium": [
       "lecture"
     ],
-    "delivery": null,
+    "delivery": [
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -1745,7 +1805,7 @@
     "imaging_modality": [
       "NA"
     ],
-    "open_dataset": null,
+    "open_dataset": false,
     "last_updated": "2019",
     "functionality": null,
     "assessment": false,
@@ -1786,7 +1846,10 @@
     "instruction_medium": [
       "Hands-on tutorial / notebooks"
     ],
-    "delivery": null,
+    "delivery": [
+      "self-paced",
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -1828,7 +1891,8 @@
       "Beginner"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Linux"
     ],
     "keywords": [
       "Lesson plan"
@@ -1837,7 +1901,9 @@
     "instruction_medium": [
       "reference"
     ],
-    "delivery": null,
+    "delivery": [
+      "self-paced"
+    ],
     "language": [
       "English"
     ],
@@ -1914,7 +1980,7 @@
     "open_dataset": true,
     "last_updated": null,
     "functionality": null,
-    "assessment": null,
+    "assessment": true,
     "prerequisite": [
       "Basic Python",
       "Introductory statistics",
@@ -1955,10 +2021,18 @@
       "Python",
       "version control"
     ],
-    "course_length": "NA",
-    "instruction_medium": null,
-    "delivery": null,
-    "language": null,
+    "course_length": "1+ weeks",
+    "instruction_medium": [
+      "lecture",
+      "Hands-on tutorial / notebooks",
+      "website"
+    ],
+    "delivery": [
+      "instructor"
+    ],
+    "language": [
+      "English"
+    ],
     "programming_language": [
       "Python",
       "shell scripting",
@@ -1971,12 +2045,15 @@
       "Multiple"
     ],
     "imaging_modality": [
-      "NA"
+      "Structural",
+      "Functional",
+      "EEG",
+      "MEG"
     ],
     "open_dataset": true,
     "last_updated": null,
     "functionality": null,
-    "assessment": null,
+    "assessment": true,
     "prerequisite": [
       "Basic Python programming",
       "Familiarity with neuroimaging concepts"
@@ -2018,10 +2095,17 @@
       "summer institute",
       "collaborative"
     ],
-    "course_length": "NA",
-    "instruction_medium": null,
-    "delivery": null,
-    "language": null,
+    "course_length": "1+ weeks",
+    "instruction_medium": [
+      "lecture",
+      "Hands-on tutorial / notebooks"
+    ],
+    "delivery": [
+      "instructor"
+    ],
+    "language": [
+      "English"
+    ],
     "programming_language": [
       "Python",
       "R",
@@ -2042,7 +2126,7 @@
     "open_dataset": true,
     "last_updated": null,
     "functionality": null,
-    "assessment": null,
+    "assessment": true,
     "prerequisite": [
       "Basic Python or programming experience",
       "Graduate-level neuroscience or related field"
@@ -2082,14 +2166,23 @@
       "open science",
       "tutorials"
     ],
-    "course_length": "NA",
-    "instruction_medium": null,
-    "delivery": null,
-    "language": null,
+    "course_length": "1+ weeks",
+    "instruction_medium": [
+      "lecture",
+      "Hands-on tutorial / notebooks"
+    ],
+    "delivery": [
+      "instructor"
+    ],
+    "language": [
+      "English"
+    ],
     "programming_language": [
       "Python"
     ],
-    "neuroimaging_software": null,
+    "neuroimaging_software": [
+      "NA"
+    ],
     "imaging_modality": [
       "Functional",
       "Resting-State",
@@ -2098,7 +2191,7 @@
     "open_dataset": true,
     "last_updated": null,
     "functionality": null,
-    "assessment": null,
+    "assessment": true,
     "prerequisite": [
       "Linear algebra",
       "Basic calculus",
@@ -2129,7 +2222,9 @@
       "Advanced"
     ],
     "platform": [
-      "NA"
+      "Mac",
+      "Windows",
+      "Linux"
     ],
     "keywords": [
       "List of resources"
@@ -2186,16 +2281,6 @@
     "course_name": "Andy's brain book",
     "url": "https://andysbrainbook.readthedocs.io/en/latest/",
     "course_length": "1+ weeks",
-    "level": null,
-    "platform": null,
-    "keywords": null,
-    "instruction_medium": [
-      "blog post",
-      "Hands-on tutorial / notebooks"
-    ],
-    "open_dataset": true,
-    "last_updated": 2026,
-    "description": "Andy's Brain Book is a comprehensive, beginner-friendly online textbook covering neuroimaging analysis with major software packages including FSL, SPM, AFNI, and Freesurfer, using real datasets and step-by-step tutorials. It is widely used as an introductory reference for fMRI and structural MRI analysis.",
     "level": [
       "Beginner",
       "Intermediate"
@@ -2218,6 +2303,13 @@
       "connectivity",
       "tractography"
     ],
+    "instruction_medium": [
+      "blog post",
+      "Hands-on tutorial / notebooks"
+    ],
+    "open_dataset": true,
+    "last_updated": 2026,
+    "description": "Andy's Brain Book is a comprehensive, beginner-friendly online textbook covering neuroimaging analysis with major software packages including FSL, SPM, AFNI, and Freesurfer, using real datasets and step-by-step tutorials. It is widely used as an introductory reference for fMRI and structural MRI analysis.",
     "prerequisite": null,
     "quadrants": [
       "learning-oriented (tutorials)",
@@ -2242,7 +2334,14 @@
       "AFNI",
       "Freesurfer",
       "Multiple"
-    ]
+    ],
+    "delivery": [
+      "self-paced"
+    ],
+    "language": [
+      "English"
+    ],
+    "assessment": false
   },
   {
     "id": 59,
@@ -2269,9 +2368,17 @@
       "open data"
     ],
     "course_length": "1+ weeks",
-    "instruction_medium": null,
-    "delivery": null,
-    "language": null,
+    "instruction_medium": [
+      "video",
+      "lecture"
+    ],
+    "delivery": [
+      "self-paced",
+      "instructor"
+    ],
+    "language": [
+      "English"
+    ],
     "programming_language": [
       "Python",
       "R",
@@ -2289,7 +2396,7 @@
     "open_dataset": true,
     "last_updated": null,
     "functionality": null,
-    "assessment": null,
+    "assessment": true,
     "prerequisite": [
       "Basic Python or R programming",
       "Introductory neuroimaging knowledge",
@@ -2326,9 +2433,15 @@
     "course_length": [
       "1+ weeks"
     ],
-    "instruction_medium": null,
-    "delivery": null,
-    "language": null,
+    "instruction_medium": [
+      "video"
+    ],
+    "delivery": [
+      "self-paced"
+    ],
+    "language": [
+      "English"
+    ],
     "programming_language": [
       "Python"
     ],
@@ -2378,7 +2491,9 @@
       "Best Practices",
       "Data Visualization"
     ],
-    "delivery": null,
+    "delivery": [
+      "instructor"
+    ],
     "language": [
       "English"
     ],
@@ -2395,7 +2510,7 @@
     "open_dataset": true,
     "last_updated": 2025,
     "functionality": null,
-    "assessment": null,
+    "assessment": false,
     "prerequisite": [
       "Basic neuroimaging experience",
       "Familiarity with command-line tools",
@@ -2409,6 +2524,11 @@
       "problem-oriented (how to guides)",
       "understanding-oriented (explanation)"
     ],
-    "description": "Comprehensive website describing the necessity of reproducible research and how to achieve it (notebooks, visualisation)"
+    "description": "Comprehensive website describing the necessity of reproducible research and how to achieve it (notebooks, visualisation)",
+    "instruction_medium": [
+      "website",
+      "Hands-on tutorial / notebooks"
+    ],
+    "course_length": "1-4 hrs"
   }
 ]

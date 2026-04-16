@@ -36,15 +36,14 @@
   open_dataset: false
   last_updated: '2023'
   assessment: false
-  prerequisite: null
+  prerequisite:
   source:
   - ReproNim
   - Johanna Bayer
   - Fellow-22
-  description: A beginner-friendly course introducing Git and GitHub for version control
-    and collaboration, covering online GitHub workflows and local machine setup with
-    GitHub Desktop, progressing from basic concepts to managing merge conflicts.
-  notes: null
+  description: A beginner-friendly course introducing Git and GitHub for version control and collaboration, covering online
+    GitHub workflows and local machine setup with GitHub Desktop, progressing from basic concepts to managing merge conflicts.
+  notes:
   quadrants:
   - problem-oriented (how to guides)
   - learning-oriented (tutorials)
@@ -53,8 +52,8 @@
   - CW
   - JB
   course_name: 'Data Science in Communication: Python and Reproducible Research'
-  url: 'GitHub - yibeichan/COMM160DS: COMM 160DS: Data Science in Communication: Python
-    and Reproducible Research (Spring 2023, University of California, Santa Barbara)'
+  url: 'GitHub - yibeichan/COMM160DS: COMM 160DS: Data Science in Communication: Python and Reproducible Research (Spring
+    2023, University of California, Santa Barbara)'
   level:
   - Beginner
   platform:
@@ -86,7 +85,7 @@
   - NA
   open_dataset: true
   last_updated: '2023'
-  functionality: null
+  functionality:
   assessment: true
   prerequisite:
   - Basic Python
@@ -96,10 +95,9 @@
   - Yibei Chen
   - Fellow-22
   - UCSB
-  description: JupyterHub no longer accessible. Need to link GitHubClassroom to GitHub
-    (uclear if links work once you do that)
-  alias_links: null
-  notes: null
+  description: JupyterHub no longer accessible. Need to link GitHubClassroom to GitHub (uclear if links work once you do that)
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
 - id: 7
@@ -108,7 +106,8 @@
   - CF
   - JB
   course_name: Reproducible Data Management with DataLad - University of Munster 18/11/22
-  url: https://onedrive.live.com/?authkey=%21AFsNiGzveqZ750s&id=86184EF59C004002%21416672&cid=86184EF59C004002&parId=root&parQt=sharedby&o=OneUp
+  url: 
+    https://onedrive.live.com/?authkey=%21AFsNiGzveqZ750s&id=86184EF59C004002%21416672&cid=86184EF59C004002&parId=root&parQt=sharedby&o=OneUp
   level:
   - Beginner
   platform:
@@ -133,7 +132,7 @@
   - NA
   open_dataset: false
   last_updated: '2022'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Basic Git
@@ -143,7 +142,7 @@
   - Fellow-22
   - Donders Institute
   description: Short slide deck, very clear
-  alias_links: null
+  alias_links:
   notes: link does not work for me (JB) can someone double check
   quadrants:
   - understanding-oriented (explanation)
@@ -152,7 +151,8 @@
   - CW
   - CF
   course_name: Reproducible Data Management with DataLad - MEG/EEG Meeting DCCN 2022-11-28
-  url: https://onedrive.live.com/?authkey=%21AANsp4ZosaSOK2o&id=86184EF59C004002%21416988&cid=86184EF59C004002&parId=root&parQt=sharedby&o=OneUp
+  url: 
+    https://onedrive.live.com/?authkey=%21AANsp4ZosaSOK2o&id=86184EF59C004002%21416988&cid=86184EF59C004002&parId=root&parQt=sharedby&o=OneUp
   level:
   - Beginner
   platform:
@@ -178,7 +178,7 @@
   - NA
   open_dataset: false
   last_updated: '2022'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Basic Git
@@ -187,10 +187,9 @@
   - Julian Kosciessa
   - Fellow-22
   - Donders Institute
-  description: Relatively quick overview - more just what is DataLad vs detailed how
-    to use
-  alias_links: null
-  notes: null
+  description: Relatively quick overview - more just what is DataLad vs detailed how to use
+  alias_links:
+  notes:
   quadrants:
   - information-oriented (reference)
   - understanding-oriented (explanation)
@@ -200,7 +199,8 @@
   - CF
   - JB
   course_name: Reusable (big) data management with DataLad - Donders Nexus
-  url: https://1drv.ms/b/s!AgJAAJz1ThiGms0Vdo-WifbI8FKPOA?e%3DourGa2&sa=D&source=editors&ust=1718948936539613&usg=AOvVaw0nBhMBkdri9NRmpgP0Wfu1
+  url: 
+    https://1drv.ms/b/s!AgJAAJz1ThiGms0Vdo-WifbI8FKPOA?e%3DourGa2&sa=D&source=editors&ust=1718948936539613&usg=AOvVaw0nBhMBkdri9NRmpgP0Wfu1
   level:
   - Beginner
   platform:
@@ -226,7 +226,7 @@
   - NA
   open_dataset: false
   last_updated: '2022'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Basic Git
@@ -236,8 +236,8 @@
   - Fellow-22
   - Donders Institute
   description: Very short slide deck on GIT
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - understanding-oriented (explanation)
   - information-oriented (reference)
@@ -271,17 +271,17 @@
   - NA
   open_dataset: false
   last_updated: '2023'
-  functionality: null
+  functionality:
   assessment: false
-  prerequisite: null
+  prerequisite:
   source:
   - ReproNim
   - Julian Kosciessa
   - Fellow-22
   - Donders Institute
   description: Practical intro to bash and git
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - understanding-oriented (explanation)
 - id: 11
@@ -324,7 +324,7 @@
   - MRI
   open_dataset: true
   last_updated: '2022'
-  functionality: null
+  functionality:
   assessment: true
   prerequisite:
   - MRI preprocessing
@@ -334,10 +334,9 @@
   - ReproNim
   - Celine Provins
   - Fellow-22
-  description: Focuses on QC in reference to MRIQC; has lots of big picture info about
-    QC/QA in general
-  alias_links: null
-  notes: null
+  description: Focuses on QC in reference to MRIQC; has lots of big picture info about QC/QA in general
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
 - id: 16
@@ -370,7 +369,7 @@
   - NA
   open_dataset: false
   last_updated: '2022'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Shell scripting
@@ -379,8 +378,8 @@
   - Avery Van De Water
   - Fellow-22
   description: labeled as part 1 - unclear where part 2 is
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
 - id: 18
@@ -392,7 +391,8 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Linux
   keywords:
   - Pre-registration
   - Plan
@@ -407,11 +407,13 @@
   language:
   - English
   programming_language:
-  - NA
+  - Python
+  - shell scripting
   neuroimaging_software:
-  - NA
+  - FSL
   imaging_modality:
-  - NA
+  - Functional
+  - Structural
   open_dataset: false
   last_updated: '2021'
   functionality: NA
@@ -423,7 +425,7 @@
   - ReproNim
   - Karolina Finc
   description: Some sections are under-developed
-  alias_links: null
+  alias_links:
   notes: Reproducible Neuroimaging, tutorial guide, for cog sci students audience
   quadrants:
   - learning-oriented (tutorials)
@@ -436,7 +438,7 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Jupyter
   keywords:
   - BIDS
   - DataLad
@@ -462,7 +464,7 @@
   - MRI
   open_dataset: true
   last_updated: '2024'
-  functionality: null
+  functionality:
   assessment: true
   prerequisite:
   - Unix
@@ -472,8 +474,8 @@
   - MIchael Joseph
   - Fellow-20
   description: Basic Imaging Overview. Focus on BIDS
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - understanding-oriented (explanation)
@@ -486,7 +488,7 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Jupyter
   keywords:
   - nilearn
   - resting state
@@ -512,7 +514,7 @@
   - Functional
   open_dataset: true
   last_updated: '2024'
-  functionality: null
+  functionality:
   assessment: true
   prerequisite:
   - Python
@@ -521,8 +523,8 @@
   - MIchael Joseph
   - Fellow-20
   description: Tutorial on functional neuroimaging in Python
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -534,7 +536,7 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Jupyter
   keywords:
   - dMRI
   - carpentries
@@ -544,7 +546,8 @@
   course_length: 1 day
   instruction_medium:
   - Hands-on tutorial / notebooks
-  delivery: null
+  delivery:
+  - self-paced
   language:
   - English
   programming_language:
@@ -555,7 +558,7 @@
   - DWI
   open_dataset: true
   last_updated: '2024'
-  functionality: null
+  functionality:
   assessment: true
   prerequisite:
   - Unix
@@ -564,11 +567,10 @@
   - ReproNim
   - MIchael Joseph
   - Fellow-20
-  description: A Carpentries Incubator lesson introducing diffusion MRI concepts and
-    data organization using BIDS, with hands-on analysis using Python-based tools
-    like Dipy and Nibabel.
-  alias_links: null
-  notes: null
+  description: A Carpentries Incubator lesson introducing diffusion MRI concepts and data organization using BIDS, with hands-on
+    analysis using Python-based tools like Dipy and Nibabel.
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -592,7 +594,8 @@
   course_length: 1 week
   instruction_medium:
   - notes
-  delivery: null
+  delivery:
+  - instructor
   language:
   - English
   programming_language:
@@ -600,10 +603,11 @@
   neuroimaging_software:
   - Multiple
   imaging_modality:
-  - NA
-  open_dataset: null
+  - Functional
+  - Structural
+  open_dataset: false
   last_updated: '2020'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Unix
@@ -613,8 +617,8 @@
   - Jennifer Legault
   - Fellow-20
   description: example syllabus for hackathon/course
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - understanding-oriented (explanation)
   - learning-oriented (tutorials)
@@ -627,7 +631,9 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Windows
+  - Linux
   keywords:
   - Rehabilitation
   - data sharing
@@ -635,7 +641,9 @@
   course_length: 1+ weeks
   instruction_medium:
   - video
-  delivery: null
+  delivery:
+  - self-paced
+  - instructor
   language:
   - English
   programming_language:
@@ -647,7 +655,7 @@
   - NA
   open_dataset: true
   last_updated: '2023'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Basic statistics
@@ -658,8 +666,8 @@
   - Fellow-20
   - ReproRehab
   description: Entire first year bootcamp videos online
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - understanding-oriented (explanation)
@@ -679,7 +687,8 @@
   course_length: 1+ weeks
   instruction_medium:
   - Hands-on tutorial / notebooks
-  delivery: null
+  delivery:
+  - self-paced
   language:
   - English
   programming_language:
@@ -690,7 +699,7 @@
   - Functional
   open_dataset: true
   last_updated: '2020'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - basic programming
@@ -699,10 +708,9 @@
   - Elizabeth McDevitt
   - Fellow-20
   - Princeton
-  description: Jupyter tutorials from the basics to advanced machine learning analyses
-    on fMRI data
-  alias_links: null
-  notes: null
+  description: Jupyter tutorials from the basics to advanced machine learning analyses on fMRI data
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -714,7 +722,8 @@
   level:
   - Intermediate
   platform:
-  - NA
+  - Mac
+  - Linux
   keywords:
   - Syllabus
   - MRI
@@ -722,7 +731,8 @@
   course_length: 1+ weeks
   instruction_medium:
   - lecture
-  delivery: null
+  delivery:
+  - instructor
   language:
   - English
   programming_language:
@@ -734,7 +744,7 @@
   - Functional
   open_dataset: true
   last_updated: '2020'
-  functionality: null
+  functionality:
   assessment: true
   prerequisite:
   - Basic neuroscience knowledge
@@ -744,8 +754,8 @@
   - Chris Rorden
   - Fellow-20
   description: Syllabus for course on fMRI, including slides, from collection to inferencing
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - understanding-oriented (explanation)
@@ -757,7 +767,9 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Windows
+  - Linux
   keywords:
   - BIDS
   - fMRI
@@ -765,7 +777,8 @@
   course_length: 1+ weeks
   instruction_medium:
   - lecture
-  delivery: null
+  delivery:
+  - instructor
   language:
   - English
   programming_language:
@@ -776,9 +789,9 @@
   - Multiple
   imaging_modality:
   - Functional
-  open_dataset: null
+  open_dataset: false
   last_updated: NA
-  functionality: null
+  functionality:
   assessment: true
   prerequisite:
   - moderate programming experience
@@ -788,8 +801,8 @@
   - Julie Schneider
   - Fellow-20
   description: Syllabus for reproducible neuroimaging multi-week course
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -801,7 +814,9 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Windows
+  - Linux
   keywords:
   - syllabus
   - BIDS
@@ -810,7 +825,8 @@
   course_length: 1-3 days
   instruction_medium:
   - notes
-  delivery: null
+  delivery:
+  - self-paced
   language:
   - English
   programming_language:
@@ -819,9 +835,9 @@
   - Freesurfer
   imaging_modality:
   - MRI
-  open_dataset: null
+  open_dataset: false
   last_updated: '2020'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - UNIX
@@ -829,8 +845,8 @@
   source:
   - ReproNim
   description: syllabus for tutorial; details unclear. Might be unfinished.
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - information-oriented (reference)
@@ -843,7 +859,9 @@
   level:
   - Intermediate
   platform:
-  - NA
+  - Mac
+  - Windows
+  - Linux
   keywords:
   - DataLad
   - version control
@@ -862,7 +880,7 @@
   - NA
   imaging_modality:
   - NA
-  open_dataset: null
+  open_dataset: false
   last_updated: '2024'
   functionality: '2025'
   assessment: false
@@ -872,8 +890,8 @@
   - ReproNim
   - Adina Wagner
   description: very good resource for data provenance
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - information-oriented (reference)
@@ -888,14 +906,17 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Windows
+  - Linux
   keywords:
   - AI
   - chatbots
   course_length: 1+ weeks
   instruction_medium:
   - video
-  delivery: null
+  delivery:
+  - self-paced
   language:
   - English
   - German
@@ -905,16 +926,16 @@
   - NA
   imaging_modality:
   - NA
-  open_dataset: null
+  open_dataset: false
   last_updated: '2024'
-  functionality: null
+  functionality:
   assessment: false
-  prerequisite: null
+  prerequisite:
   source:
   - AI campus
   description: Nice videos and course material on AI
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - understanding-oriented (explanation)
@@ -928,7 +949,9 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Windows
+  - Linux
   keywords:
   - Datalad
   - Version Control
@@ -936,7 +959,8 @@
   course_length: 1-4 hrs
   instruction_medium:
   - video
-  delivery: null
+  delivery:
+  - self-paced
   language:
   - English
   programming_language:
@@ -947,16 +971,16 @@
   - NA
   open_dataset: false
   last_updated: '2021'
-  functionality: null
+  functionality:
   assessment: false
-  prerequisite: null
+  prerequisite:
   source:
   - ReproNim
   - Lennart Wittkuhn
   - Adina Wagner
   description: Good video
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - understanding-oriented (explanation)
@@ -968,7 +992,8 @@
   level:
   - Intermediate
   platform:
-  - NA
+  - Mac
+  - Linux
   keywords:
   - Datalad
   - MPI
@@ -988,15 +1013,16 @@
   - NA
   open_dataset: false
   last_updated: '2020'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Basic Git
   - Unix
-  source: null
-  description: Course outline for Data Lad Course
-  alias_links: null
-  notes: null
+  source:
+  - Adina Wagner
+  - Max Planck Institute
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -1010,14 +1036,18 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Windows
+  - Linux
   keywords:
   - Git
   - Version Control
   course_length: 1+ weeks
   instruction_medium:
   - notes
-  delivery: null
+  delivery:
+  - self-paced
+  - instructor
   language:
   - English
   programming_language:
@@ -1026,20 +1056,18 @@
   - NA
   imaging_modality:
   - NA
-  open_dataset: null
+  open_dataset: false
   last_updated: '2024'
-  functionality: null
+  functionality:
   assessment: false
-  prerequisite: null
+  prerequisite:
   source:
   - ReproNim
   - Lennart Wittkuhn
-  description: An open-access online book that teaches version control using Git,
-    designed for researchers with no prior experience. It covers core Git concepts
-    and workflows through hands-on exercises and practical examples relevant to scientific
-    work.
-  alias_links: null
-  notes: null
+  description: An open-access online book that teaches version control using Git, designed for researchers with no prior experience.
+    It covers core Git concepts and workflows through hands-on exercises and practical examples relevant to scientific work.
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - information-oriented (reference)
@@ -1053,7 +1081,8 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Jupyter
+  - Linux
   keywords:
   - Git
   - Reproducibility
@@ -1063,7 +1092,8 @@
   course_length: 1+ weeks
   instruction_medium:
   - lecture
-  delivery: null
+  delivery:
+  - instructor
   language:
   - English
   programming_language:
@@ -1074,7 +1104,7 @@
   - NA
   open_dataset: true
   last_updated: '2021'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Basic familiarity with Python recommended
@@ -1082,8 +1112,8 @@
   - ReproNim
   - Xihe Xie
   description: Review of previous materials, full course
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - understanding-oriented (explanation)
@@ -1096,7 +1126,8 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Linux
   keywords:
   - Syllabus
   - shell scripting
@@ -1108,7 +1139,8 @@
   course_length: 1-3 days
   instruction_medium:
   - notes
-  delivery: null
+  delivery:
+  - instructor
   language:
   - English
   programming_language:
@@ -1117,9 +1149,9 @@
   - Python
   imaging_modality:
   - MRI
-  open_dataset: null
+  open_dataset: true
   last_updated: '2019'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Basic Python
@@ -1129,8 +1161,8 @@
   - Michael Dayan
   - Fellow-19
   description: Syllabus for ReproNim workshop
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - information-oriented (reference)
@@ -1151,7 +1183,8 @@
   instruction_medium:
   - notes
   - outline
-  delivery: null
+  delivery:
+  - instructor
   language:
   - English
   programming_language:
@@ -1160,9 +1193,9 @@
   - NA
   imaging_modality:
   - MRI
-  open_dataset: null
+  open_dataset: false
   last_updated: '2019'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Computational Methods
@@ -1171,10 +1204,9 @@
   - ReproNim
   - Aaron Kemp
   - Fellow-19
-  description: Syllabus for Research Imaging Informatics course. Overview of neuroimaging
-    methods and basic processing
-  alias_links: null
-  notes: null
+  description: Syllabus for Research Imaging Informatics course. Overview of neuroimaging methods and basic processing
+  alias_links:
+  notes:
   quadrants:
   - information-oriented (reference)
   - understanding-oriented (explanation)
@@ -1188,7 +1220,7 @@
   level:
   - Intermediate
   platform:
-  - NA
+  - Linux
   keywords:
   - DataLad
   - Boutiques
@@ -1196,7 +1228,8 @@
   course_length: 1-3 days
   instruction_medium:
   - Hands-on tutorial / notebooks
-  delivery: null
+  delivery:
+  - instructor
   language:
   - English
   programming_language:
@@ -1207,7 +1240,7 @@
   - NA
   open_dataset: false
   last_updated: '2020'
-  functionality: null
+  functionality:
   assessment: true
   prerequisite:
   - Basic Python
@@ -1216,8 +1249,8 @@
   source:
   - ReproNim
   description: Syllabus for workshop that has been given
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -1231,14 +1264,16 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Linux
   keywords:
   - fMRI
   - Multivariate analysis
   course_length: 1+ weeks
   instruction_medium:
   - lecture
-  delivery: null
+  delivery:
+  - self-paced
   language:
   - English
   programming_language:
@@ -1250,7 +1285,7 @@
   - Functional
   open_dataset: true
   last_updated: '2021'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Basic familiarity with neuroimaging concepts
@@ -1259,8 +1294,8 @@
   - ReproNim
   - Princeton
   description: Very nice overview of different fMRI topics
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - information-oriented (reference)
 - id: 47
@@ -1273,7 +1308,8 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Linux
   keywords:
   - fMRI analysis
   - clinical
@@ -1281,18 +1317,19 @@
   course_length: 1 week
   instruction_medium:
   - lecture
-  delivery: null
+  delivery:
+  - instructor
   language:
   - English
   programming_language:
-  - NA
+  - shell scripting
   neuroimaging_software:
-  - NA
+  - FSL
   imaging_modality:
   - Functional
-  open_dataset: null
+  open_dataset: false
   last_updated: '2019'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Basic MRI knowledge
@@ -1301,8 +1338,8 @@
   - ReproNim
   - Etienne Roesch
   description: Pretty good if you want to teach fMRI analysis from scratch
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - understanding-oriented (explanation)
@@ -1325,7 +1362,8 @@
   course_length: 1-4 hrs
   instruction_medium:
   - lecture
-  delivery: null
+  delivery:
+  - instructor
   language:
   - English
   programming_language:
@@ -1334,19 +1372,18 @@
   - NA
   imaging_modality:
   - NA
-  open_dataset: null
+  open_dataset: false
   last_updated: '2019'
-  functionality: null
+  functionality:
   assessment: false
   prerequisite:
   - Basic neuroimaging knowledge
   source:
   - ReproNim
   - Sebastien Tourbier
-  description: Single presentation, good for an intro class to data management and
-    data version control
-  alias_links: null
-  notes: null
+  description: Single presentation, good for an intro class to data management and data version control
+  alias_links:
+  notes:
   quadrants:
   - information-oriented (reference)
   - understanding-oriented (explanation)
@@ -1366,7 +1403,9 @@
   course_length: 1+ weeks
   instruction_medium:
   - Hands-on tutorial / notebooks
-  delivery: null
+  delivery:
+  - self-paced
+  - instructor
   language:
   - English
   programming_language:
@@ -1377,15 +1416,15 @@
   - NA
   open_dataset: false
   last_updated: '2024'
-  functionality: null
+  functionality:
   assessment: false
-  prerequisite: null
+  prerequisite:
   source:
   - Carpentries
-  description: If you want to teach carpentries use this tool - not only shell scripting,
-    but also intro to R, Python and HPC
+  description: If you want to teach carpentries use this tool - not only shell scripting, but also intro to R, Python and
+    HPC
   alias_links: https://github.com/jdkent/incf-fellow-jdkent/blob/gh-pages/index.md
-  notes: null
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -1399,13 +1438,15 @@
   level:
   - Beginner
   platform:
-  - NA
+  - Mac
+  - Linux
   keywords:
   - Lesson plan
   course_length: <1 hr
   instruction_medium:
   - reference
-  delivery: null
+  delivery:
+  - self-paced
   language:
   - English
   programming_language:
@@ -1416,14 +1457,14 @@
   - NA
   open_dataset: false
   last_updated: NA
-  functionality: null
+  functionality:
   assessment: false
-  prerequisite: null
+  prerequisite:
   source:
   - ReproNim
   - David Warren
   description: For internal usage
-  alias_links: null
+  alias_links:
   notes: Link to Github Importer broken
   quadrants:
   - information-oriented (reference)
@@ -1462,19 +1503,21 @@
   imaging_modality:
   - MRI
   open_dataset: true
-  last_updated: null
-  functionality: null
-  assessment: null
+  last_updated: '2024'
+  functionality:
+  assessment: true
   prerequisite:
   - Basic Python
   - Introductory statistics
   - Basic neuroimaging knowledge
-  source: null
-  description: An introduction to machine learning concepts and methods in the context
-    of neuroimaging data, covering supervised learning, model evaluation, and practical
-    implementation in Python. Part of the QLS612 multi-week curriculum at McGill University.
-  alias_links: null
-  notes: null
+  source:
+  - McGill University
+  - NeuroDataScience
+  description: An introduction to machine learning concepts and methods in the context of neuroimaging data, covering supervised
+    learning, model evaluation, and practical implementation in Python. Part of the QLS612 multi-week curriculum at McGill
+    University.
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - understanding-oriented (explanation)
@@ -1499,10 +1542,15 @@
   - collaboration
   - Python
   - version control
-  course_length: NA
-  instruction_medium: null
-  delivery: null
-  language: null
+  course_length: 1+ weeks
+  instruction_medium:
+  - lecture
+  - Hands-on tutorial / notebooks
+  - website
+  delivery:
+  - instructor
+  language:
+  - English
   programming_language:
   - Python
   - shell scripting
@@ -1513,21 +1561,24 @@
   - Python
   - Multiple
   imaging_modality:
-  - NA
+  - Structural
+  - Functional
+  - EEG
+  - MEG
   open_dataset: true
-  last_updated: null
-  functionality: null
-  assessment: null
+  last_updated: '2022'
+  functionality:
+  assessment: true
   prerequisite:
   - Basic Python programming
   - Familiarity with neuroimaging concepts
-  source: null
-  description: Brainhack School is an intensive, project-based training program run
-    by a consortium of Canadian universities that teaches open and reproducible neuroscience.
-    Participants work on collaborative projects while learning modern data science
-    tools applied to neuroimaging.
-  alias_links: null
-  notes: null
+  source:
+  - Brainhack School
+  description: Brainhack School is an intensive, project-based training program run by a consortium of Canadian universities
+    that teaches open and reproducible neuroscience. Participants work on collaborative projects while learning modern data
+    science tools applied to neuroimaging.
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -1554,10 +1605,14 @@
   - Python
   - summer institute
   - collaborative
-  course_length: NA
-  instruction_medium: null
-  delivery: null
-  language: null
+  course_length: 1+ weeks
+  instruction_medium:
+  - lecture
+  - Hands-on tutorial / notebooks
+  delivery:
+  - instructor
+  language:
+  - English
   programming_language:
   - Python
   - R
@@ -1573,19 +1628,19 @@
   - Structural
   - Resting-State
   open_dataset: true
-  last_updated: null
-  functionality: null
-  assessment: null
+  last_updated: '2026'
+  functionality:
+  assessment: true
   prerequisite:
   - Basic Python or programming experience
   - Graduate-level neuroscience or related field
-  source: null
-  description: NeuroHackademy is a summer institute at the University of Washington
-    focused on data science and open neuroscience, combining lectures and hands-on
-    tutorials covering neuroimaging analysis, machine learning, and reproducible research
+  source:
+  - University of Washington
+  description: NeuroHackademy is a summer institute at the University of Washington focused on data science and open neuroscience,
+    combining lectures and hands-on tutorials covering neuroimaging analysis, machine learning, and reproducible research
     practices.
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - understanding-oriented (explanation)
@@ -1610,33 +1665,38 @@
   - online course
   - open science
   - tutorials
-  course_length: NA
-  instruction_medium: null
-  delivery: null
-  language: null
+  course_length: 1+ weeks
+  instruction_medium:
+  - lecture
+  - Hands-on tutorial / notebooks
+  delivery:
+  - instructor
+  language:
+  - English
   programming_language:
   - Python
-  neuroimaging_software: null
+  neuroimaging_software:
+  - NA
   imaging_modality:
   - Functional
   - Resting-State
   - Behavioral
   open_dataset: true
-  last_updated: null
-  functionality: null
-  assessment: null
+  last_updated: '2024'
+  functionality:
+  assessment: true
   prerequisite:
   - Linear algebra
   - Basic calculus
   - Python programming
   - Introductory neuroscience
-  source: null
-  description: Neuromatch Academy offers intensive online computational neuroscience
-    and deep learning courses through lectures, tutorials, and projects designed to
-    build skills in quantitative analysis of neural data. The curriculum covers modeling,
+  source:
+  - Neuromatch Academy
+  description: Neuromatch Academy offers intensive online computational neuroscience and deep learning courses through lectures,
+    tutorials, and projects designed to build skills in quantitative analysis of neural data. The curriculum covers modeling,
     data analysis, and machine learning applied to neuroscience.
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - understanding-oriented (explanation)
@@ -1652,7 +1712,9 @@
   - Intermediate
   - Advanced
   platform:
-  - NA
+  - Mac
+  - Windows
+  - Linux
   keywords:
   - List of resources
   course_length: 1+ weeks
@@ -1682,12 +1744,12 @@
   last_updated: '2024'
   functionality: '2024'
   assessment: false
-  prerequisite: null
+  prerequisite:
   source:
   - Github Repo added by Charlotte Fraze
   description: Great resource
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - information-oriented (reference)
 - id: 58
@@ -1696,18 +1758,23 @@
   course_name: Andy's brain book
   url: https://andysbrainbook.readthedocs.io/en/latest/
   course_length: 1+ weeks
-  level: null
-  platform: null
-  keywords: null
   instruction_medium:
   - blog post
   - Hands-on tutorial / notebooks
+  delivery:
+  - self-paced
+  language:
+  - English
+  assessment: false
   open_dataset: true
+  prerequisite:
+  source:
+  - Andrew Jahn
+  - University of Michigan
   last_updated: 2026
-  description: Andy's Brain Book is a comprehensive, beginner-friendly online textbook
-    covering neuroimaging analysis with major software packages including FSL, SPM,
-    AFNI, and Freesurfer, using real datasets and step-by-step tutorials. It is widely
-    used as an introductory reference for fMRI and structural MRI analysis.
+  description: Andy's Brain Book is a comprehensive, beginner-friendly online textbook covering neuroimaging analysis with
+    major software packages including FSL, SPM, AFNI, and Freesurfer, using real datasets and step-by-step tutorials. It is
+    widely used as an introductory reference for fMRI and structural MRI analysis.
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -1768,9 +1835,13 @@
   - open data
   course_length: 1+ weeks
 
-  instruction_medium: null
-  delivery: null
-  language: null
+  instruction_medium:
+  - video
+  - Hands-on tutorial / notebooks
+  delivery:
+  - Hybrid
+  language:
+  - English
   programming_language:
   - Python
   - R
@@ -1783,14 +1854,16 @@
   - Resting-State
   - DWI
   open_dataset: true
-  last_updated: null
+  last_updated: '2025'
   functionality: null
-  assessment: null
+  assessment: true
   prerequisite:
   - Basic Python or R programming
   - Introductory neuroimaging knowledge
   - Familiarity with MRI data
-  source: null
+  source:
+  - ABCD-ReproNim
+  - ReproNim
   description: A comprehensive course on reproducible neuroimaging using the Adolescent
     Brain Cognitive Development (ABCD) dataset, covering data access, processing pipelines,
     and ReproNim reproducibility principles. Designed for researchers working with
@@ -1816,9 +1889,12 @@
   - Machine Learning
   course_length:
   - 1+ weeks
-  instruction_medium: null
-  delivery: null
-  language: null
+  instruction_medium:
+  - video
+  delivery:
+  - self-paced
+  language:
+  - English
   programming_language:
   - Python
   neuroimaging_software:
@@ -1829,16 +1905,16 @@
   - Resting-State
   open_dataset: true
   last_updated: 2025
-  functionality: null
+  functionality:
   assessment: true
   prerequisite:
   - ABCD ReproNim course or equivalent
   - Basic Python programming
   - Introductory machine learning concepts
-  source: null
+  source:
   description: 3 week machone learning course
-  alias_links: null
-  notes: null
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -1857,9 +1933,12 @@
   - Reproducible Pipelines
   - Best Practices
   - Data Visualization
-  course_length: null
-  instruction_medium: null
-  delivery: null
+  course_length: 1-4 hrs
+  instruction_medium:
+  - website
+  - Hands-on tutorial / notebooks
+  delivery:
+  - instructor
   language:
   - English
   programming_language:
@@ -1871,17 +1950,16 @@
   - Functional
   open_dataset: true
   last_updated: 2025
-  functionality: null
-  assessment: null
+  functionality:
+  assessment: false
   prerequisite:
   - Basic neuroimaging experience
   - Familiarity with command-line tools
   - Basic Python or shell scripting
-  source: null
-  description: Comprehensive website describing the necessity of reproducible research
-    and how to achieve it (notebooks, visualisation)
-  alias_links: null
-  notes: null
+  source:
+  description: Comprehensive website describing the necessity of reproducible research and how to achieve it (notebooks, visualisation)
+  alias_links:
+  notes:
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
