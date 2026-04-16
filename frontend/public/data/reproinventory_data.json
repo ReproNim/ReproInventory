@@ -226,7 +226,8 @@
       "NA"
     ],
     "imaging_modality": [
-      "NA"
+      "EEG",
+      "MEG"
     ],
     "open_dataset": false,
     "last_updated": "2022",
