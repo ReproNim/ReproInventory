@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { getGitHubRepoUrl } from "@/lib/github";
 import { DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,11 +18,10 @@ import type {
     ProgrammingLanguageEnum,
     NeuroimagingSoftwareEnum,
     ImagingModalityEnum,
-    OpenDatasetEnum,
     QuadrantsEnum,
 } from "@/types/reproinventory";
 
-const GITHUB_REPO = "https://github.com/ReproNim/ReproInventory";
+const GITHUB_REPO = getGitHubRepoUrl();
 
 const levelOptions: LevelEnum[] = ["Beginner", "Intermediate", "Advanced", "NA"];
 const platformOptions: PlatformEnum[] = ["Mac", "Windows", "Linux", "Docker", "Jupyter", "NA"];
@@ -32,7 +32,6 @@ const languageOptions: LanguageEnum[] = ["English", "French", "Spanish", "Chines
 const programmingLanguageOptions: ProgrammingLanguageEnum[] = ["Python", "R", "shell scripting", "Matlab", "Git", "NA"];
 const neuroimagingSoftwareOptions: NeuroimagingSoftwareEnum[] = ["AFNI", "SPM", "FSL", "Freesurfer", "Python", "Multiple", "NA"];
 const imagingModalityOptions: ImagingModalityEnum[] = ["DWI", "Structural", "Functional", "Task-based", "Resting-State", "EEG", "Behavioral", "MEG", "MRI", "NA"];
-const openDatasetOptions: OpenDatasetEnum[] = ["True", "False", "NA"];
 const quadrantsOptions: QuadrantsEnum[] = ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"];
 
 function formatAsYaml(material: ReproInventoryEntry): string {
@@ -65,7 +64,7 @@ function formatAsYaml(material: ReproInventoryEntry): string {
     addList("neuroimaging_software", material.neuroimaging_software);
     addList("imaging_modality", material.imaging_modality);
     addScalar("open_dataset", material.open_dataset);
-    addScalar("review", material.review);
+    addScalar("description", material.description);
     addScalar("notes", material.notes);
     addList("quadrants", material.quadrants);
 
@@ -103,7 +102,7 @@ const AddMaterialDialog: React.FC<AddMaterialDialogProps> = ({ onClose }) => {
         neuroimaging_software: [],
         imaging_modality: [],
         open_dataset: undefined,
-        review: "",
+        description: "",
         notes: "",
         quadrants: [],
     });
@@ -175,11 +174,11 @@ const AddMaterialDialog: React.FC<AddMaterialDialogProps> = ({ onClose }) => {
                 </div>
 
                 <div className="grid grid-cols-4 items-center gap-4">
-                    <Label htmlFor="review" className="text-right">Description</Label>
+                    <Label htmlFor="description" className="text-right">Description</Label>
                     <Input
-                        id="review"
-                        value={material.review || ""}
-                        onChange={(e) => handleChange("review", e.target.value)}
+                        id="description"
+                        value={material.description || ""}
+                        onChange={(e) => handleChange("description", e.target.value)}
                         className="col-span-3"
                         placeholder="Brief description of the material"
                     />
@@ -368,19 +367,14 @@ const AddMaterialDialog: React.FC<AddMaterialDialogProps> = ({ onClose }) => {
                 {/* Open Dataset */}
                 <div className="grid grid-cols-4 items-center gap-4">
                     <Label className="text-right">Open Dataset</Label>
-                    <Select
-                        value={material.open_dataset || ""}
-                        onValueChange={(value) => handleChange("open_dataset", value as OpenDatasetEnum)}
-                    >
-                        <SelectTrigger className="col-span-3">
-                            <SelectValue placeholder="Select dataset availability" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            {openDatasetOptions.map((option) => (
-                                <SelectItem key={option} value={option}>{option}</SelectItem>
-                            ))}
-                        </SelectContent>
-                    </Select>
+                    <div className="col-span-3 flex items-center gap-2">
+                        <Checkbox
+                            id="open_dataset"
+                            checked={material.open_dataset === true}
+                            onCheckedChange={(checked) => handleChange("open_dataset", checked === true)}
+                        />
+                        <Label htmlFor="open_dataset" className="text-sm">Uses an open dataset</Label>
+                    </div>
                 </div>
 
                 {/* Quadrants */}
