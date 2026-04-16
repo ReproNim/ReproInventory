@@ -1,6 +1,7 @@
 "use client"
 
 import Footer from "@/components/Footer"
+import { getGitHubRepoUrl } from "@/lib/github"
 import { useState, useMemo, useEffect } from "react"
 import { Search, BookOpen, Video, FileText, Clock, ExternalLink } from "lucide-react" // Added ExternalLink
 import { Badge } from "@/components/ui/badge"
@@ -39,7 +40,7 @@ export default function TrainingMaterialsBrowser() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/ReproInventory/data/reproinventory_data.json")
+        const response = await fetch(`${import.meta.env.BASE_URL}data/reproinventory_data.json`)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
@@ -696,7 +697,7 @@ export default function TrainingMaterialsBrowser() {
                               const body =
                                 `## Delete Training Material Request\n\n` +
                                 `Please remove entry **ID: ${material.id}** ("${material.course_name}") from \`model/reproinventory_data.yaml\`.`;
-                              const url = `https://github.com/ReproNim/likeajumprope/issues/new?labels=delete-material&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+                              const url = `${getGitHubRepoUrl()}/issues/new?labels=delete-material&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
                               window.open(url, "_blank");
                             }}
                           >

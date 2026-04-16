@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { getGitHubRepoUrl } from "@/lib/github";
 import { DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,7 +21,7 @@ import type {
     QuadrantsEnum,
 } from "@/types/reproinventory";
 
-const GITHUB_REPO = "https://github.com/likeajumprope/ReproInventory";
+const GITHUB_REPO = getGitHubRepoUrl();
 
 function formatAsYaml(material: ReproInventoryEntry): string {
     const lines: string[] = [];
