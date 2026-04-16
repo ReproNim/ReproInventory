@@ -371,7 +371,7 @@ const AddMaterialDialog: React.FC<AddMaterialDialogProps> = ({ onClose }) => {
                         <Checkbox
                             id="open_dataset"
                             checked={material.open_dataset === true}
-                            onCheckedChange={(checked) => handleChange("open_dataset", checked === true ? true : null)}
+                            onCheckedChange={(checked) => handleChange("open_dataset", checked === true)}
                         />
                         <Label htmlFor="open_dataset" className="text-sm">Uses an open dataset</Label>
                     </div>
