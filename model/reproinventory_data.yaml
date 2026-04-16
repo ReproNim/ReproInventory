@@ -1891,6 +1891,7 @@
   - 1+ weeks
   instruction_medium:
   - video
+  - website
   delivery:
   - self-paced
   language:
@@ -1905,16 +1906,18 @@
   - Resting-State
   open_dataset: true
   last_updated: 2025
-  functionality:
+  functionality: null
   assessment: true
   prerequisite:
   - ABCD ReproNim course or equivalent
   - Basic Python programming
   - Introductory machine learning concepts
   source:
+  - ABCD-ReproNim
+  - ReproNim
   description: 3 week machone learning course
-  alias_links:
-  notes:
+  alias_links: null
+  notes: null
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
@@ -1950,16 +1953,18 @@
   - Functional
   open_dataset: true
   last_updated: 2025
-  functionality:
+  functionality: null
   assessment: false
   prerequisite:
   - Basic neuroimaging experience
   - Familiarity with command-line tools
   - Basic Python or shell scripting
   source:
+  - Sina Mansour L.
+  - OHBM 2025
   description: Comprehensive website describing the necessity of reproducible research and how to achieve it (notebooks, visualisation)
-  alias_links:
-  notes:
+  alias_links: null
+  notes: null
   quadrants:
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
