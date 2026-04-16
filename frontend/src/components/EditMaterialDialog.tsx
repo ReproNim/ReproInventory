@@ -473,7 +473,7 @@ const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onClo
                         <Checkbox
                             id="open_dataset"
                             checked={editedMaterial.open_dataset === true}
-                            onCheckedChange={(checked) => handleChange("open_dataset", checked === true ? true : null)}
+                            onCheckedChange={(checked) => handleChange("open_dataset", checked === true)}
                         />
                         <Label htmlFor="open_dataset" className="text-sm">Uses an open dataset</Label>
                     </div>
