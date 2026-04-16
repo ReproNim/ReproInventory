@@ -2185,7 +2185,10 @@
     ],
     "course_name": "Andy's brain book",
     "url": "https://andysbrainbook.readthedocs.io/en/latest/",
-    "course_length": "NA",
+    "course_length": "1+ weeks",
+    "level": null,
+    "platform": null,
+    "keywords": null,
     "instruction_medium": [
       "blog post",
       "Hands-on tutorial / notebooks"
@@ -2265,7 +2268,7 @@
       "large-scale data",
       "open data"
     ],
-    "course_length": "NA",
+    "course_length": "1+ weeks",
     "instruction_medium": null,
     "delivery": null,
     "language": null,
@@ -2320,7 +2323,9 @@
     "keywords": [
       "Machine Learning"
     ],
-    "course_length": "NA",
+    "course_length": [
+      "1+ weeks"
+    ],
     "instruction_medium": null,
     "delivery": null,
     "language": null,
@@ -2373,8 +2378,6 @@
       "Best Practices",
       "Data Visualization"
     ],
-    "course_length": null,
-    "instruction_medium": null,
     "delivery": null,
     "language": [
       "English"
