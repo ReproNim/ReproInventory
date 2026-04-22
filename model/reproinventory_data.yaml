@@ -95,7 +95,7 @@
   - Yibei Chen
   - Fellow-22
   - UCSB
-  description: JupyterHub no longer accessible. Need to link GitHubClassroom to GitHub (uclear if links work once you do that)
+  description: JupyterHub no longer accessible. Need to link GitHubClassroom to GitHub (unclear if links work once you do that)
   alias_links:
   notes:
   quadrants:
@@ -1022,6 +1022,7 @@
   source:
   - Adina Wagner
   - Max Planck Institute
+  description: Course outline for Data Lad Course  
   alias_links:
   notes:
   quadrants:
@@ -1772,7 +1773,7 @@
   source:
   - Andrew Jahn
   - University of Michigan
-  last_updated: 2026
+  last_updated: '2026'
   description: Andy's Brain Book is a comprehensive, beginner-friendly online textbook covering neuroimaging analysis with
     major software packages including FSL, SPM, AFNI, and Freesurfer, using real datasets and step-by-step tutorials. It is
     widely used as an introductory reference for fMRI and structural MRI analysis.
@@ -1916,7 +1917,7 @@
   source:
   - ABCD-ReproNim
   - ReproNim
-  description: 3 week machone learning course
+  description: 3 week machine learning course
   alias_links: null
   notes: null
   quadrants:
