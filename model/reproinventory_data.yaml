@@ -1912,3 +1912,11 @@
   quadrants:
   - information-oriented (reference)
   - learning-oriented (tutorials)
+- id: 64
+  course_name: test course
+  platform:
+  - Linux
+  instruction_medium:
+  - reference
+  programming_language:
+  - Git
