@@ -1882,16 +1882,6 @@
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
   - understanding-oriented (explanation)
-- id: 62
-  course_name: test course
-  platform:
-  - Mac
-  instruction_medium:
-  - blog post
-  delivery:
-  - instructor
-  imaging_modality:
-  - Behavioral
 - id: 63
   course_name: FSL course
   url: https://www.youtube.com/@FSLCourse
