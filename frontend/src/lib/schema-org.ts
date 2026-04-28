@@ -22,7 +22,7 @@ export function toSchemaOrgLearningResource(entry: ReproInventoryEntry): Record<
   const obj: Record<string, unknown> = {
     "@type": "LearningResource",
     "@id": entry.url ?? `urn:reproinventory:${entry.id}`,
-    "identifier": `repronim.inventory:${entry.id}`,
+    "identifier": `${window.location.origin}${import.meta.env.BASE_URL}#/item/${entry.id}`,
   }
 
   if (entry.course_name) obj["name"] = entry.course_name
