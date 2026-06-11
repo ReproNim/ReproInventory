@@ -2,6 +2,9 @@
 
 import Footer from "@/components/Footer"
 import { getGitHubRepoUrl } from "@/lib/github"
+import { buildItemListJsonLd } from "@/lib/schema-org"
+import { useInventoryData } from "@/hooks/useInventoryData"
+import { Link } from "react-router-dom"
 import { useState, useMemo, useEffect } from "react"
 import { Search, BookOpen, Video, FileText, Clock, ExternalLink } from "lucide-react" // Added ExternalLink
 import { Badge } from "@/components/ui/badge"
@@ -30,31 +33,22 @@ import {
 } from "./types/reproinventory" // Import generated types
 
 export default function TrainingMaterialsBrowser() {
-  const [reproInventoryData, setReproInventoryData] = useState<ReproInventoryEntry[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
+  const { data: reproInventoryData, loading, error } = useInventoryData()
   const [selectedRawMaterial, setSelectedRawMaterial] = useState<ReproInventoryEntry | null>(null)
   const [editingMaterial, setEditingMaterial] = useState<ReproInventoryEntry | null>(null)
   const [showAddMaterial, setShowAddMaterial] = useState(false)
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(`${import.meta.env.BASE_URL}data/reproinventory_data.json`)
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        const data: ReproInventoryEntry[] = await response.json()
-        setReproInventoryData(data)
-      } catch (e: any) {
-        setError(e.message)
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchData()
-  }, [])
+    if (reproInventoryData.length === 0) return
+    const existing = document.getElementById("reproinventory-schema-org")
+    if (existing) existing.remove()
+    const script = document.createElement("script")
+    script.type = "application/ld+json"
+    script.id = "reproinventory-schema-org"
+    script.textContent = buildItemListJsonLd(reproInventoryData)
+    document.head.appendChild(script)
+    return () => { document.getElementById("reproinventory-schema-org")?.remove() }
+  }, [reproInventoryData])
 
   // State for filters, adapted to schema
   const [searchQuery, setSearchQuery] = useState("")
@@ -594,7 +588,11 @@ export default function TrainingMaterialsBrowser() {
                             </Badge>
                           </div>
                         </div>
-                        <CardTitle className="text-lg break-words">{material.course_name}</CardTitle>
+                        <CardTitle className="text-lg break-words">
+                          <Link to={`/item/${material.id}`} className="hover:underline">
+                            {material.course_name}
+                          </Link>
+                        </CardTitle>
                         <CardDescription className="break-words">{material.description}</CardDescription>
                       </CardHeader>
                       <CardContent className="space-y-4">
