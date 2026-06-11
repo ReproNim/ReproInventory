@@ -13,8 +13,8 @@ export function useInventoryData() {
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`)
         const json: ReproInventoryEntry[] = await response.json()
         setData(json)
-      } catch (e: any) {
-        setError(e.message)
+      } catch (e) {
+        setError(e instanceof Error ? e.message : String(e))
       } finally {
         setLoading(false)
       }
