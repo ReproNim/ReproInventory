@@ -2213,7 +2213,7 @@
       "Hands-on tutorial / notebooks"
     ],
     "open_dataset": true,
-    "last_updated": 2026,
+    "last_updated": "2026",
     "description": "Andy's Brain Book is a comprehensive, beginner-friendly online textbook covering neuroimaging analysis with major software packages including FSL, SPM, AFNI, and Freesurfer, using real datasets and step-by-step tutorials. It is widely used as an introductory reference for fMRI and structural MRI analysis.",
     "quadrants": [
       "learning-oriented (tutorials)",
