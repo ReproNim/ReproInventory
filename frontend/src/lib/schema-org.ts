@@ -55,7 +55,7 @@ export function buildSingleItemJsonLd(entry: ReproInventoryEntry): string {
     "@context": "https://schema.org",
     ...toSchemaOrgLearningResource(entry),
   }
-  return JSON.stringify(ld)
+  return JSON.stringify(ld).replace(/</g, '\\u003c')
 }
 
 export function buildItemListJsonLd(entries: ReproInventoryEntry[]): string {
