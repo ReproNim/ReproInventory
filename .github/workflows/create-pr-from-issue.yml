@@ -2,12 +2,16 @@ name: Create PR from Issue
 
 on:
   issues:
-    types: [labeled]
+    types: [opened, labeled]
 
 jobs:
   create-pr:
     runs-on: ubuntu-latest
-    if: contains(fromJSON('["new-material", "edit-material", "delete-material"]'), github.event.label.name)
+    if: >
+      contains(fromJSON('["new-material", "edit-material", "delete-material"]'), github.event.label.name)
+      || contains(join(github.event.issue.labels.*.name, ','), 'new-material')
+      || contains(join(github.event.issue.labels.*.name, ','), 'edit-material')
+      || contains(join(github.event.issue.labels.*.name, ','), 'delete-material')
 
     permissions:
       contents: write
