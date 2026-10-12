@@ -23,7 +23,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install pyyaml
+        run: pip install pyyaml requests
 
       - name: Write issue data to files
         env:
@@ -37,6 +37,10 @@ jobs:
         env:
           ISSUE_LABEL: ${{ github.event.label.name }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_API_URL: ${{ secrets.AI_API_URL || 'https://api.openai.com/v1' }}
+          AI_MODEL: ${{ vars.AI_MODEL || 'gpt-4o-mini' }}
+          AI_MAX_TOKENS: ${{ vars.AI_MAX_TOKENS || '250' }}
         run: python .github/scripts/process_issue.py
 
       - name: Create branch and open PR
