@@ -50,7 +50,6 @@ enums:
       self-paced:
       instructor:
       Hybrid:
-      "Discussion needed":
   LanguageEnum:
     permissible_values:
       English:
