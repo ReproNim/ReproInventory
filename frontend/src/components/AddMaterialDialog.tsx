@@ -39,7 +39,12 @@ function formatAsYaml(material: ReproInventoryEntry): string {
 
     const addScalar = (key: string, value: string | number | boolean | undefined | null) => {
         if (value !== undefined && value !== null && value !== "") {
-            lines.push(`${key}: ${value}`);
+            if (typeof value === "string") {
+                const escaped = value.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+                lines.push(`${key}: "${escaped}"`);
+            } else {
+                lines.push(`${key}: ${value}`);
+            }
         }
     };
 
