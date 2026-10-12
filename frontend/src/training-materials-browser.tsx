@@ -1,10 +1,8 @@
 "use client"
 
 import Footer from "@/components/Footer"
-import { getGitHubRepoUrl } from "@/lib/github"
 import { buildItemListJsonLd } from "@/lib/schema-org"
 import { useInventoryData } from "@/hooks/useInventoryData"
-import { Link } from "react-router-dom"
 import { useState, useMemo, useEffect } from "react"
 import { Search, BookOpen, Video, FileText, Clock, ExternalLink } from "lucide-react" // Added ExternalLink
 import { Badge } from "@/components/ui/badge"
@@ -588,9 +586,7 @@ export default function TrainingMaterialsBrowser() {
                           </div>
                         </div>
                         <CardTitle className="text-lg break-words">
-                          <Link to={`/item/${material.id}`} className="hover:underline">
-                            {material.course_name}
-                          </Link>
+                          <span>{material.course_name}</span>
                         </CardTitle>
                         <CardDescription className="break-words">{material.description}</CardDescription>
                       </CardHeader>
@@ -685,20 +681,6 @@ export default function TrainingMaterialsBrowser() {
                               />
                             )}
                           </Dialog>
-                          <Button
-                            variant="outline"
-                            className="w-fit text-xs px-2 py-1 h-auto text-red-600 hover:text-red-700"
-                            onClick={() => {
-                              const title = `Delete material: ${material.course_name} (ID: ${material.id})`;
-                              const body =
-                                `## Delete Training Material Request\n\n` +
-                                `Please remove entry **ID: ${material.id}** ("${material.course_name}") from \`model/reproinventory_data.yaml\`.`;
-                              const url = `${getGitHubRepoUrl()}/issues/new?labels=delete-material&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
-                              window.open(url, "_blank");
-                            }}
-                          >
-                            Delete
-                          </Button>
                         </div>
                       </CardContent>
                     </Card>
