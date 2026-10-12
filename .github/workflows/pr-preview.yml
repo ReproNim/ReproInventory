@@ -1,11 +1,11 @@
 name: PR Preview
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, synchronize, reopened, closed]
 
-# Read-only token is sufficient here; deploy/cleanup happen in pr-deploy.yml
-# via workflow_run which is not subject to the fork-workflow-file restriction.
+# Build previews in the safe PR context. Deployment and cleanup happen in
+# pr-deploy.yml via workflow_run so privileged actions still run in the base repo.
 permissions:
   contents: read
 
@@ -14,7 +14,7 @@ jobs:
     if: github.event.action != 'closed'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout PR code
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
