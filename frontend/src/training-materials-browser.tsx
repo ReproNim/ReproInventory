@@ -34,7 +34,6 @@ import {
 
 export default function TrainingMaterialsBrowser() {
   const { data: reproInventoryData, loading, error } = useInventoryData()
-  const [selectedRawMaterial, setSelectedRawMaterial] = useState<ReproInventoryEntry | null>(null)
   const [editingMaterial, setEditingMaterial] = useState<ReproInventoryEntry | null>(null)
   const [showAddMaterial, setShowAddMaterial] = useState(false)
 
@@ -649,21 +648,20 @@ export default function TrainingMaterialsBrowser() {
                               <Button
                                 variant="outline"
                                 className="w-fit text-xs px-2 py-1 h-auto"
-                                onClick={() => setSelectedRawMaterial(material)}
                               >
                                 View Raw Data
                               </Button>
                             </DialogTrigger>
                             <DialogContent className="sm:max-w-[800px]">
                               <DialogHeader>
-                                <DialogTitle>Raw Data for {selectedRawMaterial?.course_name}</DialogTitle>
+                                <DialogTitle>Raw Data for {material.course_name}</DialogTitle>
                                 <DialogDescription>
                                   This is the raw JSON data for the selected training material.
                                 </DialogDescription>
                               </DialogHeader>
                               <div className="max-h-[60vh] overflow-auto rounded-md bg-zinc-900 p-4 text-zinc-50">
                                 <pre className="text-xs">
-                                  {selectedRawMaterial ? JSON.stringify(selectedRawMaterial, null, 2) : "No data selected"}
+                                  {JSON.stringify(material, null, 2)}
                                 </pre>
                               </div>
                             </DialogContent>
