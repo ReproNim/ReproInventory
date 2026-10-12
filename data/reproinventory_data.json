@@ -1657,7 +1657,7 @@
       "SS",
       "JB"
     ],
-    "course_name": "The Princeton Handbook for Reproducible Neuroimaging\u00b6",
+    "course_name": "The Princeton Handbook for Reproducible Neuroimaging¶",
     "url": "https://brainhack-princeton.github.io/handbook/",
     "level": [
       "Beginner"
@@ -2651,5 +2651,11 @@
       "understanding-oriented (explanation)",
       "learning-oriented (tutorials)"
     ]
+  },
+  {
+    "id": 65,
+    "course_name": "National Institute of Mental Health (NIMH) Data Science & Sharing Team (DSST) material",
+    "url": "https://dsst.readthedocs.io/en/latest/guides/trainings/",
+    "description": "Neuroimaging resources and material shared by NIMH"
   }
 ]
