@@ -1,0 +1,152 @@
+name: PR Preview Deploy
+
+# This workflow deploys preview builds and cleans up closed PRs.
+# It is triggered by the "PR Preview" workflow_run so that it always runs
+# in the context of the base repository and receives a GITHUB_TOKEN with
+# write access — even when the originating PR is from a fork that modifies
+# workflow files (which would otherwise restrict the token to read-only).
+on:
+  workflow_run:
+    workflows: ["PR Preview"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+jobs:
+  deploy-preview:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download preview artifact
+        id: download
+        uses: actions/download-artifact@v4
+        with:
+          pattern: pr-preview-*
+          path: ./artifacts
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
+      - name: Find PR number and dist directory
+        id: pr
+        if: steps.download.outcome == 'success'
+        run: |
+          # Each workflow run processes exactly one PR, so at most one
+          # pr-preview-* artifact exists per run.
+          PREVIEW_DIR=$(find ./artifacts -maxdepth 1 -type d -name 'pr-preview-*' | head -1)
+          if [ -n "$PREVIEW_DIR" ]; then
+            PR_NUMBER=$(basename "$PREVIEW_DIR" | sed 's/pr-preview-//')
+            echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+            echo "dist=$PREVIEW_DIR" >> "$GITHUB_OUTPUT"
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy preview to gh-pages
+        if: steps.pr.outputs.found == 'true'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ steps.pr.outputs.dist }}
+          publish_branch: gh-pages
+          destination_dir: pr-previews/pr-${{ steps.pr.outputs.number }}
+          keep_files: true
+
+      - name: Post or update preview URL comment
+        if: steps.pr.outputs.found == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = parseInt('${{ steps.pr.outputs.number }}', 10);
+            if (!prNumber || isNaN(prNumber)) {
+              core.setFailed('Could not determine PR number from artifact name');
+              return;
+            }
+            const previewUrl = `https://${{ github.repository_owner }}.github.io/ReproInventory/pr-previews/pr-${prNumber}/`;
+            const body = [
+              '## 🔍 PR Preview',
+              '',
+              `**Preview URL:** ${previewUrl}`,
+              '',
+              `_Last updated: ${new Date().toUTCString()}_`,
+            ].join('\n');
+
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+
+            const existing = comments.data.find(
+              c => c.user.type === 'Bot' && c.body.includes('## 🔍 PR Preview')
+            );
+
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body,
+              });
+            }
+
+  cleanup-preview:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download close signal artifact
+        id: download
+        uses: actions/download-artifact@v4
+        with:
+          pattern: pr-closed-*
+          path: ./artifacts
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
+
+      - name: Find closed PR number
+        id: pr
+        if: steps.download.outcome == 'success'
+        run: |
+          # Each workflow run processes exactly one PR, so at most one
+          # pr-closed-* artifact exists per run.
+          CLOSED_DIR=$(find ./artifacts -maxdepth 1 -type d -name 'pr-closed-*' | head -1)
+          if [ -n "$CLOSED_DIR" ]; then
+            PR_NUMBER=$(basename "$CLOSED_DIR" | sed 's/pr-closed-//')
+            echo "number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout gh-pages branch
+        if: steps.pr.outputs.found == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Remove preview directory
+        if: steps.pr.outputs.found == 'true'
+        run: |
+          PR_DIR="pr-previews/pr-${{ steps.pr.outputs.number }}"
+          if [ -d "$PR_DIR" ]; then
+            rm -rf "$PR_DIR"
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore: remove PR preview for #${{ steps.pr.outputs.number }}"
+            git push
+          else
+            echo "No preview directory found, nothing to clean up."
+          fi

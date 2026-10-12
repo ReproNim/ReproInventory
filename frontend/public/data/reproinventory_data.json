@@ -121,7 +121,7 @@
       "Fellow-22",
       "UCSB"
     ],
-    "description": "JupyterHub no longer accessible. Need to link GitHubClassroom to GitHub (uclear if links work once you do that)",
+    "description": "JupyterHub no longer accessible. Need to link GitHubClassroom to GitHub (unclear if links work once you do that)",
     "alias_links": null,
     "notes": null,
     "quadrants": [
@@ -1341,6 +1341,7 @@
       "Adina Wagner",
       "Max Planck Institute"
     ],
+    "description": "Course outline for Data Lad Course",
     "alias_links": null,
     "notes": null,
     "quadrants": [
@@ -2293,6 +2294,28 @@
     "course_name": "Andy's brain book",
     "url": "https://andysbrainbook.readthedocs.io/en/latest/",
     "course_length": "1+ weeks",
+    "level": [
+      "Beginner",
+      "Intermediate"
+    ],
+    "platform": [
+      "Mac",
+      "Windows",
+      "Linux"
+    ],
+    "keywords": [
+      "fMRI",
+      "neuroimaging",
+      "FSL",
+      "SPM",
+      "AFNI",
+      "Freesurfer",
+      "tutorial",
+      "beginner",
+      "structural MRI",
+      "connectivity",
+      "tractography"
+    ],
     "instruction_medium": [
       "blog post",
       "Hands-on tutorial / notebooks"
@@ -2310,7 +2333,7 @@
       "Andrew Jahn",
       "University of Michigan"
     ],
-    "last_updated": 2026,
+    "last_updated": "2026",
     "description": "Andy's Brain Book is a comprehensive, beginner-friendly online textbook covering neuroimaging analysis with major software packages including FSL, SPM, AFNI, and Freesurfer, using real datasets and step-by-step tutorials. It is widely used as an introductory reference for fMRI and structural MRI analysis.",
     "quadrants": [
       "learning-oriented (tutorials)",
@@ -2335,28 +2358,6 @@
       "DWI",
       "Resting-State",
       "Task-based"
-    ],
-    "platform": [
-      "Mac",
-      "Windows",
-      "Linux"
-    ],
-    "keywords": [
-      "fMRI",
-      "neuroimaging",
-      "FSL",
-      "SPM",
-      "AFNI",
-      "Freesurfer",
-      "tutorial",
-      "beginner",
-      "structural MRI",
-      "connectivity",
-      "tractography"
-    ],
-    "level": [
-      "Beginner",
-      "Intermediate"
     ]
   },
   {
@@ -2485,7 +2486,7 @@
       "ABCD-ReproNim",
       "ReproNim"
     ],
-    "description": "3 week machone learning course",
+    "description": "3 week machine learning course",
     "alias_links": null,
     "notes": null,
     "quadrants": [
@@ -2554,6 +2555,47 @@
       "learning-oriented (tutorials)",
       "problem-oriented (how to guides)",
       "understanding-oriented (explanation)"
+    ]
+  },
+  {
+    "id": 63,
+    "course_name": "FSL course",
+    "url": "https://www.youtube.com/@FSLCourse",
+    "level": [
+      "Beginner",
+      "Intermediate"
+    ],
+    "platform": [
+      "NA"
+    ],
+    "course_length": "1+ weeks",
+    "instruction_medium": [
+      "video",
+      "lecture"
+    ],
+    "delivery": [
+      "self-paced"
+    ],
+    "language": [
+      "English"
+    ],
+    "programming_language": [
+      "NA"
+    ],
+    "neuroimaging_software": [
+      "FSL"
+    ],
+    "imaging_modality": [
+      "Structural",
+      "Functional",
+      "DWI",
+      "Task-based",
+      "Resting-State"
+    ],
+    "description": "Youtube lecture series of the 2021 FSL online course",
+    "quadrants": [
+      "information-oriented (reference)",
+      "learning-oriented (tutorials)"
     ]
   }
 ]

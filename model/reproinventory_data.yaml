@@ -1760,6 +1760,25 @@
   course_name: Andy's brain book
   url: https://andysbrainbook.readthedocs.io/en/latest/
   course_length: 1+ weeks
+  level:
+  - Beginner
+  - Intermediate
+  platform:
+  - Mac
+  - Windows
+  - Linux
+  keywords:
+  - fMRI
+  - neuroimaging
+  - FSL
+  - SPM
+  - AFNI
+  - Freesurfer
+  - tutorial
+  - beginner
+  - structural MRI
+  - connectivity
+  - tractography
   instruction_medium:
   - blog post
   - Hands-on tutorial / notebooks
@@ -1797,25 +1816,6 @@
   - DWI
   - Resting-State
   - Task-based
-  platform:
-  - Mac
-  - Windows
-  - Linux
-  keywords:
-  - fMRI
-  - neuroimaging
-  - FSL
-  - SPM
-  - AFNI
-  - Freesurfer
-  - tutorial
-  - beginner
-  - structural MRI
-  - connectivity
-  - tractography
-  level:
-  - Beginner
-  - Intermediate
 - id: 59
   tag_team:
   - JB
@@ -1836,7 +1836,6 @@
   - large-scale data
   - open data
   course_length: 1+ weeks
-
   instruction_medium:
   - video
   - Hands-on tutorial / notebooks
@@ -1971,3 +1970,34 @@
   - learning-oriented (tutorials)
   - problem-oriented (how to guides)
   - understanding-oriented (explanation)
+- id: 63
+  course_name: FSL course
+  url: https://www.youtube.com/@FSLCourse
+  level:
+  - Beginner
+  - Intermediate
+  platform:
+  - NA
+  course_length: 1+ weeks
+  instruction_medium:
+  - video
+  - lecture
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - NA
+  neuroimaging_software:
+  - FSL
+  imaging_modality:
+  - Structural
+  - Functional
+  - DWI
+  - Task-based
+  - Resting-State
+  description: Youtube lecture series of the 2021 FSL online course
+  quadrants:
+  - information-oriented (reference)
+  - learning-oriented (tutorials)
+
