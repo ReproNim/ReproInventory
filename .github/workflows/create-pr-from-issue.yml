@@ -39,7 +39,7 @@ jobs:
 
       - name: Process issue and update files
         env:
-          ISSUE_LABEL: ${{ github.event.label.name }}
+          ISSUE_LABEL: ${{ contains(join(github.event.issue.labels.*.name, ','), 'new-material') && 'new-material' || contains(join(github.event.issue.labels.*.name, ','), 'edit-material') && 'edit-material' || contains(join(github.event.issue.labels.*.name, ','), 'delete-material') && 'delete-material' || github.event.label.name }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_API_URL: ${{ secrets.AI_API_URL || 'https://api.openai.com/v1' }}
@@ -51,7 +51,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-          ISSUE_LABEL: ${{ github.event.label.name }}
+          ISSUE_LABEL: ${{ contains(join(github.event.issue.labels.*.name, ','), 'new-material') && 'new-material' || contains(join(github.event.issue.labels.*.name, ','), 'edit-material') && 'edit-material' || contains(join(github.event.issue.labels.*.name, ','), 'delete-material') && 'delete-material' || github.event.label.name }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
           BRANCH="auto/${ISSUE_LABEL}-issue-${ISSUE_NUMBER}"
