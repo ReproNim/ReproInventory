@@ -2060,3 +2060,7 @@
     (DSST) material
   url: https://dsst.readthedocs.io/en/latest/guides/trainings/
   description: Neuroimaging resources and material shared by NIMH
+- id: 66
+  course_name: NIMH Data Science & Sharing Team - Self Guided Trainings
+  url: https://dsst.readthedocs.io/en/latest/guides/trainings/
+  description: Self guided training Repository by NIMH
