@@ -85,7 +85,7 @@
   - **Options:**
     - self-paced
     - instructor
-    - Discussion needed
+    - Hybrid
     - NA
 
 - **Language**
