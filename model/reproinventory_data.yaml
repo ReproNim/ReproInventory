@@ -2000,4 +2000,46 @@
   quadrants:
   - information-oriented (reference)
   - learning-oriented (tutorials)
-
+- id: 64
+  course_name: The Hitchhacker's guide to the brain
+  url: https://learn-neuroimaging.github.io/hitchhackers_guide_brain/
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - preprocessing
+  - analysis
+  - statistics
+  - reporting results
+  - sharing data
+  - null
+  course_length: 1-3 days
+  instruction_medium:
+  - website
+  - lecture
+  - video
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - Python
+  - R
+  - shell scripting
+  - Matlab
+  - Git
+  neuroimaging_software:
+  - NA
+  imaging_modality:
+  - Structural
+  - DWI
+  - Task-based
+  - EEG
+  - Behavioral
+  - MRI
+  description: A repository containing links to various training resources across
+    the neuroimaging processing pipeline
+  quadrants:
+  - understanding-oriented (explanation)
+  - learning-oriented (tutorials)
