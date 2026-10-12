@@ -8,7 +8,7 @@ export type CourseLengthEnum = "<1 hr" | "1-4 hrs" | "1 day" | "1-3 days" | "1 w
 
 export type ContentFormatEnum = "Hands-on tutorial / notebooks" | "lecture" | "video" | "notes" | "blog post" | "reference" | "slides" | "website" | "outline" | "meta-resource" | "NA";
 
-export type DeliveryEnum = "self-paced" | "instructor" | "Hybrid" | "Discussion needed";
+export type DeliveryEnum = "self-paced" | "instructor" | "Hybrid";
 
 export type LanguageEnum = "English" | "French" | "Spanish" | "Chinese" | "German" | "English, French" | "English, German" | "Other" | "NA";
 

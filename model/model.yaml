@@ -105,7 +105,6 @@ enums:
     permissible_values:
       self_paced:
       instructor:
-      Discussion_needed:
       NA:
   Quadrants_enum:
     permissible_values:
