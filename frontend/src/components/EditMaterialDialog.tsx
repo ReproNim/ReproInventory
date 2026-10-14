@@ -1,3 +1,4 @@
+import { LevelEnumValues, PlatformEnumValues, CourseLengthEnumValues, ContentFormatEnumValues, DeliveryEnumValues, LanguageEnumValues, ProgrammingLanguageEnumValues, NeuroimagingSoftwareEnumValues, ImagingModalityEnumValues, QuadrantsEnumValues } from "@/types/reproinventory";
 import React, { useState, useEffect } from "react";
 import { getGitHubRepoUrl } from "@/lib/github";
 import { DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -7,19 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Plus, Minus } from "lucide-react"; // Added Plus and Minus for dynamic fields
-import type {
-    ReproInventoryEntry,
-    LevelEnum,
-    PlatformEnum,
-    CourseLengthEnum,
-    ContentFormatEnum,
-    DeliveryEnum,
-    LanguageEnum,
-    ProgrammingLanguageEnum,
-    NeuroimagingSoftwareEnum,
-    ImagingModalityEnum,
-    QuadrantsEnum,
-} from "@/types/reproinventory";
+import type { ReproInventoryEntry, CourseLengthEnum } from "@/types/reproinventory";
 
 const GITHUB_REPO = getGitHubRepoUrl();
 
@@ -80,17 +69,16 @@ interface EditMaterialDialogProps {
     onClose: () => void;
 }
 
-const levelOptions: LevelEnum[] = ["Beginner", "Intermediate", "Advanced", "NA"];
-const platformOptions: PlatformEnum[] = ["Mac", "Windows", "Linux", "Docker", "Jupyter", "NA"];
-const courseLengthOptions: CourseLengthEnum[] = ["<1 hr", "1-4 hrs", "1 day", "1-3 days", "1 week", "1+ weeks", "NA"];
-const instructionMediumOptions: ContentFormatEnum[] = ["Hands-on tutorial / notebooks", "lecture", "video", "notes", "blog post", "reference", "slides", "website", "outline", "meta-resource", "NA"];
-const deliveryOptions: DeliveryEnum[] = ["self-paced", "instructor", "Hybrid"];
-const languageOptions: LanguageEnum[] = ["English", "French", "Spanish", "Chinese", "German", "English, French", "English, German", "Other", "NA"];
-const programmingLanguageOptions: ProgrammingLanguageEnum[] = ["Python", "R", "shell scripting", "Matlab", "Git", "NA"];
-const neuroimagingSoftwareOptions: NeuroimagingSoftwareEnum[] = ["AFNI", "SPM", "FSL", "Freesurfer", "Python", "Multiple", "NA"];
-const imagingModalityOptions: ImagingModalityEnum[] = ["DWI", "Structural", "Functional", "Task-based", "Resting-State", "EEG", "Behavioral", "MEG", "MRI", "NA"];
-const quadrantsOptions: QuadrantsEnum[] = ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"];
-
+const levelOptions = LevelEnumValues;
+const platformOptions = PlatformEnumValues;
+const courseLengthOptions = CourseLengthEnumValues;
+const instructionMediumOptions = ContentFormatEnumValues;
+const deliveryOptions = DeliveryEnumValues;
+const languageOptions = LanguageEnumValues;
+const programmingLanguageOptions = ProgrammingLanguageEnumValues;
+const neuroimagingSoftwareOptions = NeuroimagingSoftwareEnumValues;
+const imagingModalityOptions = ImagingModalityEnumValues;
+const quadrantsOptions = QuadrantsEnumValues;
 const ARRAY_FIELDS: (keyof ReproInventoryEntry)[] = [
     "tag_team", "level", "platform", "keywords", "instruction_medium",
     "delivery", "language", "programming_language", "neuroimaging_software",
@@ -102,7 +90,7 @@ function normalizeMaterial(m: ReproInventoryEntry): ReproInventoryEntry {
     for (const field of ARRAY_FIELDS) {
         const val = normalized[field];
         if (val !== null && val !== undefined && !Array.isArray(val)) {
-            (normalized as any)[field] = [val];
+            (normalized as Record<string, unknown>)[field] = [val];
         }
     }
     return normalized;
@@ -115,7 +103,7 @@ const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onClo
         setEditedMaterial(normalizeMaterial(material));
     }, [material]);
 
-    const handleChange = (field: keyof ReproInventoryEntry, value: any) => {
+    const handleChange = (field: keyof ReproInventoryEntry, value: ReproInventoryEntry[keyof ReproInventoryEntry]) => {
         setEditedMaterial(prev => ({ ...prev, [field]: value }));
     };
 
