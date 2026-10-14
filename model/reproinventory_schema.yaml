@@ -7,6 +7,10 @@ prefixes:
   reproinv: http://example.org/reproinventory/
 
 default_prefix: reproinv
+default_range: string
+
+imports:
+  - linkml:types
 
 enums:
   LevelEnum:
@@ -90,11 +94,6 @@ enums:
       MEG:
       MRI:
       NA:
-  OpenDatasetEnum:
-    permissible_values:
-      Yes:
-      No:
-      NA:
   QuadrantsEnum:
     permissible_values:
       "information-oriented (reference)":
@@ -126,6 +125,7 @@ classes:
       - assessment
       - prerequisite
       - source
+      - description
       - review
       - exclude_from_repro_inventory
       - alias_links
@@ -135,6 +135,7 @@ classes:
 slots:
   id:
     identifier: true
+    range: integer
   tag_team:
     range: string
     multivalued: true
@@ -172,23 +173,27 @@ slots:
     range: ImagingModalityEnum
     multivalued: true
   open_dataset:
-    range: OpenDatasetEnum
+    description: Whether the resource uses openly available data.
+    range: boolean
   last_updated:
     range: string # Can be date, but '2023' values suggest string is safer
   functionality:
     range: string
   assessment:
-    range: bool
+    range: boolean
   prerequisite:
     range: string
     multivalued: true
   source:
     range: string
     multivalued: true
+  description:
+    description: A short summary of what the resource covers.
+    range: string
   review:
     range: string
   exclude_from_repro_inventory:
-    range: bool
+    range: boolean
   alias_links:
     range: string
   notes:

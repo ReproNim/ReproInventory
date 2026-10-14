@@ -15,7 +15,7 @@ def convert_yaml_to_json(yaml_input_path, json_output_path):
         os.makedirs(output_dir)
 
     with open(json_output_path, 'w', encoding='utf-8') as json_file:
-        json.dump(data, json_file, indent=2)
+        json.dump(data, json_file, indent=2, ensure_ascii=False)
 
 if __name__ == '__main__':
     yaml_input_path = 'model/reproinventory_data.yaml'
