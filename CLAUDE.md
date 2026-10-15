@@ -57,7 +57,7 @@ The data schema is defined in `model/reproinventory_schema.yaml` (LinkML). TypeS
 - `id`, `course_name`, `url`, `review`, `notes`, `keywords`
 - `level`, `platform`, `course_length`, `instruction_medium`, `delivery`
 - `language`, `programming_language`, `neuroimaging_software`, `imaging_modality`
-- `open_dataset`, `assessment`, `quadrants`, `tag_team`
+- `open_dataset`, `assessment`, `quadrant_weights` (Diataxis scores 0-3, see `frontend/src/lib/diataxis.ts`), `tag_team`
 
 Enum values are strict — always use values that match the schema.
 

@@ -94,13 +94,6 @@ enums:
       MEG:
       MRI:
       NA:
-  QuadrantsEnum:
-    permissible_values:
-      "information-oriented (reference)":
-      "understanding-oriented (explanation)":
-      "learning-oriented (tutorials)":
-      "problem-oriented (how to guides)":
-      NA:
 
 classes:
   ReproInventoryEntry:
@@ -130,7 +123,36 @@ classes:
       - exclude_from_repro_inventory
       - alias_links
       - notes
-      - quadrants
+      - quadrant_weights
+
+  QuadrantWeights:
+    description: >-
+      How strongly a resource serves each of the four Diataxis purposes
+      (https://diataxis.fr), from 0 (not at all) to 3 (mainly). Together the
+      scores place the resource on two axes: practical (tutorial, how-to) vs
+      theoretical (explanation, reference), and study (tutorial, explanation)
+      vs work (how-to, reference).
+    attributes:
+      tutorial:
+        description: Learning-oriented - guides a learner through doing something.
+        range: integer
+        minimum_value: 0
+        maximum_value: 3
+      how_to:
+        description: Task-oriented - steps to solve a specific problem.
+        range: integer
+        minimum_value: 0
+        maximum_value: 3
+      explanation:
+        description: Understanding-oriented - background, concepts and reasoning.
+        range: integer
+        minimum_value: 0
+        maximum_value: 3
+      reference:
+        description: Information-oriented - lookup material such as documentation or command references.
+        range: integer
+        minimum_value: 0
+        maximum_value: 3
 
 slots:
   id:
@@ -198,6 +220,7 @@ slots:
     range: string
   notes:
     range: string
-  quadrants:
-    range: QuadrantsEnum
-    multivalued: true
+  quadrant_weights:
+    description: Diataxis profile of the resource, scored 0-3 per quadrant.
+    range: QuadrantWeights
+    inlined: true

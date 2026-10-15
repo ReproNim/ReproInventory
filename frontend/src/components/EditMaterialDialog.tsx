@@ -1,4 +1,6 @@
-import { LevelEnumValues, PlatformEnumValues, CourseLengthEnumValues, ContentFormatEnumValues, DeliveryEnumValues, LanguageEnumValues, ProgrammingLanguageEnumValues, NeuroimagingSoftwareEnumValues, ImagingModalityEnumValues, QuadrantsEnumValues } from "@/types/reproinventory";
+import { LevelEnumValues, PlatformEnumValues, CourseLengthEnumValues, ContentFormatEnumValues, DeliveryEnumValues, LanguageEnumValues, ProgrammingLanguageEnumValues, NeuroimagingSoftwareEnumValues, ImagingModalityEnumValues } from "@/types/reproinventory";
+import QuadrantWeightsInput from "@/components/QuadrantWeightsInput";
+import { QUADRANT_KEYS } from "@/lib/diataxis";
 import React, { useState, useEffect } from "react";
 import { getGitHubRepoUrl } from "@/lib/github";
 import { DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -48,7 +50,11 @@ function formatAsYaml(material: ReproInventoryEntry): string {
     addList("source", material.source);
     addScalar("description", material.description);
     addScalar("notes", material.notes);
-    addList("quadrants", material.quadrants);
+    const weights = material.quadrant_weights;
+    if (weights && QUADRANT_KEYS.some((k) => (weights[k] ?? 0) > 0)) {
+        lines.push("quadrant_weights:");
+        QUADRANT_KEYS.forEach((k) => lines.push(`  ${k}: ${weights[k] ?? 0}`));
+    }
 
     return lines.join("\n");
 }
@@ -78,11 +84,10 @@ const languageOptions = LanguageEnumValues;
 const programmingLanguageOptions = ProgrammingLanguageEnumValues;
 const neuroimagingSoftwareOptions = NeuroimagingSoftwareEnumValues;
 const imagingModalityOptions = ImagingModalityEnumValues;
-const quadrantsOptions = QuadrantsEnumValues;
 const ARRAY_FIELDS: (keyof ReproInventoryEntry)[] = [
     "tag_team", "level", "platform", "keywords", "instruction_medium",
     "delivery", "language", "programming_language", "neuroimaging_software",
-    "imaging_modality", "quadrants", "source", "prerequisite",
+    "imaging_modality", "source", "prerequisite",
 ];
 
 function normalizeMaterial(m: ReproInventoryEntry): ReproInventoryEntry {
@@ -422,19 +427,12 @@ const EditMaterialDialog: React.FC<EditMaterialDialogProps> = ({ material, onClo
                         ))}
                     </div>
                     <div>
-                        <Label className="text-left">Quadrants</Label>
-                        {quadrantsOptions.map(option => (
-                            <div key={option} className="flex items-center space-x-2">
-                                <Checkbox
-                                    id={`quadrants-${option}`}
-                                    checked={editedMaterial.quadrants?.includes(option) || false}
-                                    onCheckedChange={(checked) =>
-                                        handleMultiSelectChange("quadrants", option, checked as boolean)
-                                    }
-                                />
-                                <Label htmlFor={`quadrants-${option}`}>{option}</Label>
-                            </div>
-                        ))}
+                        <Label className="text-left">Diataxis profile</Label>
+                        <QuadrantWeightsInput
+                            idPrefix="edit-quadrant"
+                            value={editedMaterial.quadrant_weights}
+                            onChange={(w) => handleChange("quadrant_weights", w)}
+                        />
                     </div>
                 </div>
 

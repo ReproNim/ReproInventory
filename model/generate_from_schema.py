@@ -37,6 +37,20 @@ def ts_literal(value):
     return json.dumps(value, ensure_ascii=False)
 
 
+def nested_classes(schema):
+    """Classes other than the main entry class, defined with inline attributes."""
+    return [(name, cls) for name, cls in list(schema["classes"].items())[1:] if cls.get("attributes")]
+
+
+def range_label(schema, rng, default_range):
+    rng = rng or default_range
+    if rng in schema["enums"]:
+        return "enum"
+    if rng in schema["classes"]:
+        return f"[{rng}](#{rng.lower()})"
+    return rng
+
+
 def generate(schema):
     class_name, cls = next(iter(schema["classes"].items()))
     slots = schema["slots"]
@@ -58,13 +72,29 @@ def generate(schema):
     for slot_name in cls["slots"]:
         spec = slots.get(slot_name) or {}
         rng = spec.get("range", default_range)
-        ts = rng if rng in schema["enums"] else TS_TYPES.get(rng, "string")
+        ts = rng if rng in schema["enums"] or rng in schema["classes"] else TS_TYPES.get(rng, "string")
         if spec.get("multivalued"):
             ts = f"{ts}[]"
         optional = "" if spec.get("identifier") or spec.get("required") else "?"
         out.append(f"  {slot_name}{optional}: {ts};")
     out.append("}")
     out.append("")
+
+    for name, nested in nested_classes(schema):
+        attrs = nested["attributes"]
+        out.append(f"export interface {name} {{")
+        for attr, spec in attrs.items():
+            spec = spec or {}
+            out.append(f"  {attr}?: {TS_TYPES.get(spec.get('range', default_range), 'string')};")
+        out.append("}")
+        keys = ", ".join(ts_literal(a) for a in attrs)
+        out.append(f"export const {name}Keys = [{keys}] as const;")
+        lo = {(spec or {}).get("minimum_value") for spec in attrs.values()}
+        hi = {(spec or {}).get("maximum_value") for spec in attrs.values()}
+        if len(lo) == 1 and len(hi) == 1 and None not in lo | hi:
+            out.append(f"export const {name}Min = {lo.pop()};")
+            out.append(f"export const {name}Max = {hi.pop()};")
+        out.append("")
     return "\n".join(out)
 
 
@@ -85,16 +115,22 @@ def generate_docs(schema):
     for slot_name in cls["slots"]:
         spec = slots.get(slot_name) or {}
         rng = spec.get("range", default_range)
-        if rng in schema["enums"]:
-            allowed = ", ".join(f"`{v}`" for v in enum_values(schema, rng))
-            kind = "enum"
-        else:
-            allowed = ""
-            kind = rng
+        allowed = ", ".join(f"`{v}`" for v in enum_values(schema, rng)) if rng in schema["enums"] else ""
+        kind = range_label(schema, rng, default_range)
         multi = "yes" if spec.get("multivalued") else ""
         desc = spec.get("description", "")
         out.append(f"| `{slot_name}` | {kind} | {multi} | {allowed} | {desc} |")
     out.append("")
+
+    for name, nested in nested_classes(schema):
+        out += [f"## `{name}`", "", " ".join(str(nested.get("description", "")).split()), "",
+                "| Field | Type | Allowed values | Description |", "| --- | --- | --- | --- |"]
+        for attr, spec in nested["attributes"].items():
+            spec = spec or {}
+            lo, hi = spec.get("minimum_value"), spec.get("maximum_value")
+            allowed = f"{lo}-{hi}" if lo is not None and hi is not None else ""
+            out.append(f"| `{attr}` | {spec.get('range', default_range)} | {allowed} | {spec.get('description', '')} |")
+        out.append("")
     return "\n".join(out)
 
 

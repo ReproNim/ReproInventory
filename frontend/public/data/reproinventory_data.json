@@ -56,10 +56,12 @@
     ],
     "description": "A beginner-friendly course introducing Git and GitHub for version control and collaboration, covering online GitHub workflows and local machine setup with GitHub Desktop, progressing from basic concepts to managing merge conflicts.",
     "notes": null,
-    "quadrants": [
-      "problem-oriented (how to guides)",
-      "learning-oriented (tutorials)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 5,
@@ -124,9 +126,12 @@
     "description": "JupyterHub no longer accessible. Need to link GitHubClassroom to GitHub (unclear if links work once you do that)",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 7,
@@ -184,9 +189,12 @@
     "description": "Short slide deck, very clear",
     "alias_links": null,
     "notes": "link does not work for me (JB) can someone double check",
-    "quadrants": [
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 0,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 8,
@@ -245,10 +253,12 @@
     "description": "Relatively quick overview - more just what is DataLad vs detailed how to use",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "information-oriented (reference)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 0,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 1
+    }
   },
   {
     "id": 9,
@@ -307,10 +317,12 @@
     "description": "Very short slide deck on GIT",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "understanding-oriented (explanation)",
-      "information-oriented (reference)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 0,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 1
+    }
   },
   {
     "id": 10,
@@ -365,9 +377,12 @@
     "description": "Practical intro to bash and git",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 0,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 11,
@@ -435,9 +450,12 @@
     "description": "Focuses on QC in reference to MRIQC; has lots of big picture info about QC/QA in general",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 16,
@@ -493,9 +511,12 @@
     "description": "labeled as part 1 - unclear where part 2 is",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 18,
@@ -555,10 +576,12 @@
     "description": "Some sections are under-developed",
     "alias_links": null,
     "notes": "Reproducible Neuroimaging, tutorial guide, for cog sci students audience",
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "information-oriented (reference)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 1
+    }
   },
   {
     "id": 21,
@@ -619,10 +642,12 @@
     "description": "Basic Imaging Overview. Focus on BIDS",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 22,
@@ -683,10 +708,12 @@
     "description": "Tutorial on functional neuroimaging in Python",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 23,
@@ -743,10 +770,12 @@
     "description": "A Carpentries Incubator lesson introducing diffusion MRI concepts and data organization using BIDS, with hands-on analysis using Python-based tools like Dipy and Nibabel.",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 25,
@@ -806,11 +835,12 @@
     "description": "example syllabus for hackathon/course",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "understanding-oriented (explanation)",
-      "learning-oriented (tutorials)",
-      "information-oriented (reference)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 1
+    }
   },
   {
     "id": 26,
@@ -870,10 +900,12 @@
     "description": "Entire first year bootcamp videos online",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 28,
@@ -928,10 +960,12 @@
     "description": "Jupyter tutorials from the basics to advanced machine learning analyses on fMRI data",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 29,
@@ -988,10 +1022,12 @@
     "description": "Syllabus for course on fMRI, including slides, from collection to inferencing",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 30,
@@ -1050,10 +1086,12 @@
     "description": "Syllabus for reproducible neuroimaging multi-week course",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 31,
@@ -1109,10 +1147,12 @@
     "description": "syllabus for tutorial; details unclear. Might be unfinished.",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "information-oriented (reference)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 1
+    }
   },
   {
     "id": 32,
@@ -1169,11 +1209,12 @@
     "description": "very good resource for data provenance",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "information-oriented (reference)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 1
+    }
   },
   {
     "id": 33,
@@ -1227,10 +1268,12 @@
     "description": "Nice videos and course material on AI",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 34,
@@ -1286,10 +1329,12 @@
     "description": "Good video",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 35,
@@ -1344,10 +1389,12 @@
     "description": "Course outline for Data Lad Course",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 36,
@@ -1402,10 +1449,12 @@
     "description": "An open-access online book that teaches version control using Git, designed for researchers with no prior experience. It covers core Git concepts and workflows through hands-on exercises and practical examples relevant to scientific work.",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "information-oriented (reference)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 1
+    }
   },
   {
     "id": 38,
@@ -1463,10 +1512,12 @@
     "description": "Review of previous materials, full course",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 39,
@@ -1527,10 +1578,12 @@
     "description": "Syllabus for ReproNim workshop",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "information-oriented (reference)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 1
+    }
   },
   {
     "id": 40,
@@ -1586,10 +1639,12 @@
     "description": "Syllabus for Research Imaging Informatics course. Overview of neuroimaging methods and basic processing",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "information-oriented (reference)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 0,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 1
+    }
   },
   {
     "id": 43,
@@ -1645,10 +1700,12 @@
     "description": "Syllabus for workshop that has been given",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 46,
@@ -1705,9 +1762,12 @@
     "description": "Very nice overview of different fMRI topics",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "information-oriented (reference)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 0,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 1
+    }
   },
   {
     "id": 47,
@@ -1764,11 +1824,12 @@
     "description": "Pretty good if you want to teach fMRI analysis from scratch",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)",
-      "information-oriented (reference)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 1
+    }
   },
   {
     "id": 50,
@@ -1823,10 +1884,12 @@
     "description": "Single presentation, good for an intro class to data management and data version control",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "information-oriented (reference)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 0,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 1
+    }
   },
   {
     "id": 51,
@@ -1877,10 +1940,12 @@
     "description": "If you want to teach carpentries use this tool - not only shell scripting, but also intro to R, Python and HPC",
     "alias_links": "https://github.com/jdkent/incf-fellow-jdkent/blob/gh-pages/index.md",
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 52,
@@ -1932,10 +1997,12 @@
     "description": "For internal usage",
     "alias_links": null,
     "notes": "Link to Github Importer broken",
-    "quadrants": [
-      "information-oriented (reference)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 0,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 1
+    }
   },
   {
     "id": 53,
@@ -1997,10 +2064,12 @@
     "description": "An introduction to machine learning concepts and methods in the context of neuroimaging data, covering supervised learning, model evaluation, and practical implementation in Python. Part of the QLS612 multi-week curriculum at McGill University.",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 54,
@@ -2071,10 +2140,12 @@
     "description": "Brainhack School is an intensive, project-based training program run by a consortium of Canadian universities that teaches open and reproducible neuroscience. Participants work on collaborative projects while learning modern data science tools applied to neuroimaging.",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 55,
@@ -2146,11 +2217,12 @@
     "description": "NeuroHackademy is a summer institute at the University of Washington focused on data science and open neuroscience, combining lectures and hands-on tutorials covering neuroimaging analysis, machine learning, and reproducible research practices.",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 56,
@@ -2215,10 +2287,12 @@
     "description": "Neuromatch Academy offers intensive online computational neuroscience and deep learning courses through lectures, tutorials, and projects designed to build skills in quantitative analysis of neural data. The curriculum covers modeling, data analysis, and machine learning applied to neuroscience.",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 57,
@@ -2282,9 +2356,12 @@
     "description": "Great resource",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "information-oriented (reference)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 0,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 1
+    }
   },
   {
     "id": 58,
@@ -2335,11 +2412,6 @@
     ],
     "last_updated": "2026",
     "description": "Andy's Brain Book is a comprehensive, beginner-friendly online textbook covering neuroimaging analysis with major software packages including FSL, SPM, AFNI, and Freesurfer, using real datasets and step-by-step tutorials. It is widely used as an introductory reference for fMRI and structural MRI analysis.",
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)",
-      "information-oriented (reference)"
-    ],
     "programming_language": [
       "shell scripting",
       "Python",
@@ -2358,7 +2430,13 @@
       "DWI",
       "Resting-State",
       "Task-based"
-    ]
+    ],
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 1
+    }
   },
   {
     "id": 59,
@@ -2425,11 +2503,12 @@
     "description": "A comprehensive course on reproducible neuroimaging using the Adolescent Brain Cognitive Development (ABCD) dataset, covering data access, processing pipelines, and ReproNim reproducibility principles. Designed for researchers working with large-scale developmental neuroimaging data.",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "understanding-oriented (explanation)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 60,
@@ -2487,10 +2566,12 @@
     "description": "3 week machine learning course",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 0,
+      "reference": 0
+    }
   },
   {
     "id": 61,
@@ -2549,11 +2630,12 @@
     "description": "Comprehensive website describing the necessity of reproducible research and how to achieve it (notebooks, visualisation)",
     "alias_links": null,
     "notes": null,
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "problem-oriented (how to guides)",
-      "understanding-oriented (explanation)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 1,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 63,
@@ -2591,10 +2673,12 @@
       "Resting-State"
     ],
     "description": "Youtube lecture series of the 2021 FSL online course",
-    "quadrants": [
-      "information-oriented (reference)",
-      "learning-oriented (tutorials)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 1
+    }
   },
   {
     "id": 64,
@@ -2644,10 +2728,12 @@
       "MRI"
     ],
     "description": "A repository containing links to various training resources across the neuroimaging processing pipeline",
-    "quadrants": [
-      "understanding-oriented (explanation)",
-      "learning-oriented (tutorials)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 1,
+      "reference": 0
+    }
   },
   {
     "id": 65,
@@ -2709,9 +2795,11 @@
       "Foundational programming concepts",
       "Basic command line knowledge"
     ],
-    "quadrants": [
-      "learning-oriented (tutorials)",
-      "information-oriented (reference)"
-    ]
+    "quadrant_weights": {
+      "tutorial": 1,
+      "how_to": 0,
+      "explanation": 0,
+      "reference": 1
+    }
   }
 ]

@@ -45,9 +45,11 @@
     and collaboration, covering online GitHub workflows and local machine setup with
     GitHub Desktop, progressing from basic concepts to managing merge conflicts.
   notes: null
-  quadrants:
-  - problem-oriented (how to guides)
-  - learning-oriented (tutorials)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 0
 - id: 5
   tag_team:
   - CW
@@ -100,8 +102,11 @@
     (unclear if links work once you do that)
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 0
+    reference: 0
 - id: 7
   tag_team:
   - MH
@@ -145,8 +150,11 @@
   description: Short slide deck, very clear
   alias_links: null
   notes: link does not work for me (JB) can someone double check
-  quadrants:
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 0
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 8
   tag_team:
   - CW
@@ -192,9 +200,11 @@
     to use
   alias_links: null
   notes: null
-  quadrants:
-  - information-oriented (reference)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 0
+    how_to: 0
+    explanation: 1
+    reference: 1
 - id: 9
   tag_team:
   - CW
@@ -239,9 +249,11 @@
   description: Very short slide deck on GIT
   alias_links: null
   notes: null
-  quadrants:
-  - understanding-oriented (explanation)
-  - information-oriented (reference)
+  quadrant_weights:
+    tutorial: 0
+    how_to: 0
+    explanation: 1
+    reference: 1
 - id: 10
   tag_team:
   - BH
@@ -283,8 +295,11 @@
   description: Practical intro to bash and git
   alias_links: null
   notes: null
-  quadrants:
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 0
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 11
   tag_team:
   - CW
@@ -339,8 +354,11 @@
     QC/QA in general
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 0
+    reference: 0
 - id: 16
   tag_team:
   - CW
@@ -382,8 +400,11 @@
   description: labeled as part 1 - unclear where part 2 is
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 0
+    reference: 0
 - id: 18
   tag_team:
   - BH
@@ -429,9 +450,11 @@
   description: Some sections are under-developed
   alias_links: null
   notes: Reproducible Neuroimaging, tutorial guide, for cog sci students audience
-  quadrants:
-  - learning-oriented (tutorials)
-  - information-oriented (reference)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 0
+    reference: 1
 - id: 21
   tag_team:
   - CW
@@ -478,9 +501,11 @@
   description: Basic Imaging Overview. Focus on BIDS
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 22
   tag_team:
   - CW
@@ -527,9 +552,11 @@
   description: Tutorial on functional neuroimaging in Python
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 0
 - id: 23
   tag_team:
   - CW
@@ -574,9 +601,11 @@
     like Dipy and Nibabel.
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 0
 - id: 25
   tag_team:
   - CW
@@ -622,10 +651,11 @@
   description: example syllabus for hackathon/course
   alias_links: null
   notes: null
-  quadrants:
-  - understanding-oriented (explanation)
-  - learning-oriented (tutorials)
-  - information-oriented (reference)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 1
 - id: 26
   tag_team:
   - ELB
@@ -671,9 +701,11 @@
   description: Entire first year bootcamp videos online
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 28
   tag_team:
   - ELB
@@ -715,9 +747,11 @@
     on fMRI data
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 0
 - id: 29
   tag_team:
   - ELB
@@ -760,9 +794,11 @@
   description: Syllabus for course on fMRI, including slides, from collection to inferencing
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 30
   tag_team:
   - ELB
@@ -807,9 +843,11 @@
   description: Syllabus for reproducible neuroimaging multi-week course
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 0
 - id: 31
   tag_team:
   - CW
@@ -851,9 +889,11 @@
   description: syllabus for tutorial; details unclear. Might be unfinished.
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - information-oriented (reference)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 0
+    reference: 1
 - id: 32
   tag_team:
   - CW
@@ -896,10 +936,11 @@
   description: very good resource for data provenance
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - information-oriented (reference)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 1
 - id: 33
   tag_team:
   - CF
@@ -940,9 +981,11 @@
   description: Nice videos and course material on AI
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 34
   tag_team:
   - CF
@@ -985,9 +1028,11 @@
   description: Good video
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 35
   tag_team:
   - MH
@@ -1028,9 +1073,11 @@
   description: Course outline for Data Lad Course
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 0
 - id: 36
   tag_team:
   - CF
@@ -1075,9 +1122,11 @@
     work.
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - information-oriented (reference)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 0
+    reference: 1
 - id: 38
   tag_team:
   - CF
@@ -1121,9 +1170,11 @@
   description: Review of previous materials, full course
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 39
   tag_team:
   - CW
@@ -1170,9 +1221,11 @@
   description: Syllabus for ReproNim workshop
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - information-oriented (reference)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 0
+    reference: 1
 - id: 40
   tag_team:
   - CW
@@ -1215,9 +1268,11 @@
     methods and basic processing
   alias_links: null
   notes: null
-  quadrants:
-  - information-oriented (reference)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 0
+    how_to: 0
+    explanation: 1
+    reference: 1
 - id: 43
   tag_team:
   - CF
@@ -1259,9 +1314,11 @@
   description: Syllabus for workshop that has been given
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 0
 - id: 46
   tag_team:
   - CF
@@ -1304,8 +1361,11 @@
   description: Very nice overview of different fMRI topics
   alias_links: null
   notes: null
-  quadrants:
-  - information-oriented (reference)
+  quadrant_weights:
+    tutorial: 0
+    how_to: 0
+    explanation: 0
+    reference: 1
 - id: 47
   tag_team:
   - CF
@@ -1348,10 +1408,11 @@
   description: Pretty good if you want to teach fMRI analysis from scratch
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
-  - information-oriented (reference)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 1
 - id: 50
   tag_team:
   - CF
@@ -1393,9 +1454,11 @@
     data version control
   alias_links: null
   notes: null
-  quadrants:
-  - information-oriented (reference)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 0
+    how_to: 0
+    explanation: 1
+    reference: 1
 - id: 51
   tag_team:
   - CF
@@ -1434,9 +1497,11 @@
     but also intro to R, Python and HPC
   alias_links: https://github.com/jdkent/incf-fellow-jdkent/blob/gh-pages/index.md
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 0
 - id: 52
   tag_team:
   - CF
@@ -1475,9 +1540,11 @@
   description: For internal usage
   alias_links: null
   notes: Link to Github Importer broken
-  quadrants:
-  - information-oriented (reference)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 0
+    how_to: 0
+    explanation: 1
+    reference: 1
 - id: 53
   tag_team:
   - JB
@@ -1527,9 +1594,11 @@
     implementation in Python. Part of the QLS612 multi-week curriculum at McGill University.
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 54
   tag_team:
   - JB
@@ -1589,9 +1658,11 @@
     tools applied to neuroimaging.
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 0
 - id: 55
   tag_team:
   - JB
@@ -1652,10 +1723,11 @@
     practices.
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 1
+    reference: 0
 - id: 56
   tag_team:
   - CF
@@ -1709,9 +1781,11 @@
     data analysis, and machine learning applied to neuroscience.
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 57
   tag_team:
   - CF
@@ -1762,8 +1836,11 @@
   description: Great resource
   alias_links: null
   notes: null
-  quadrants:
-  - information-oriented (reference)
+  quadrant_weights:
+    tutorial: 0
+    how_to: 0
+    explanation: 0
+    reference: 1
 - id: 58
   tag_team:
   - JB
@@ -1807,10 +1884,6 @@
     covering neuroimaging analysis with major software packages including FSL, SPM,
     AFNI, and Freesurfer, using real datasets and step-by-step tutorials. It is widely
     used as an introductory reference for fMRI and structural MRI analysis.
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
-  - information-oriented (reference)
   programming_language:
   - shell scripting
   - Python
@@ -1827,6 +1900,11 @@
   - DWI
   - Resting-State
   - Task-based
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 1
 - id: 59
   tag_team:
   - JB
@@ -1882,10 +1960,11 @@
     large-scale developmental neuroimaging data.
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - understanding-oriented (explanation)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 1
+    reference: 0
 - id: 60
   tag_team:
   - JB
@@ -1929,9 +2008,11 @@
   description: 3 week machine learning course
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 0
+    reference: 0
 - id: 61
   tag_team:
   - JB
@@ -1977,10 +2058,11 @@
     and how to achieve it (notebooks, visualisation)
   alias_links: null
   notes: null
-  quadrants:
-  - learning-oriented (tutorials)
-  - problem-oriented (how to guides)
-  - understanding-oriented (explanation)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 1
+    explanation: 1
+    reference: 0
 - id: 63
   course_name: FSL course
   url: https://www.youtube.com/@FSLCourse
@@ -2008,9 +2090,11 @@
   - Task-based
   - Resting-State
   description: Youtube lecture series of the 2021 FSL online course
-  quadrants:
-  - information-oriented (reference)
-  - learning-oriented (tutorials)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 0
+    reference: 1
 - id: 64
   course_name: The Hitchhacker's guide to the brain
   url: https://learn-neuroimaging.github.io/hitchhackers_guide_brain/
@@ -2050,9 +2134,11 @@
   - MRI
   description: A repository containing links to various training resources across
     the neuroimaging processing pipeline
-  quadrants:
-  - understanding-oriented (explanation)
-  - learning-oriented (tutorials)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 1
+    reference: 0
 - id: 65
   course_name: National Institute of Mental Health (NIMH) Data Science & Sharing Team
     (DSST) material
@@ -2101,6 +2187,8 @@
   prerequisite:
   - Foundational programming concepts
   - Basic command line knowledge
-  quadrants:
-  - learning-oriented (tutorials)
-  - information-oriented (reference)
+  quadrant_weights:
+    tutorial: 1
+    how_to: 0
+    explanation: 0
+    reference: 1

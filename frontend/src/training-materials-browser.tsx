@@ -1,11 +1,13 @@
 "use client"
 
-import { LevelEnumValues, PlatformEnumValues, CourseLengthEnumValues, ContentFormatEnumValues, DeliveryEnumValues, LanguageEnumValues, ProgrammingLanguageEnumValues, NeuroimagingSoftwareEnumValues, ImagingModalityEnumValues, QuadrantsEnumValues } from "@/types/reproinventory";
+import { LevelEnumValues, PlatformEnumValues, CourseLengthEnumValues, ContentFormatEnumValues, DeliveryEnumValues, LanguageEnumValues, ProgrammingLanguageEnumValues, NeuroimagingSoftwareEnumValues, ImagingModalityEnumValues } from "@/types/reproinventory";
+import DiataxisMap from "@/components/DiataxisMap"
+import { QUADRANT_KEYS, QUADRANT_INFO, hasQuadrant, type QuadrantKey } from "@/lib/diataxis"
 import Footer from "@/components/Footer"
 import { buildItemListJsonLd } from "@/lib/schema-org"
 import { useInventoryData } from "@/hooks/useInventoryData"
 import { useState, useMemo, useEffect } from "react"
-import { Search, BookOpen, Video, FileText, Clock, ExternalLink } from "lucide-react" // Added ExternalLink
+import { Search, BookOpen, Video, FileText, Clock, ExternalLink, LayoutGrid, Map as MapIcon } from "lucide-react" // Added ExternalLink
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -28,7 +30,6 @@ import {
   type ProgrammingLanguageEnum,
   type NeuroimagingSoftwareEnum,
   type ImagingModalityEnum,
-  type QuadrantsEnum,
 } from "./types/reproinventory" // Import generated types
 
 export default function TrainingMaterialsBrowser() {
@@ -60,7 +61,7 @@ export default function TrainingMaterialsBrowser() {
   const [selectedNeuroimagingSoftware, setSelectedNeuroimagingSoftware] = useState<NeuroimagingSoftwareEnum[]>([])
   const [selectedImagingModalities, setSelectedImagingModalities] = useState<ImagingModalityEnum[]>([])
   const [selectedOpenDataset, setSelectedOpenDataset] = useState<boolean | null>(null)
-  const [selectedQuadrants, setSelectedQuadrants] = useState<QuadrantsEnum[]>([])
+  const [selectedQuadrants, setSelectedQuadrants] = useState<QuadrantKey[]>([])
   const [showFeaturedOnly, setShowFeaturedOnly] = useState(false)
 
   // Helper function to handle multi-select filters
@@ -82,7 +83,8 @@ export default function TrainingMaterialsBrowser() {
     { label: "Yes", value: true },
     { label: "No", value: false },
   ];
-  const quadrantsOptions = QuadrantsEnumValues;
+  const quadrantsOptions = QUADRANT_KEYS;
+  const [view, setView] = useState<"list" | "map">("list")
   const filteredMaterials = useMemo(() => {
     const filtered = reproInventoryData
 
@@ -151,7 +153,7 @@ export default function TrainingMaterialsBrowser() {
       }
       
       // Quadrants filter
-      if (selectedQuadrants.length > 0 && !material.quadrants?.some(quadrant => selectedQuadrants.includes(quadrant))) {
+      if (selectedQuadrants.length > 0 && !selectedQuadrants.some((quadrant) => hasQuadrant(material, quadrant))) {
         return false;
       }
 
@@ -283,8 +285,8 @@ export default function TrainingMaterialsBrowser() {
               <TabsContent value="categories" className="space-y-4">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="text-lg">Quadrants</CardTitle>
-                    <CardDescription>Filter by Quadrants classification</CardDescription>
+                    <CardTitle className="text-lg">Diataxis type</CardTitle>
+                    <CardDescription>What the material is for (any score above 0)</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
@@ -299,8 +301,9 @@ export default function TrainingMaterialsBrowser() {
                           />
                           <div className="grid gap-1.5 leading-none">
                             <Label htmlFor={`quadrant-${quadrant}`} className="text-sm font-medium">
-                              {quadrant}
+                              {QUADRANT_INFO[quadrant].label}
                             </Label>
+                            <p className="text-xs text-muted-foreground">{QUADRANT_INFO[quadrant].hint}</p>
                           </div>
                         </div>
                       ))}
@@ -565,15 +568,45 @@ export default function TrainingMaterialsBrowser() {
                       <p className="text-sm text-muted-foreground">Results for "{searchQuery}"</p>
                     )}
                   </div>
-                  <Dialog open={showAddMaterial} onOpenChange={setShowAddMaterial}>
-                    <DialogTrigger asChild>
-                      <Button>Add Material</Button>
-                    </DialogTrigger>
-                    <AddMaterialDialog onClose={() => setShowAddMaterial(false)} />
-                  </Dialog>
+                  <div className="flex items-center gap-2">
+                    <div className="flex rounded-md border p-0.5" role="group" aria-label="View">
+                      <Button
+                        variant={view === "list" ? "secondary" : "ghost"}
+                        size="sm"
+                        className="gap-1.5"
+                        aria-pressed={view === "list"}
+                        onClick={() => setView("list")}
+                      >
+                        <LayoutGrid className="w-4 h-4" /> List
+                      </Button>
+                      <Button
+                        variant={view === "map" ? "secondary" : "ghost"}
+                        size="sm"
+                        className="gap-1.5"
+                        aria-pressed={view === "map"}
+                        onClick={() => setView("map")}
+                      >
+                        <MapIcon className="w-4 h-4" /> Map
+                      </Button>
+                    </div>
+                    <Dialog open={showAddMaterial} onOpenChange={setShowAddMaterial}>
+                      <DialogTrigger asChild>
+                        <Button>Add Material</Button>
+                      </DialogTrigger>
+                      <AddMaterialDialog onClose={() => setShowAddMaterial(false)} />
+                    </Dialog>
+                  </div>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                {view === "map" && (
+                  <Card>
+                    <CardContent className="pt-6">
+                      <DiataxisMap entries={filteredMaterials} />
+                    </CardContent>
+                  </Card>
+                )}
+
+                <div className={view === "map" ? "hidden" : "grid gap-6 md:grid-cols-2 xl:grid-cols-3"}>
                   {filteredMaterials.map((material) => (
                     <Card key={material.id} className="hover:shadow-lg transition-shadow">
                       <CardHeader>

@@ -31,4 +31,15 @@ Source: [`reproinventory_schema.yaml`](reproinventory_schema.yaml) (LinkML).
 | `exclude_from_repro_inventory` | boolean |  |  |  |
 | `alias_links` | string |  |  |  |
 | `notes` | string |  |  |  |
-| `quadrants` | enum | yes | `information-oriented (reference)`, `understanding-oriented (explanation)`, `learning-oriented (tutorials)`, `problem-oriented (how to guides)`, `NA` |  |
+| `quadrant_weights` | [QuadrantWeights](#quadrantweights) |  |  | Diataxis profile of the resource, scored 0-3 per quadrant. |
+
+## `QuadrantWeights`
+
+How strongly a resource serves each of the four Diataxis purposes (https://diataxis.fr), from 0 (not at all) to 3 (mainly). Together the scores place the resource on two axes: practical (tutorial, how-to) vs theoretical (explanation, reference), and study (tutorial, explanation) vs work (how-to, reference).
+
+| Field | Type | Allowed values | Description |
+| --- | --- | --- | --- |
+| `tutorial` | integer | 0-3 | Learning-oriented - guides a learner through doing something. |
+| `how_to` | integer | 0-3 | Task-oriented - steps to solve a specific problem. |
+| `explanation` | integer | 0-3 | Understanding-oriented - background, concepts and reasoning. |
+| `reference` | integer | 0-3 | Information-oriented - lookup material such as documentation or command references. |
