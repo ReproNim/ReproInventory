@@ -57,10 +57,40 @@ def _load_schema_definitions(path=SCHEMA_PATH):
         if slots.get(n, {}).get("range") in enums
     }
     schema_fields = [n for n in class_slots if n not in NOT_AUTO_FILLED]
-    return array_fields, schema_fields, enum_values, boolean_fields
+    # Inline objects of integer scores, e.g. quadrant_weights -> {keys, min, max}
+    score_fields = {}
+    for n in class_slots:
+        nested = schema["classes"].get(slots.get(n, {}).get("range"))
+        if nested and nested.get("attributes"):
+            attrs = {k: (v or {}) for k, v in nested["attributes"].items()}
+            score_fields[n] = {
+                "keys": list(attrs),
+                "min": min(a.get("minimum_value", 0) for a in attrs.values()),
+                "max": max(a.get("maximum_value", 0) for a in attrs.values()),
+            }
+    return array_fields, schema_fields, enum_values, boolean_fields, score_fields
 
 
-ARRAY_FIELDS, SCHEMA_FIELDS, ENUM_VALUES, BOOLEAN_FIELDS = _load_schema_definitions()
+ARRAY_FIELDS, SCHEMA_FIELDS, ENUM_VALUES, BOOLEAN_FIELDS, SCORE_FIELDS = _load_schema_definitions()
+
+
+def clean_scores(field, value):
+    """Keep known keys with integer scores inside the allowed range; None if nothing usable."""
+    if not isinstance(value, dict):
+        return None
+    spec = SCORE_FIELDS[field]
+    cleaned = {}
+    for key in spec["keys"]:
+        raw = value.get(key)
+        try:
+            score = int(raw)
+        except (TypeError, ValueError):
+            continue
+        if spec["min"] <= score <= spec["max"]:
+            cleaned[key] = score
+    if not cleaned or not any(cleaned.values()):
+        return None
+    return {key: cleaned.get(key, 0) for key in spec["keys"]}
 
 
 def field_is_missing(value):
@@ -70,6 +100,8 @@ def field_is_missing(value):
         return True
     if isinstance(value, list) and len(value) == 0:
         return True
+    if isinstance(value, dict) and not any(value.values()):
+        return True  # e.g. quadrant_weights with every score 0
     return False
 
 
@@ -115,6 +147,12 @@ def validate_ai_payload(payload):
         if field not in SCHEMA_FIELDS:
             continue
         if field == "id":
+            continue
+
+        if field in SCORE_FIELDS:
+            scores = clean_scores(field, value)
+            if scores:
+                cleaned[field] = scores
             continue
 
         if field in ARRAY_FIELDS:
@@ -179,7 +217,7 @@ AI_FILLABLE_FIELDS = [
     "open_dataset",
     "assessment",
     "prerequisite",
-    "quadrants",
+    "quadrant_weights",
 ]
 
 FIELD_HINTS = {
@@ -196,7 +234,11 @@ FIELD_HINTS = {
     "open_dataset": "true if the material uses an openly available dataset",
     "assessment": "true if the material includes exercises with answers, quizzes or other assessment",
     "prerequisite": "short list of prior knowledge the material assumes",
-    "quadrants": "Diataxis type(s): tutorial, how-to guide, explanation or reference",
+    "quadrant_weights": (
+        "Diataxis profile: how strongly the material is a tutorial (guided learning by doing), "
+        "a how-to guide (steps for a specific task), an explanation (concepts and background) "
+        "or a reference (lookup information); 0 = not at all, 3 = mainly"
+    ),
 }
 
 PAGE_TEXT_LIMIT = 8000
@@ -266,6 +308,10 @@ def build_ai_prompt(entry, missing_fields, page_text=""):
         if field in ENUM_VALUES:
             kind = "list of values from" if field in ARRAY_FIELDS else "one value from"
             lines.append(f'- "{field}" ({hint}): {kind} {json.dumps(ENUM_VALUES[field])}')
+        elif field in SCORE_FIELDS:
+            spec = SCORE_FIELDS[field]
+            keys = ", ".join(f'"{k}"' for k in spec["keys"])
+            lines.append(f'- "{field}" ({hint}): object with integer scores {spec["min"]}-{spec["max"]} for keys {keys}')
         elif field in BOOLEAN_FIELDS:
             lines.append(f'- "{field}" ({hint}): true or false')
         else:
@@ -396,6 +442,8 @@ def format_pr_body(issue_number, label):
                 shown = "yes" if value else "no"
             elif isinstance(value, list):
                 shown = ", ".join(map(str, value))
+            elif isinstance(value, dict):
+                shown = ", ".join(f"{k} {v}" for k, v in value.items())
             else:
                 shown = str(value)
             lines.append(f"| `{field}` | {shown} |")

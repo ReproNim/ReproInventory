@@ -28,9 +28,6 @@ export const NeuroimagingSoftwareEnumValues: NeuroimagingSoftwareEnum[] = ["AFNI
 export type ImagingModalityEnum = "DWI" | "Structural" | "Functional" | "Task-based" | "Resting-State" | "EEG" | "Behavioral" | "MEG" | "MRI" | "NA";
 export const ImagingModalityEnumValues: ImagingModalityEnum[] = ["DWI", "Structural", "Functional", "Task-based", "Resting-State", "EEG", "Behavioral", "MEG", "MRI", "NA"];
 
-export type QuadrantsEnum = "information-oriented (reference)" | "understanding-oriented (explanation)" | "learning-oriented (tutorials)" | "problem-oriented (how to guides)" | "NA";
-export const QuadrantsEnumValues: QuadrantsEnum[] = ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"];
-
 export interface ReproInventoryEntry {
   id: number;
   tag_team?: string[];
@@ -57,5 +54,15 @@ export interface ReproInventoryEntry {
   exclude_from_repro_inventory?: boolean;
   alias_links?: string;
   notes?: string;
-  quadrants?: QuadrantsEnum[];
+  quadrant_weights?: QuadrantWeights;
 }
+
+export interface QuadrantWeights {
+  tutorial?: number;
+  how_to?: number;
+  explanation?: number;
+  reference?: number;
+}
+export const QuadrantWeightsKeys = ["tutorial", "how_to", "explanation", "reference"] as const;
+export const QuadrantWeightsMin = 0;
+export const QuadrantWeightsMax = 3;
