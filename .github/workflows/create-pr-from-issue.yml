@@ -1,21 +1,47 @@
 name: Create PR from Issue
 
+# Turns an "Add / Edit / Delete material" issue (opened from the website) into a
+# pull request against the inventory data. Runs once per issue. The type of
+# change is taken from the issue label or, if GitHub dropped the label (it does
+# for contributors without triage rights), from the issue title.
+#
+# To reprocess an issue (e.g. after fixing the AI settings), use "Run workflow"
+# on the Actions tab and enter the issue number. The issue's branch is rebuilt
+# from main and its existing PR is updated, so no duplicate entries or PRs.
+
 on:
   issues:
-    types: [opened, labeled]
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Issue number to (re)process
+        required: true
+
+concurrency:
+  group: create-pr-from-issue-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
 
 jobs:
   create-pr:
     runs-on: ubuntu-latest
     if: >
-      contains(fromJSON('["new-material", "edit-material", "delete-material"]'), github.event.label.name)
-      || contains(join(github.event.issue.labels.*.name, ','), 'new-material')
-      || contains(join(github.event.issue.labels.*.name, ','), 'edit-material')
-      || contains(join(github.event.issue.labels.*.name, ','), 'delete-material')
+      github.event_name == 'workflow_dispatch'
+      || startsWith(github.event.issue.title, 'Add material:')
+      || startsWith(github.event.issue.title, 'Edit material:')
+      || startsWith(github.event.issue.title, 'Delete material:')
+      || contains(github.event.issue.labels.*.name, 'new-material')
+      || contains(github.event.issue.labels.*.name, 'edit-material')
+      || contains(github.event.issue.labels.*.name, 'delete-material')
 
-    permissions:
-      contents: write
-      pull-requests: write
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
 
     steps:
       - name: Checkout
@@ -29,60 +55,59 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml requests
 
-      - name: Write issue data to files
-        env:
-          ISSUE_BODY: ${{ github.event.issue.body }}
-          ISSUE_TITLE: ${{ github.event.issue.title }}
+      - name: Read issue and determine the type of change
         run: |
-          printf '%s' "$ISSUE_BODY" > /tmp/issue_body.txt
-          printf '%s' "$ISSUE_TITLE" > /tmp/issue_title.txt
+          gh issue view "$ISSUE_NUMBER" --json title --jq .title > /tmp/issue_title.txt
+          gh issue view "$ISSUE_NUMBER" --json body --jq .body > /tmp/issue_body.txt
+          LABELS=$(gh issue view "$ISSUE_NUMBER" --json labels --jq '[.labels[].name] | join(",")')
+          TITLE=$(cat /tmp/issue_title.txt)
 
-      - name: Prepare issue branch
-        env:
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-          ISSUE_LABEL: ${{ contains(join(github.event.issue.labels.*.name, ','), 'new-material') && 'new-material' || contains(join(github.event.issue.labels.*.name, ','), 'edit-material') && 'edit-material' || contains(join(github.event.issue.labels.*.name, ','), 'delete-material') && 'delete-material' || github.event.label.name }}
-        run: |
-          BRANCH="auto/${ISSUE_LABEL}-issue-${ISSUE_NUMBER}-${GITHUB_RUN_ID}"
-          echo "BRANCH=${BRANCH}" >> "$GITHUB_ENV"
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch --all --prune
-
-          if git show-ref --verify --quiet "refs/remotes/origin/${BRANCH}"; then
-            git checkout -B "$BRANCH" "origin/${BRANCH}"
-          else
-            git checkout -B "$BRANCH"
-          fi
+          case ",$LABELS," in
+            *,new-material,*)    ISSUE_LABEL=new-material ;;
+            *,edit-material,*)   ISSUE_LABEL=edit-material ;;
+            *,delete-material,*) ISSUE_LABEL=delete-material ;;
+            *)
+              case "$TITLE" in
+                "Add material:"*)    ISSUE_LABEL=new-material ;;
+                "Edit material:"*)   ISSUE_LABEL=edit-material ;;
+                "Delete material:"*) ISSUE_LABEL=delete-material ;;
+                *) echo "Issue #$ISSUE_NUMBER is not a material submission; nothing to do."; exit 1 ;;
+              esac ;;
+          esac
+          echo "ISSUE_LABEL=$ISSUE_LABEL" >> "$GITHUB_ENV"
+          echo "BRANCH=auto/issue-$ISSUE_NUMBER" >> "$GITHUB_ENV"
+          echo "Issue #$ISSUE_NUMBER: $ISSUE_LABEL"
 
       - name: Process issue and update files
         env:
-          ISSUE_LABEL: ${{ contains(join(github.event.issue.labels.*.name, ','), 'new-material') && 'new-material' || contains(join(github.event.issue.labels.*.name, ','), 'edit-material') && 'edit-material' || contains(join(github.event.issue.labels.*.name, ','), 'delete-material') && 'delete-material' || github.event.label.name }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
-          AI_API_URL: ${{ secrets.AI_API_URL || 'https://api.openai.com/v1' }}
+          AI_API_URL: ${{ vars.AI_API_URL || secrets.AI_API_URL || 'https://api.openai.com/v1' }}
           AI_MODEL: ${{ vars.AI_MODEL || 'gpt-4o-mini' }}
-          AI_MAX_TOKENS: ${{ vars.AI_MAX_TOKENS || '250' }}
+          AI_MAX_TOKENS: ${{ vars.AI_MAX_TOKENS || '1000' }}
+          PR_BODY_PATH: /tmp/pr_body.md
         run: python .github/scripts/process_issue.py
 
-      - name: Create branch and open PR
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_NUMBER: ${{ github.event.issue.number }}
-          ISSUE_LABEL: ${{ contains(join(github.event.issue.labels.*.name, ','), 'new-material') && 'new-material' || contains(join(github.event.issue.labels.*.name, ','), 'edit-material') && 'edit-material' || contains(join(github.event.issue.labels.*.name, ','), 'delete-material') && 'delete-material' || github.event.label.name }}
-          ISSUE_TITLE: ${{ github.event.issue.title }}
+      - name: Push branch and open or update the PR
         run: |
-          BRANCH="${BRANCH:-auto/${ISSUE_LABEL}-issue-${ISSUE_NUMBER}-${GITHUB_RUN_ID}}"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Always start the issue's branch fresh from main, so reprocessing
+          # replaces the previous attempt instead of stacking entries.
+          git checkout -B "$BRANCH"
           git add model/reproinventory_data.yaml frontend/public/data/reproinventory_data.json
           if git diff --cached --quiet; then
-            echo "No changes detected — nothing to commit."
+            echo "No changes detected - nothing to commit."
             exit 1
           fi
-          git commit -m "${ISSUE_TITLE}"
-          git fetch --all --prune
-          git push --set-upstream origin "$BRANCH" --force-with-lease
-          PR_BODY=$(printf "Closes #%s\n\nAutomatically generated from issue #%s." "${ISSUE_NUMBER}" "${ISSUE_NUMBER}")
-          gh pr create \
-            --title "${ISSUE_TITLE}" \
-            --body "${PR_BODY}" \
-            --base main \
-            --head "${BRANCH}"
+          TITLE=$(cat /tmp/issue_title.txt)
+          git commit -m "$TITLE" -m "Closes #$ISSUE_NUMBER"
+          git push --force origin "$BRANCH"
+
+          EXISTING=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then
+            gh pr edit "$EXISTING" --body-file /tmp/pr_body.md
+            echo "Updated PR #$EXISTING"
+          else
+            gh pr create --title "$TITLE" --body-file /tmp/pr_body.md --base main --head "$BRANCH"
+          fi
