@@ -41,7 +41,29 @@ Want other specific resources included, add them here (or file an issue)
      
 # Our Training Resource Description Model
 
-Our current model (v_0.0.1) is expressed in YAML [here](model/model.yaml). A more human-readable version of that model is [here](model/model.md).
+The data model is defined as a [LinkML](https://linkml.io/) schema in [`model/reproinventory_schema.yaml`](model/reproinventory_schema.yaml). A human-readable field reference is in [`model/schema.md`](model/schema.md).
+
+The inventory itself lives in [`model/reproinventory_data.yaml`](model/reproinventory_data.yaml), one entry per training resource. Every change is validated against the schema in CI.
+
+### Working with the data and schema
+
+```bash
+pip install linkml pyyaml requests
+
+# validate the data against the schema
+linkml-validate -s model/reproinventory_schema.yaml -C ReproInventoryEntry model/reproinventory_data.yaml
+
+# after editing the data: regenerate the JSON used by the website
+python model/convert_yaml_to_json.py
+
+# after editing the schema: regenerate TypeScript types and model/schema.md
+python model/generate_from_schema.py
+
+# run the tests
+python -m unittest discover -s tests
+```
+
+The first version of the model, from the OHBM 2025 BrainHack, is kept in [`archive/`](archive/).
 
 
 # Project development (OHBM Hackathon)

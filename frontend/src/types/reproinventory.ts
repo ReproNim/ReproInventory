@@ -1,91 +1,61 @@
-export type ReproInventoryEntryId = string;
+// GENERATED FILE - DO NOT EDIT.
+// Generated from model/reproinventory_schema.yaml by model/generate_from_schema.py.
 
 export type LevelEnum = "Beginner" | "Intermediate" | "Advanced" | "NA";
+export const LevelEnumValues: LevelEnum[] = ["Beginner", "Intermediate", "Advanced", "NA"];
 
 export type PlatformEnum = "Mac" | "Windows" | "Linux" | "Docker" | "Jupyter" | "NA";
+export const PlatformEnumValues: PlatformEnum[] = ["Mac", "Windows", "Linux", "Docker", "Jupyter", "NA"];
 
 export type CourseLengthEnum = "<1 hr" | "1-4 hrs" | "1 day" | "1-3 days" | "1 week" | "1+ weeks" | "NA";
+export const CourseLengthEnumValues: CourseLengthEnum[] = ["<1 hr", "1-4 hrs", "1 day", "1-3 days", "1 week", "1+ weeks", "NA"];
 
 export type ContentFormatEnum = "Hands-on tutorial / notebooks" | "lecture" | "video" | "notes" | "blog post" | "reference" | "slides" | "website" | "outline" | "meta-resource" | "NA";
+export const ContentFormatEnumValues: ContentFormatEnum[] = ["Hands-on tutorial / notebooks", "lecture", "video", "notes", "blog post", "reference", "slides", "website", "outline", "meta-resource", "NA"];
 
 export type DeliveryEnum = "self-paced" | "instructor" | "Hybrid";
+export const DeliveryEnumValues: DeliveryEnum[] = ["self-paced", "instructor", "Hybrid"];
 
 export type LanguageEnum = "English" | "French" | "Spanish" | "Chinese" | "German" | "English, French" | "English, German" | "Other" | "NA";
+export const LanguageEnumValues: LanguageEnum[] = ["English", "French", "Spanish", "Chinese", "German", "English, French", "English, German", "Other", "NA"];
 
 export type ProgrammingLanguageEnum = "Python" | "R" | "shell scripting" | "Matlab" | "Git" | "NA";
+export const ProgrammingLanguageEnumValues: ProgrammingLanguageEnum[] = ["Python", "R", "shell scripting", "Matlab", "Git", "NA"];
 
 export type NeuroimagingSoftwareEnum = "AFNI" | "SPM" | "FSL" | "Freesurfer" | "Python" | "Multiple" | "NA";
+export const NeuroimagingSoftwareEnumValues: NeuroimagingSoftwareEnum[] = ["AFNI", "SPM", "FSL", "Freesurfer", "Python", "Multiple", "NA"];
 
 export type ImagingModalityEnum = "DWI" | "Structural" | "Functional" | "Task-based" | "Resting-State" | "EEG" | "Behavioral" | "MEG" | "MRI" | "NA";
-
-export type OpenDatasetEnum = boolean;
+export const ImagingModalityEnumValues: ImagingModalityEnum[] = ["DWI", "Structural", "Functional", "Task-based", "Resting-State", "EEG", "Behavioral", "MEG", "MRI", "NA"];
 
 export type QuadrantsEnum = "information-oriented (reference)" | "understanding-oriented (explanation)" | "learning-oriented (tutorials)" | "problem-oriented (how to guides)" | "NA";
-
-
+export const QuadrantsEnumValues: QuadrantsEnum[] = ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"];
 
 export interface ReproInventoryEntry {
-    id: string,
-    tag_team?: string[],
-    course_name?: string,
-    url?: string,
-    level?: LevelEnum[],
-    platform?: PlatformEnum[],
-    keywords?: string[],
-    course_length?: CourseLengthEnum,
-    instruction_medium?: ContentFormatEnum[],
-    delivery?: DeliveryEnum[],
-    language?: LanguageEnum[],
-    programming_language?: ProgrammingLanguageEnum[],
-    neuroimaging_software?: NeuroimagingSoftwareEnum[],
-    imaging_modality?: ImagingModalityEnum[],
-    open_dataset?: OpenDatasetEnum,
-    last_updated?: string,
-    functionality?: string,
-    assessment?: boolean,
-    prerequisite?: string[],
-    source?: string[],
-    description?: string,
-    exclude_from_repro_inventory?: string,
-    alias_links?: string,
-    notes?: string,
-    quadrants?: QuadrantsEnum[],
+  id: number;
+  tag_team?: string[];
+  course_name?: string;
+  url?: string;
+  level?: LevelEnum[];
+  platform?: PlatformEnum[];
+  keywords?: string[];
+  course_length?: CourseLengthEnum;
+  instruction_medium?: ContentFormatEnum[];
+  delivery?: DeliveryEnum[];
+  language?: LanguageEnum[];
+  programming_language?: ProgrammingLanguageEnum[];
+  neuroimaging_software?: NeuroimagingSoftwareEnum[];
+  imaging_modality?: ImagingModalityEnum[];
+  open_dataset?: boolean;
+  last_updated?: string;
+  functionality?: string;
+  assessment?: boolean;
+  prerequisite?: string[];
+  source?: string[];
+  description?: string;
+  review?: string;
+  exclude_from_repro_inventory?: boolean;
+  alias_links?: string;
+  notes?: string;
+  quadrants?: QuadrantsEnum[];
 }
-
-
-export function isReproInventoryEntry(o: object): o is ReproInventoryEntry {
-    return (
-        'id' in o
-    )
-}
-
-export function toReproInventoryEntry(o: ReproInventoryEntry): ReproInventoryEntry {
-    return {
-        id: o.id ?? undefined,
-        tag_team: o.tag_team ?? undefined,
-        course_name: o.course_name ?? undefined,
-        url: o.url ?? undefined,
-        level: o.level ?? undefined,
-        platform: o.platform ?? undefined,
-        keywords: o.keywords ?? undefined,
-        course_length: o.course_length ?? undefined,
-        instruction_medium: o.instruction_medium ?? undefined,
-        delivery: o.delivery ?? undefined,
-        language: o.language ?? undefined,
-        programming_language: o.programming_language ?? undefined,
-        neuroimaging_software: o.neuroimaging_software ?? undefined,
-        imaging_modality: o.imaging_modality ?? undefined,
-        open_dataset: o.open_dataset ?? undefined,
-        last_updated: o.last_updated ?? undefined,
-        functionality: o.functionality ?? undefined,
-        assessment: o.assessment ?? undefined,
-        prerequisite: Array.isArray(o.prerequisite) ? o.prerequisite : (o.prerequisite ? [o.prerequisite] : undefined),
-        source: Array.isArray(o.source) ? o.source : (o.source ? [o.source] : undefined),
-        description: o.description ?? undefined,
-        exclude_from_repro_inventory: o.exclude_from_repro_inventory ?? undefined,
-        alias_links: o.alias_links ?? undefined,
-        notes: o.notes ?? undefined,
-        quadrants: o.quadrants ?? undefined
-    }
-}
-

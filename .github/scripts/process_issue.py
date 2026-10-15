@@ -17,6 +17,7 @@ Environment variables:
 import json
 import os
 import re
+from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
 import requests
@@ -25,65 +26,32 @@ import yaml
 YAML_PATH = "model/reproinventory_data.yaml"
 JSON_PATH = "frontend/public/data/reproinventory_data.json"
 
-ARRAY_FIELDS = [
-    "tag_team", "level", "platform", "keywords", "instruction_medium",
-    "delivery", "language", "programming_language", "neuroimaging_software",
-    "imaging_modality", "quadrants", "source", "prerequisite",
-]
+SCHEMA_PATH = Path(__file__).resolve().parents[2] / "model" / "reproinventory_schema.yaml"
 
-SCHEMA_FIELDS = [
-    "id",
-    "tag_team",
-    "course_name",
-    "url",
-    "level",
-    "platform",
-    "keywords",
-    "course_length",
-    "instruction_medium",
-    "delivery",
-    "language",
-    "programming_language",
-    "neuroimaging_software",
-    "imaging_modality",
-    "open_dataset",
-    "last_updated",
-    "functionality",
-    "assessment",
-    "prerequisite",
-    "source",
-    "description",
-    "exclude_from_repro_inventory",
-    "alias_links",
-    "notes",
-    "quadrants",
-]
+# Fields that are never filled automatically: the free-text quality review
+# must come from a human maintainer.
+NOT_AUTO_FILLED = {"review"}
 
-ENUM_VALUES = {
-    "level": ["Beginner", "Intermediate", "Advanced", "NA"],
-    "platform": ["Mac", "Windows", "Linux", "Docker", "Jupyter", "NA"],
-    "course_length": ["<1 hr", "1-4 hrs", "1 day", "1-3 days", "1 week", "1+ weeks", "NA"],
-    "instruction_medium": [
-        "Hands-on tutorial / notebooks",
-        "lecture",
-        "video",
-        "notes",
-        "blog post",
-        "reference",
-        "slides",
-        "website",
-        "outline",
-        "meta-resource",
-        "NA",
-    ],
-    "delivery": ["self-paced", "instructor", "Hybrid", "NA"],
-    "language": ["English", "French", "Spanish", "Chinese", "German", "English, French", "English, German", "Other", "NA"],
-    "programming_language": ["Python", "R", "shell scripting", "Matlab", "Git", "NA"],
-    "neuroimaging_software": ["AFNI", "SPM", "FSL", "Freesurfer", "Python", "Multiple", "NA"],
-    "imaging_modality": ["DWI", "Structural", "Functional", "Task-based", "Resting-State", "EEG", "Behavioral", "MEG", "MRI", "NA"],
-    "quadrants": ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"],
-    "exclude_from_repro_inventory": ["Yes", "No", "NA"],
-}
+
+def _load_schema_definitions(path=SCHEMA_PATH):
+    """Derive field lists and allowed values from the LinkML schema."""
+    with open(path, encoding="utf-8") as f:
+        schema = yaml.safe_load(f)
+    class_slots = next(iter(schema["classes"].values()))["slots"]
+    slots = {name: (spec or {}) for name, spec in schema["slots"].items()}
+    enums = schema["enums"]
+    array_fields = [n for n in class_slots if slots.get(n, {}).get("multivalued")]
+    boolean_fields = {n for n in class_slots if slots.get(n, {}).get("range") == "boolean"}
+    enum_values = {
+        n: [str(v) for v in (enums[slots[n]["range"]].get("permissible_values") or {})]
+        for n in class_slots
+        if slots.get(n, {}).get("range") in enums
+    }
+    schema_fields = [n for n in class_slots if n not in NOT_AUTO_FILLED]
+    return array_fields, schema_fields, enum_values, boolean_fields
+
+
+ARRAY_FIELDS, SCHEMA_FIELDS, ENUM_VALUES, BOOLEAN_FIELDS = _load_schema_definitions()
 
 
 def field_is_missing(value):
@@ -155,7 +123,7 @@ def validate_ai_payload(payload):
                 cleaned[field] = value
             continue
 
-        if field in {"open_dataset", "assessment"}:
+        if field in BOOLEAN_FIELDS:
             if isinstance(value, bool):
                 cleaned[field] = value
             elif isinstance(value, str):
@@ -195,7 +163,7 @@ def build_ai_prompt(entry, missing_fields):
     for field in missing_fields:
         if field in ENUM_VALUES:
             allowed.append(f"- {field}: one of {ENUM_VALUES[field]}")
-        elif field in {"open_dataset", "assessment"}:
+        elif field in BOOLEAN_FIELDS:
             allowed.append(f"- {field}: boolean (true or false)")
         else:
             allowed.append(f"- {field}: string or list of strings as appropriate")

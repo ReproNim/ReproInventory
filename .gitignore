@@ -1,3 +1,10 @@
 node_modules
 .squad
 frontend/dist/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

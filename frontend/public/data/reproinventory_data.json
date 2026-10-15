@@ -2449,9 +2449,7 @@
     "keywords": [
       "Machine Learning"
     ],
-    "course_length": [
-      "1+ weeks"
-    ],
+    "course_length": "1+ weeks",
     "instruction_medium": [
       "video",
       "website"
@@ -2474,7 +2472,7 @@
       "Resting-State"
     ],
     "open_dataset": true,
-    "last_updated": 2025,
+    "last_updated": "2025",
     "functionality": null,
     "assessment": true,
     "prerequisite": [
@@ -2536,7 +2534,7 @@
       "Functional"
     ],
     "open_dataset": true,
-    "last_updated": 2025,
+    "last_updated": "2025",
     "functionality": null,
     "assessment": false,
     "prerequisite": [
@@ -2613,8 +2611,7 @@
       "analysis",
       "statistics",
       "reporting results",
-      "sharing data",
-      null
+      "sharing data"
     ],
     "course_length": "1-3 days",
     "instruction_medium": [

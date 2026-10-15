@@ -10,7 +10,7 @@ ReproInventory is a web application for browsing neuroimaging and reproducibilit
 - **Styling:** Tailwind CSS v4
 - **UI Components:** shadcn/ui (built on Radix UI primitives)
 - **Icons:** lucide-react
-- **Data:** Static JSON file served from `frontend/public/data/reproinventory_data.json`
+- **Data:** Static JSON file served from `frontend/public/data/reproinventory_data.json` (generated from `model/reproinventory_data.yaml`)
 - **Model/Schema:** YAML-based schema in `model/`, with Python scripts to generate JSON
 - **Deploy:** GitHub Pages via GitHub Actions (pushes to `main` auto-deploy)
 
@@ -29,13 +29,14 @@ frontend/               # Main React app
       reproinventory_data.json  # The training materials dataset
 
 model/                  # Schema and data source of truth
-  model.yaml            # LinkML schema definition
-  reproinventory_data.yaml     # Raw training data
-  reproinventory_schema.yaml   # Schema
-  generate_reproinventory_data.py  # Generates JSON from YAML
-  convert_yaml_to_json.py
+  reproinventory_schema.yaml   # LinkML schema (single source of truth for fields and allowed values)
+  reproinventory_data.yaml     # The inventory data, one entry per resource
+  schema.md                    # GENERATED field reference
+  generate_from_schema.py      # Generates frontend types + schema.md from the schema
+  convert_yaml_to_json.py      # Generates the frontend JSON from the YAML data
 
-SimpleViewer/           # Legacy Python/Flask viewer (archived, do not modify)
+tests/                  # Python tests (schema sync, issue processing)
+archive/                # Legacy files (hackathon model, SimpleViewer, TSV importer) - do not modify
 ```
 
 ## Development Commands
@@ -51,7 +52,7 @@ npm run preview   # Preview production build locally
 
 ## Data Model
 
-The data schema is defined in `model/model.yaml` (LinkML). TypeScript types in `frontend/src/types/reproinventory.ts` are generated from this schema. Key fields on `ReproInventoryEntry`:
+The data schema is defined in `model/reproinventory_schema.yaml` (LinkML). TypeScript types and the option lists in `frontend/src/types/reproinventory.ts` are generated from it by `python model/generate_from_schema.py`; never edit that file by hand. Key fields on `ReproInventoryEntry`:
 
 - `id`, `course_name`, `url`, `review`, `notes`, `keywords`
 - `level`, `platform`, `course_length`, `instruction_medium`, `delivery`
@@ -62,7 +63,7 @@ Enum values are strict — always use values that match the schema.
 
 ## Code Conventions
 
-- Use the types from `frontend/src/types/reproinventory.ts` for all data model types; do not redefine them locally (note: `AddMaterialDialog.tsx` currently duplicates types — prefer importing from the shared types file in new code).
+- Use the types and `...EnumValues` option lists from `frontend/src/types/reproinventory.ts`; do not redefine them locally.
 - Use `@/` path alias for imports (e.g. `@/components/ui/button`).
 - UI primitives live in `frontend/src/components/ui/` — use these rather than raw HTML elements.
 - Custom components go in `frontend/src/components/`.
@@ -76,7 +77,7 @@ Enum values are strict — always use values that match the schema.
 
 ## What to Avoid
 
-- Do not modify files in `SimpleViewer/` — it is a legacy viewer and not actively used.
-- Do not change enum values without also updating `model/model.yaml` and regenerating types.
+- Do not modify files in `archive/`.
+- Change enum values only in `model/reproinventory_schema.yaml`, then run `python model/generate_from_schema.py`. CI checks that generated files are up to date and that the data validates (`linkml-validate`).
 - Do not hardcode data that belongs in `reproinventory_data.json` or the YAML source.
 - Do not add dependencies without good reason — the stack is intentionally minimal.

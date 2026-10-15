@@ -1,5 +1,6 @@
 "use client"
 
+import { LevelEnumValues, PlatformEnumValues, CourseLengthEnumValues, ContentFormatEnumValues, DeliveryEnumValues, LanguageEnumValues, ProgrammingLanguageEnumValues, NeuroimagingSoftwareEnumValues, ImagingModalityEnumValues, QuadrantsEnumValues } from "@/types/reproinventory";
 import Footer from "@/components/Footer"
 import { buildItemListJsonLd } from "@/lib/schema-org"
 import { useInventoryData } from "@/hooks/useInventoryData"
@@ -68,23 +69,22 @@ export default function TrainingMaterialsBrowser() {
   }
 
   // Define filter options based on Enums from schema
-  const levelOptions: LevelEnum[] = ["Beginner", "Intermediate", "Advanced", "NA"];
-  const platformOptions: PlatformEnum[] = ["Mac", "Windows", "Linux", "Docker", "Jupyter", "NA"];
-  const courseLengthOptions: CourseLengthEnum[] = ["<1 hr", "1-4 hrs", "1 day", "1-3 days", "1 week", "1+ weeks", "NA"];
-  const instructionMediumOptions: ContentFormatEnum[] = ["Hands-on tutorial / notebooks", "lecture", "video", "notes", "blog post", "reference", "slides", "website", "outline", "meta-resource", "NA"];
-  const deliveryOptions: DeliveryEnum[] = ["self-paced", "instructor", "Hybrid"];
-  const languageOptions: LanguageEnum[] = ["English", "French", "Spanish", "Chinese", "German", "English, French", "English, German", "Other", "NA"];
-  const programmingLanguageOptions: ProgrammingLanguageEnum[] = ["Python", "R", "shell scripting", "Matlab", "Git", "NA"];
-  const neuroimagingSoftwareOptions: NeuroimagingSoftwareEnum[] = ["AFNI", "SPM", "FSL", "Freesurfer", "Python", "Multiple", "NA"];
-  const imagingModalityOptions: ImagingModalityEnum[] = ["DWI", "Structural", "Functional", "Task-based", "Resting-State", "EEG", "Behavioral", "MEG", "MRI", "NA"];
+  const levelOptions = LevelEnumValues;
+  const platformOptions = PlatformEnumValues;
+  const courseLengthOptions = CourseLengthEnumValues;
+  const instructionMediumOptions = ContentFormatEnumValues;
+  const deliveryOptions = DeliveryEnumValues;
+  const languageOptions = LanguageEnumValues;
+  const programmingLanguageOptions = ProgrammingLanguageEnumValues;
+  const neuroimagingSoftwareOptions = NeuroimagingSoftwareEnumValues;
+  const imagingModalityOptions = ImagingModalityEnumValues;
   const openDatasetOptions: { label: string; value: boolean }[] = [
     { label: "Yes", value: true },
     { label: "No", value: false },
   ];
-  const quadrantsOptions: QuadrantsEnum[] = ["information-oriented (reference)", "understanding-oriented (explanation)", "learning-oriented (tutorials)", "problem-oriented (how to guides)", "NA"];
-
+  const quadrantsOptions = QuadrantsEnumValues;
   const filteredMaterials = useMemo(() => {
-    let filtered = reproInventoryData
+    const filtered = reproInventoryData
 
     return filtered.filter((material) => {
       // Search query filter: course_name, url, keywords, notes, description
