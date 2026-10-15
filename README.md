@@ -65,6 +65,29 @@ python -m unittest discover -s tests
 
 The first version of the model, from the OHBM 2025 BrainHack, is kept in [`archive/`](archive/).
 
+### Contributions from the website
+
+The *Add* and *Edit* buttons on the website open a pre-filled GitHub issue. The
+[Create PR from Issue](.github/workflows/create-pr-from-issue.yml) workflow turns it
+into a pull request, which a maintainer reviews before merging.
+
+Empty descriptive fields (level, platform, software, modality, ...) can be suggested
+by an AI model, using the resource's web page. Suggestions never overwrite what the
+contributor entered, curator fields (tag team, source, notes, review) are never
+filled automatically, and the pull request lists every suggested value so the
+reviewer can check it. Configure it under *Settings > Secrets and variables > Actions*:
+
+| Name | Type | Example |
+| --- | --- | --- |
+| `AI_API_KEY` | secret | API key (OpenAI, OpenRouter or another OpenAI-compatible provider) |
+| `AI_API_URL` | variable | `https://openrouter.ai/api/v1` (default: OpenAI) |
+| `AI_MODEL` | variable | `openai/gpt-4o-mini` |
+| `AI_MAX_TOKENS` | variable | `1000` (default) |
+
+Without `AI_API_KEY` the workflow still works and the pull request says that no
+suggestions were made. To reprocess an issue, run the workflow manually from the
+Actions tab and enter the issue number; the existing pull request is updated.
+
 
 # Project development (OHBM Hackathon)
 
