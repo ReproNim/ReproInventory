@@ -12,11 +12,20 @@ Environment variables:
   AI_API_KEY   - optional API key for an OpenAI-compatible model
   AI_API_URL   - optional base URL for an OpenAI-compatible model
   AI_MODEL     - optional model name (defaults to gpt-4o-mini)
+  AI_MAX_TOKENS - optional reply length limit (defaults to 1000)
+  PR_BODY_PATH - where to write the pull request description
+                 (defaults to /tmp/pr_body.md)
+
+AI enrichment only fills empty descriptive fields (see AI_FILLABLE_FIELDS),
+never overwrites contributor input, and reports what it filled in the
+pull request description so a maintainer can check it.
 """
 
 import json
 import os
 import re
+import time
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
@@ -150,84 +159,252 @@ def merge_ai_values(entry, ai_values):
     return entry
 
 
+# ---------------------------------------------------------------------------
+# AI enrichment
+# ---------------------------------------------------------------------------
+
+# Only descriptive facts about the resource are ever filled by the AI.
+# Curator information (tag_team, source, notes, review, ...) must come from people.
+AI_FILLABLE_FIELDS = [
+    "level",
+    "platform",
+    "keywords",
+    "course_length",
+    "instruction_medium",
+    "delivery",
+    "language",
+    "programming_language",
+    "neuroimaging_software",
+    "imaging_modality",
+    "open_dataset",
+    "assessment",
+    "prerequisite",
+    "quadrants",
+]
+
+FIELD_HINTS = {
+    "level": "audience level the material is written for",
+    "platform": "operating systems / environments the material requires",
+    "keywords": "3-8 short topic keywords",
+    "course_length": "approximate total time to work through the material",
+    "instruction_medium": "format(s) of the material",
+    "delivery": "self-paced material vs. taught by an instructor",
+    "language": "natural language of the material",
+    "programming_language": "programming languages used in the material",
+    "neuroimaging_software": "neuroimaging packages taught or used",
+    "imaging_modality": "imaging / data modalities covered",
+    "open_dataset": "true if the material uses an openly available dataset",
+    "assessment": "true if the material includes exercises with answers, quizzes or other assessment",
+    "prerequisite": "short list of prior knowledge the material assumes",
+    "quadrants": "Diataxis type(s): tutorial, how-to guide, explanation or reference",
+}
+
+PAGE_TEXT_LIMIT = 8000
+
+# Filled in by enrich_entry_with_ai() and used for the pull request description.
+AI_REPORT: Dict[str, Any] = {"status": "not run", "filled": {}, "detail": ""}
+
+
+class _TextExtractor(HTMLParser):
+    """Collect visible text from an HTML page (skips scripts, styles, navigation chrome)."""
+
+    SKIP = {"script", "style", "noscript", "svg", "head"}
+
+    def __init__(self):
+        super().__init__()
+        self.parts: List[str] = []
+        self._skip_depth = 0
+
+    def handle_starttag(self, tag, attrs):
+        if tag in self.SKIP:
+            self._skip_depth += 1
+
+    def handle_endtag(self, tag):
+        if tag in self.SKIP and self._skip_depth:
+            self._skip_depth -= 1
+
+    def handle_data(self, data):
+        if not self._skip_depth and data.strip():
+            self.parts.append(data.strip())
+
+
+def html_to_text(html: str, limit: int = PAGE_TEXT_LIMIT) -> str:
+    parser = _TextExtractor()
+    parser.feed(html)
+    text = re.sub(r"\s+", " ", " ".join(parser.parts)).strip()
+    return text[:limit]
+
+
+def fetch_page_text(url: Optional[str]) -> str:
+    """Return the visible text of the resource's web page, or '' if it can't be fetched."""
+    if not url or not str(url).startswith(("http://", "https://")):
+        return ""
+    try:
+        response = requests.get(
+            url,
+            timeout=20,
+            headers={"User-Agent": "ReproInventory metadata bot (+https://github.com/ReproNim/ReproInventory)"},
+        )
+        response.raise_for_status()
+        if "html" not in response.headers.get("Content-Type", "html"):
+            return ""
+        return html_to_text(response.text)
+    except Exception as exc:  # network problems must never block a contribution
+        print(f"Could not fetch page text from {url}: {exc}")
+        return ""
+
+
 def ai_configured():
-    api_key = os.getenv("AI_API_KEY") or os.getenv("OPENAI_API_KEY")
-    if not api_key:
-        return False
-    return True
+    return bool(os.getenv("AI_API_KEY") or os.getenv("OPENAI_API_KEY"))
 
 
-def build_ai_prompt(entry, missing_fields):
-    context = json.dumps(entry, ensure_ascii=False, indent=2)
-    allowed = []
+def build_ai_prompt(entry, missing_fields, page_text=""):
+    known = {k: v for k, v in entry.items() if not field_is_missing(v) and k != "id"}
+    lines = []
     for field in missing_fields:
+        hint = FIELD_HINTS.get(field, "")
         if field in ENUM_VALUES:
-            allowed.append(f"- {field}: one of {ENUM_VALUES[field]}")
+            kind = "list of values from" if field in ARRAY_FIELDS else "one value from"
+            lines.append(f'- "{field}" ({hint}): {kind} {json.dumps(ENUM_VALUES[field])}')
         elif field in BOOLEAN_FIELDS:
-            allowed.append(f"- {field}: boolean (true or false)")
+            lines.append(f'- "{field}" ({hint}): true or false')
         else:
-            allowed.append(f"- {field}: string or list of strings as appropriate")
+            kind = "list of short strings" if field in ARRAY_FIELDS else "short string"
+            lines.append(f'- "{field}" ({hint}): {kind}')
 
+    page = page_text or "(the page could not be retrieved; use only the information above)"
     return (
-        "You are filling in missing metadata for a ReproInventory entry. "
-        "Only fill the fields listed below. Do not overwrite existing values. "
-        "Use only values from the allowed enums provided. If uncertain, set NA or false/true only when obvious.\n\n"
-        f"Current entry JSON:\n{context}\n\n"
-        "Return valid JSON only, with no markdown, no commentary, and only the keys requested.\n\n"
-        + "\n".join(allowed)
+        "You help curate ReproInventory, a catalogue of neuroimaging training materials.\n"
+        "Fill in missing metadata for the resource below, based on the information given and the text of its web page.\n\n"
+        "Rules:\n"
+        "- Only include a field if the page or the entry clearly supports a value. Leave out any field you are unsure about; do not guess.\n"
+        "- Use only the allowed values listed for each field, spelled exactly as given.\n"
+        "- Respond with a single JSON object containing only the requested keys, and nothing else.\n\n"
+        f"Resource:\n{json.dumps(known, ensure_ascii=False, indent=2)}\n\n"
+        f"Fields to fill:\n" + "\n".join(lines) + "\n\n"
+        f"Web page text (truncated):\n{page}\n"
     )
 
 
-def call_ai_to_fill_missing_fields(entry, missing_fields):
-    if not ai_configured() or not missing_fields:
-        return {}
+def parse_ai_json(content: str) -> Dict[str, Any]:
+    """Parse the model's reply, tolerating code fences or text around the JSON object."""
+    text = (content or "").strip()
+    fenced = re.search(r"```(?:json)?\s*(.*?)```", text, re.DOTALL)
+    if fenced:
+        text = fenced.group(1).strip()
+    if not text.startswith("{"):
+        start, end = text.find("{"), text.rfind("}")
+        if start == -1 or end <= start:
+            raise ValueError(f"no JSON object in reply: {content[:200]!r}")
+        text = text[start:end + 1]
+    payload = json.loads(text)
+    if not isinstance(payload, dict):
+        raise ValueError("reply is not a JSON object")
+    return payload
 
+
+def _post_with_retry(url, headers, body, attempts=3):
+    for attempt in range(1, attempts + 1):
+        response = requests.post(url, headers=headers, json=body, timeout=90)
+        if response.status_code in (429, 500, 502, 503) and attempt < attempts:
+            wait = 5 * attempt
+            print(f"AI request returned {response.status_code}; retrying in {wait}s")
+            time.sleep(wait)
+            continue
+        if response.status_code >= 400:
+            raise RuntimeError(f"HTTP {response.status_code} from {url}: {response.text[:300]}")
+        return response.json()
+    raise RuntimeError("AI request failed after retries")
+
+
+def call_ai_to_fill_missing_fields(entry, missing_fields, page_text=""):
+    """Ask the model for the missing fields. Raises on any failure."""
+    api_key = os.getenv("AI_API_KEY") or os.getenv("OPENAI_API_KEY")
+    api_url = (os.getenv("AI_API_URL") or os.getenv("OPENAI_API_URL") or "https://api.openai.com/v1").rstrip("/")
+    model = os.getenv("AI_MODEL") or os.getenv("OPENAI_MODEL") or "gpt-4o-mini"
+    max_tokens = int(os.getenv("AI_MAX_TOKENS") or "1000")
+
+    body = {
+        "model": model,
+        "temperature": 0,
+        "max_tokens": max_tokens,
+        "response_format": {"type": "json_object"},
+        "messages": [
+            {"role": "system", "content": "You fill in missing structured metadata and reply with JSON only."},
+            {"role": "user", "content": build_ai_prompt(entry, missing_fields, page_text)},
+        ],
+    }
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
     try:
-        api_key = os.getenv("AI_API_KEY") or os.getenv("OPENAI_API_KEY")
-        api_url = (os.getenv("AI_API_URL") or os.getenv("OPENAI_API_URL") or "https://api.openai.com/v1").rstrip("/")
-        model = os.getenv("AI_MODEL") or os.getenv("OPENAI_MODEL") or "gpt-4o-mini"
-        max_tokens = int(os.getenv("AI_MAX_TOKENS") or "250")
-
-        prompt = build_ai_prompt(entry, missing_fields)
-        response = requests.post(
-            f"{api_url}/chat/completions",
-            headers={
-                "Authorization": f"Bearer {api_key}",
-                "Content-Type": "application/json",
-            },
-            json={
-                "model": model,
-                "temperature": 0.1,
-                "max_tokens": max_tokens,
-                "messages": [
-                    {"role": "system", "content": "You fill missing structured metadata only."},
-                    {"role": "user", "content": prompt},
-                ],
-            },
-            timeout=90,
-        )
-        response.raise_for_status()
-        content = response.json()["choices"][0]["message"]["content"]
-        payload = json.loads(content)
-        if not isinstance(payload, dict):
-            return {}
-        return validate_ai_payload(payload)
-    except Exception as exc:  # pragma: no cover - defensive for runtime service issues
-        print(f"AI enrichment skipped: {exc}")
-        return {}
+        data = _post_with_retry(f"{api_url}/chat/completions", headers, body)
+    except RuntimeError as exc:
+        # Some models reject response_format; retry once without it (the reply parser tolerates fences).
+        if "HTTP 400" not in str(exc):
+            raise
+        print(f"Retrying without response_format after: {exc}")
+        body.pop("response_format")
+        data = _post_with_retry(f"{api_url}/chat/completions", headers, body)
+    content = data["choices"][0]["message"]["content"]
+    return validate_ai_payload(parse_ai_json(content)), model
 
 
 def enrich_entry_with_ai(entry):
-    missing_fields = get_missing_fields(entry)
-    if not missing_fields:
+    """Fill empty descriptive fields with AI suggestions. Never overwrites contributor input."""
+    AI_REPORT.update({"status": "not run", "filled": {}, "detail": ""})
+    missing = [f for f in get_missing_fields(entry) if f in AI_FILLABLE_FIELDS]
+    if not missing:
+        AI_REPORT.update(status="nothing to fill")
+        return entry
+    if not ai_configured():
+        AI_REPORT.update(status="skipped", detail="no AI_API_KEY configured")
+        print("AI enrichment skipped: no AI_API_KEY configured")
         return entry
 
-    ai_values = call_ai_to_fill_missing_fields(entry, missing_fields)
-    if not ai_values:
+    page_text = fetch_page_text(entry.get("url"))
+    try:
+        ai_values, model = call_ai_to_fill_missing_fields(entry, missing, page_text)
+    except Exception as exc:
+        AI_REPORT.update(status="skipped", detail=str(exc))
+        print(f"AI enrichment skipped: {exc}")
         return entry
 
-    filtered_ai_values = {field: value for field, value in ai_values.items() if field in missing_fields}
-    return merge_ai_values(entry, filtered_ai_values)
+    filled = {f: v for f, v in ai_values.items() if f in missing}
+    merge_ai_values(entry, filled)
+    AI_REPORT.update(
+        status="filled" if filled else "no values returned",
+        filled=filled,
+        detail=f"model {model}; page text {'used' if page_text else 'not available'}",
+    )
+    print(f"AI filled {len(filled)} field(s): {', '.join(filled) or '-'} ({AI_REPORT['detail']})")
+    return entry
+
+
+def format_pr_body(issue_number, label):
+    lines = [f"Closes #{issue_number}", "", f"Automatically generated from issue #{issue_number} (`{label}`).", ""]
+    status = AI_REPORT["status"]
+    if status == "filled":
+        lines += [
+            "### Fields suggested by AI - please check before merging",
+            "",
+            f"_{AI_REPORT['detail']}_",
+            "",
+            "| Field | Suggested value |",
+            "| --- | --- |",
+        ]
+        for field, value in AI_REPORT["filled"].items():
+            if isinstance(value, bool):
+                shown = "yes" if value else "no"
+            elif isinstance(value, list):
+                shown = ", ".join(map(str, value))
+            else:
+                shown = str(value)
+            lines.append(f"| `{field}` | {shown} |")
+        lines += ["", "All other fields are exactly as submitted by the contributor."]
+    elif status == "skipped":
+        lines += [f"**AI enrichment skipped:** {AI_REPORT['detail']}", "", "Empty fields need to be filled in by hand."]
+    elif status == "no values returned":
+        lines += ["AI enrichment ran but could not determine any of the empty fields.", f"_{AI_REPORT['detail']}_"]
+    return "\n".join(lines) + "\n"
 
 
 def extract_yaml_block(body):
@@ -308,6 +485,10 @@ def main():
     # Write updated JSON
     with open(JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+
+    pr_body_path = os.environ.get("PR_BODY_PATH", "/tmp/pr_body.md")
+    with open(pr_body_path, "w", encoding="utf-8") as f:
+        f.write(format_pr_body(issue_number, label))
 
     print(f"Successfully processed '{label}' for issue #{issue_number}.")
 
