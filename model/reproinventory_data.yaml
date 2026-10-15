@@ -2058,3 +2058,49 @@
     (DSST) material
   url: https://dsst.readthedocs.io/en/latest/guides/trainings/
   description: Neuroimaging resources and material shared by NIMH
+- id: 66
+  course_name: DSST material
+  url: https://dsst.readthedocs.io/en/latest/guides/trainings/#self-guided-trainings
+  description: DSST material
+  level:
+  - Beginner
+  - Intermediate
+  platform:
+  - Mac
+  - Linux
+  keywords:
+  - neuroimaging
+  - data science
+  - self-guided
+  - tutorials
+  - programming
+  - BASH
+  - Python
+  course_length: 1-4 hrs
+  instruction_medium:
+  - Hands-on tutorial / notebooks
+  - website
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - Python
+  - R
+  - shell scripting
+  - Matlab
+  neuroimaging_software:
+  - FSL
+  - Freesurfer
+  - Python
+  imaging_modality:
+  - Functional
+  - Structural
+  open_dataset: true
+  assessment: false
+  prerequisite:
+  - Foundational programming concepts
+  - Basic command line knowledge
+  quadrants:
+  - learning-oriented (tutorials)
+  - information-oriented (reference)
