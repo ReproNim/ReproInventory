@@ -2058,3 +2058,43 @@
     (DSST) material
   url: https://dsst.readthedocs.io/en/latest/guides/trainings/
   description: Neuroimaging resources and material shared by NIMH
+- id: 66
+  course_name: Andy’s Brain Book – fMRI short course
+  url: https://andysbrainbook.readthedocs.io/
+  description: Introductory fMRI analysis tutorials
+  tag_team:
+  - Andy
+  level:
+  - Beginner
+  platform:
+  - NA
+  keywords:
+  - fMRI
+  - analysis
+  - tutorials
+  course_length: 1-4 hrs
+  instruction_medium:
+  - Hands-on tutorial / notebooks
+  delivery:
+  - self-paced
+  language:
+  - English
+  programming_language:
+  - Python
+  neuroimaging_software:
+  - Multiple
+  imaging_modality:
+  - Functional
+  open_dataset: false
+  last_updated: 2023-10
+  functionality: fMRI analysis
+  assessment: false
+  prerequisite:
+  - Basic understanding of neuroimaging
+  source:
+  - Andy’s Brain Book
+  exclude_from_repro_inventory: false
+  alias_links: NA
+  notes: Introductory level course
+  quadrants:
+  - learning-oriented (tutorials)
