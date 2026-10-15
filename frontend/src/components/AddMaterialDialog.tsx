@@ -1,4 +1,6 @@
-import { LevelEnumValues, PlatformEnumValues, CourseLengthEnumValues, ContentFormatEnumValues, DeliveryEnumValues, LanguageEnumValues, ProgrammingLanguageEnumValues, NeuroimagingSoftwareEnumValues, ImagingModalityEnumValues, QuadrantsEnumValues } from "@/types/reproinventory";
+import { LevelEnumValues, PlatformEnumValues, CourseLengthEnumValues, ContentFormatEnumValues, DeliveryEnumValues, LanguageEnumValues, ProgrammingLanguageEnumValues, NeuroimagingSoftwareEnumValues, ImagingModalityEnumValues } from "@/types/reproinventory";
+import QuadrantWeightsInput from "@/components/QuadrantWeightsInput";
+import { QUADRANT_KEYS } from "@/lib/diataxis";
 import React, { useState } from "react";
 import { getGitHubRepoUrl } from "@/lib/github";
 import { DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -21,7 +23,6 @@ const languageOptions = LanguageEnumValues;
 const programmingLanguageOptions = ProgrammingLanguageEnumValues;
 const neuroimagingSoftwareOptions = NeuroimagingSoftwareEnumValues;
 const imagingModalityOptions = ImagingModalityEnumValues;
-const quadrantsOptions = QuadrantsEnumValues;
 function formatAsYaml(material: ReproInventoryEntry): string {
     const lines: string[] = [];
 
@@ -59,7 +60,11 @@ function formatAsYaml(material: ReproInventoryEntry): string {
     addScalar("open_dataset", material.open_dataset);
     addScalar("description", material.description);
     addScalar("notes", material.notes);
-    addList("quadrants", material.quadrants);
+    const weights = material.quadrant_weights;
+    if (weights && QUADRANT_KEYS.some((k) => (weights[k] ?? 0) > 0)) {
+        lines.push("quadrant_weights:");
+        QUADRANT_KEYS.forEach((k) => lines.push(`  ${k}: ${weights[k] ?? 0}`));
+    }
 
     return lines.join("\n");
 }
@@ -97,7 +102,6 @@ const AddMaterialDialog: React.FC<AddMaterialDialogProps> = ({ onClose }) => {
         open_dataset: undefined,
         description: "",
         notes: "",
-        quadrants: [],
     });
 
     const handleChange = (field: keyof ReproInventoryEntry, value: ReproInventoryEntry[keyof ReproInventoryEntry]) => {
@@ -370,20 +374,15 @@ const AddMaterialDialog: React.FC<AddMaterialDialogProps> = ({ onClose }) => {
                     </div>
                 </div>
 
-                {/* Quadrants */}
+                {/* Diataxis profile */}
                 <div>
-                    <Label className="text-sm font-medium">Quadrants</Label>
-                    <div className="mt-2 space-y-2">
-                        {quadrantsOptions.map((option) => (
-                            <div key={option} className="flex items-center space-x-2">
-                                <Checkbox
-                                    id={`add-quadrant-${option}`}
-                                    checked={material.quadrants?.includes(option) || false}
-                                    onCheckedChange={(checked) => handleMultiSelectChange("quadrants", option, checked as boolean)}
-                                />
-                                <Label htmlFor={`add-quadrant-${option}`} className="text-sm">{option}</Label>
-                            </div>
-                        ))}
+                    <Label className="text-sm font-medium">Diataxis profile</Label>
+                    <div className="mt-2">
+                        <QuadrantWeightsInput
+                            idPrefix="add-quadrant"
+                            value={material.quadrant_weights}
+                            onChange={(w) => handleChange("quadrant_weights", w)}
+                        />
                     </div>
                 </div>
 

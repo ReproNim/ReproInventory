@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label"
 import Footer from "@/components/Footer"
 import { useInventoryData } from "@/hooks/useInventoryData"
 import { buildSingleItemJsonLd } from "@/lib/schema-org"
+import QuadrantProfile from "@/components/QuadrantProfile"
+import { totalWeight } from "@/lib/diataxis"
 
 function DetailRow({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -137,7 +139,7 @@ export default function ItemPage() {
                 </CardContent>
               </Card>
 
-              {(item.keywords?.length || item.quadrants?.length || item.functionality) && (
+              {(item.keywords?.length || totalWeight(item.quadrant_weights) > 0 || item.functionality) && (
                 <Card>
                   <CardHeader><CardTitle className="text-base">Content</CardTitle></CardHeader>
                   <CardContent className="space-y-4">
@@ -151,9 +153,9 @@ export default function ItemPage() {
                         <BadgeList items={item.keywords} />
                       </DetailRow>
                     )}
-                    {item.quadrants?.length && (
-                      <DetailRow label="Quadrants">
-                        <BadgeList items={item.quadrants.filter((q) => q !== "NA")} />
+                    {item.quadrant_weights && totalWeight(item.quadrant_weights) > 0 && (
+                      <DetailRow label="Diataxis profile">
+                        <QuadrantProfile weights={item.quadrant_weights} />
                       </DetailRow>
                     )}
                   </CardContent>
